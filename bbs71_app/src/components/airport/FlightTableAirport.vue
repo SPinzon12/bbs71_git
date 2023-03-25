@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="form-group">
-      <label>{{ tableName }}</label>
+      <label class="table-name">{{ tableName }}</label>
       <input type="text" class="form-control" v-model="filterField" placeholder="Escriba vuelo, aerolínea o ciudad...">
     </div>
 
@@ -15,8 +15,8 @@
           <th scope="col">Vuelo</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="(flight, i) in filteredFlights" key="flight.id" @click="handleRowClick(flight)">
+      <tbody class="overflow-auto">
+        <tr v-for="(flight, i) in filteredFlights" v-bind:key="flight.id" @click="handleRowClick(flight)">
           <td class="table-light">{{ flight.data }}</td>
           <td v-if="flightType === 'arrivals'" class="table-light">{{ flightType === 'arrivals' ? flight.route.from.origin
             :
@@ -41,6 +41,22 @@
   <div class="row" v-if="selectedFlight">
     <flight-card :flight="selectedFlight" @close="closeCard" />
   </div>
+  <nav aria-label="Pagination" class="pagination">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" href="#"><a
+          class="page-link" href="#">1</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -70,9 +86,10 @@ export default {
   data() {
     return {
       filterField: '',
-      selectedFlight: null
+      selectedFlight: null,
     };
   },
+
   computed: {
     filteredFlights() {
       return this.flights.filter(flight => {
@@ -107,4 +124,35 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.page-item {
+  padding: 0px
+}
+
+.pagination {
+  position: relative;
+  left: 40%;
+  width: 100px
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.form-group {
+  background-color: #f6c207;
+  border-radius: 10px 10px 0px 0px;
+  height: 60px;
+}
+
+.table-name {
+  font-size: 35px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.form-control {
+  width: 600px;
+  position: relative;
+  bottom: 120px;
+}</style>

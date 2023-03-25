@@ -2,11 +2,12 @@
     <div v-if="errorMessage" class="alert alert-danger" role="alert">
         {{ errorMessage }}
     </div>
-    <section class=" gradient-form" style="background-color: #eee;">
+    <div class="container-fluid">
+    <section class="gradient-form d-flex">
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
-                    <div class="card rounded-3 text-black">
+                    <div class="card text-black">
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
@@ -57,6 +58,7 @@
             </div>
         </div>
     </section>
+</div>
 </template>
   
 <script>
@@ -82,7 +84,14 @@ export default {
 };
 </script>
   
-<style>
+<style scoped>
+.card{
+    border-radius: 20px;
+}
+
+.container-fluid{
+    padding:0px
+}
 .container {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -92,6 +101,10 @@ export default {
     height: 30px;
     border: none;
     background-color: #fb9120;
+    font-weight: 500;
+    font-size: 17px;
+    padding-bottom: 5px ;
+    height: 50px;
 }
 
 .btn1 {
@@ -103,25 +116,28 @@ export default {
 
 .gradient-custom-2 {
     /* fallback for old browsers */
-    background: #fccb90;
+    background-color: #f6c207;
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #f6c207, #d8363a, black);
+    background: -webkit-linear-gradient(to right, #f6c207, #d8363a);
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #f6c207, #d8363a, black);
+    background: linear-gradient(to right, #f6c207, #d8363a);
 }
 
 @media (min-width: 768px) {
     .gradient-form {
         height: 100vh !important;
+        background-color:#b8cbd7;
+
     }
 }
 
 @media (min-width: 769px) {
     .gradient-custom-2 {
-        border-top-right-radius: .3rem;
-        border-bottom-right-radius: .3rem;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
     }
 }
 </style>

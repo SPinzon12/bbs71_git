@@ -1,15 +1,21 @@
 <template>
-    <h1>Aerolinea</h1>
-    <div>
+    <Navbar></Navbar>
+    <h1 class="aero-name">Aerolinea</h1>
+    <div class="container">
         <FlightTable :flights="flights"></FlightTable>
     </div>
+    <Footer></Footer>
 </template>
 <script>
 import FlightTable from '../components/airline/FlightTableAirline.vue';
+import Navbar from '@/components/shared/Navbar.vue';
+import Footer from '@/components/shared/Footer.vue';
 
 export default {
   components: {
     FlightTable,
+    Navbar,
+    Footer
   },
   data() {
     return {
@@ -24,5 +30,15 @@ export default {
 };
 </script>
 <style scoped>
+.container{
+  min-height: 450px;
+  margin-top:20px
+}
+.aero-name{
+  margin-left:110px;
+  margin-top:10px;
+  font-size: 40px;
+  font-weight: 700;
+}
     
 </style>

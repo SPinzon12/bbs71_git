@@ -1,11 +1,12 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-5">
                 <section class="dropdown-wrapper">
                     <div @click="isVisibleOrigin = !isVisibleOrigin" class="selected-item">
                         <span v-if="selectedOrigin">{{ selectedOrigin }}</span>
-                        <span v-else> Select Origin</span>
+                        <span v-else><i class="fa-solid fa-plane-departure fa-xl" style="color: #ffcc14;"></i> Select
+                            Origin</span>
                         <svg :class="isVisibleOrigin ? 'dropdown' : ''" class="drop-down-icon"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16">
@@ -25,11 +26,15 @@
                     </div>
                 </section>
             </div>
-            <div class="col">
+            <div class="col-1">
+                <i class="fa-solid fa-person-walking-luggage fa-beat fa-xl" style="color: #f4c210; margin-left:10px"></i>
+            </div>
+            <div class="col-6">
                 <section class="dropdown-wrapper">
                     <div @click="isVisibleDestination = !isVisibleDestination" class="selected-item">
                         <span v-if="selectedDestination">{{ selectedDestination }}</span>
-                        <span v-else> Select Destination</span>
+                        <span v-else><i class="fa-solid fa-plane-arrival fa-xl" style="color: #ffca0a;"></i> Select
+                            Destination</span>
                         <svg :class="isVisibleDestination ? 'dropdown' : ''" class="drop-down-icon"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16">
@@ -50,6 +55,9 @@
                     </div>
                 </section>
             </div>
+        </div>
+        <div class="header">
+            <h3>Flights</h3>
         </div>
         <div>
             <table class="table">
@@ -84,6 +92,21 @@
             <flight-card :flight="selectedFlight" @close="closeCard" />
         </div>
     </div>
+    <nav aria-label="Pagination" class="pagination">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </template>
 
 <script>
@@ -108,7 +131,8 @@ export default {
             filterTextDestination: "",
             selectedDestination: null,
             isVisibleDestination: false,
-            selectedFlight: null
+            selectedFlight: null,
+            elementsByPages: 15
         };
     },
     computed: {
@@ -210,6 +234,9 @@ export default {
         // },
     },
     methods: {
+        pagination() {
+            return Math.ceil(filteredFlights.length / this.elementsByPages)
+        },
         getAirportCode(cityString) {
             return cityString.split("(")[1].replace(")", "");
         },
@@ -247,9 +274,36 @@ export default {
 
 
 <style scoped>
+.page-item{
+    padding:0px
+}
+.pagination {
+    position: relative;
+    left: 40%;
+    width: 100px
+}
+
 section {
     position: relative;
-    z-index: 9999;
+    z-index: 1;
+}
+
+.header {
+    background-color: #f6c207;
+    border-radius: 10px 10px 0px 0px;
+    height: 50px;
+    margin-top: 20px
+}
+
+h3 {
+    margin-bottom: 0px;
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.table-dark {
+    margin-top: 50px
 }
 
 .dropdown-wrapper {
@@ -332,7 +386,7 @@ section {
 }
 
 .dropdown-popover li:hover {
-    background: #7087;
+    background: rgba(255, 196, 0, 0.467);
     color: white;
     font-weight: bold;
 }
@@ -344,5 +398,4 @@ section {
     font-size: 16px;
     padding-left: 8px;
     border-radius: 5px;
-}
-</style>
+}</style>
