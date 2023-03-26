@@ -45,11 +45,7 @@
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4">We are just a single "BlackBird"</h4>
-                                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                        eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p class="small mb-0">BlackBird is a web platform that provides comprehensive data analysis and insights on aviation activities in Colombia. Our platform offers a user-friendly interface to access information on flight schedules, takeoffs, landings, airlines, and airports, among other key metrics. Stay up-to-date with the latest aviation trends and make informed decisions with BlackBird.</p> <h9 class="frase">¡BlackBird has you covered!</h9>
                                 </div>
                             </div>
                         </div>
@@ -85,6 +81,9 @@ export default {
 </script>
   
 <style scoped>
+.frase{
+    margin-top:15px
+}
 .row{
     border-color: #8d8d8d;
 }
