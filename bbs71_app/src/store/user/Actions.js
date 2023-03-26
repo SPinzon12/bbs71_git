@@ -1,10 +1,10 @@
-import { apiBBS71 } from "../../api/api";
+import { BBS71 } from "../../api/api";
 import router from "@/router";
 
 export async function login(context, details) {
   const { user, password } = details;
   try{
-    const api = await apiBBS71.post("/user/login", {
+    const api = await BBS71.post("/user/login", {
       user: user,
       password: password,
     });

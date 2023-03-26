@@ -27,7 +27,7 @@
                 </section>
             </div>
             <div class="col-1">
-                <i class="fa-solid fa-person-walking-luggage fa-beat fa-xl" style="color: #f4c210; margin-left:10px"></i>
+                <i class="fa-solid fa-person-walking-luggage fa-2xl" style="color: #f4c210; margin-left:10px"></i>
             </div>
             <div class="col-6">
                 <section class="dropdown-wrapper">
@@ -63,16 +63,26 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
+                        <th>Number</th>
+                        <th>Airplane</th>
                         <th>From</th>
                         <th>To</th>
+                        <th>Status</th>
                         <th>Departure Time</th>
                         <th>Arrival Time</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="flight in filteredFlights" :key="flight.id" @click="handleRowClick(flight)">
+                        <td class="table-light">{{ flight.flightInfo.flightNumber }}</td>
+                        <td class="table-light">{{ flight.aircraft.tailNumber }}</td>
                         <td class="table-light">{{ flight.route.from.origin }}</td>
                         <td class="table-light">{{ flight.route.to.dest }}</td>
+                        <td class="table-light"
+                            :style="{ color: flight.flightInfo.isCancelled || flight.flightInfo.isDiverted ? 'red' : 'green' }">
+                            {{
+                                flight.flightInfo.isDiverted ? 'Diverted' : (flight.flightInfo.isCancelled ? 'Cancelled' :
+                                    'Arrived') }}</td>
                         <td class="table-light">{{ flight.departure.depTime }}</td>
                         <td class="table-light">{{ flight.arrival.arrTime }}</td>
                     </tr>
@@ -258,9 +268,10 @@ export default {
 
 
 <style scoped>
-.page-item{
-    padding:0px
+.page-item {
+    padding: 0px
 }
+
 .pagination {
     position: relative;
     left: 40%;
@@ -382,4 +393,5 @@ h3 {
     font-size: 16px;
     padding-left: 8px;
     border-radius: 5px;
-}</style>
+}
+</style>
