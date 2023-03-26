@@ -1,10 +1,4 @@
 <template>
-<<<<<<< Updated upstream
-    <Navbar></Navbar>
-    <h1 class="aero-name">Airline</h1>
-    <div class="container">
-        <FlightTable :flights="flights"></FlightTable>
-=======
   <Navbar></Navbar>
   <div class="container">
     <h1 class="aero-name">Airline: {{ airline }}</h1>
@@ -23,7 +17,6 @@
           <h1>Flight routes</h1>
         </div>
       </div>
->>>>>>> Stashed changes
     </div>
   </div>
   <Footer></Footer>
@@ -74,7 +67,6 @@ export default {
 }
 
 .aero-name {
-  margin-left: 110px;
   margin-top: 10px;
   font-size: 40px;
   font-weight: 700;
