@@ -12,7 +12,7 @@
       <div class="row d-flex" id="a2">
         <div class="col-5 text-center">
           <h5 class="card-text"><b>Origin</b></h5>
-          <h6>{{ flight.departure.airport.originCityName }} ({{ flight.route.from.origin }})</h6> 
+          <h6>{{ flight.departure.airport.originCityName }} ({{ flight.route.from.origin }})</h6>
         </div>
         <div class="col-2 text-center">
           <i class="fa-solid fa-plane fa-beat fa-2xl" style="color: #f1b407; margin-top:30px"></i>
@@ -36,10 +36,10 @@
         <h5 :style="{ color: flight.flightInfo.isCancelled || flight.flightInfo.isDiverted ? 'red' : 'green' }">
           <b>{{
             flight.flightInfo.isDiverted ? 'Diverted' : (flight.flightInfo.isCancelled ? 'Cancelled' :
-              'Arrived') }}</b></h5>
+              'Arrived') }}</b>
+        </h5>
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -80,6 +80,7 @@ button {
 .card-body {
   padding: 0px;
 }
+
 .col-5 {
   margin-top: 10px;
 }

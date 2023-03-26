@@ -45,7 +45,7 @@
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4">We are just a single "BlackBird"</h4>
-                                    <p class="small mb-0">BlackBird is a web platform that provides comprehensive data analysis and insights on aviation activities in Colombia. Our platform offers a user-friendly interface to access information on flight schedules, takeoffs, landings, airlines, and airports, among other key metrics. Stay up-to-date with the latest aviation trends and make informed decisions with BlackBird.</p> <h9 class="frase">¡BlackBird has you covered!</h9>
+                                    <p class="small mb-0">BlackBird is a web platform that provides comprehensive data analysis and insights on aviation activities in Colombia. Our platform offers a user-friendly interface to access information on flight schedules, takeoffs, landings, airlines, and airports, among other key metrics. Stay up-to-date with the latest aviation trends and make informed decisions with BlackBird.</p> <h6 class="frase">¡BlackBird has you covered!</h6>
                                 </div>
                             </div>
                         </div>

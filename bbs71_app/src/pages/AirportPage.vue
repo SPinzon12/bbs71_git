@@ -49,16 +49,6 @@ export default {
   },
   data() {
     return {
-      flights_departure: [
-      { '_id': '6410b30118b407031e6fe950', 'departure': { 'airport': { 'origin': 'SGU', 'originAirportID': 14794, 'originCityName': 'St. George' }, 'crsDepTime': '07:24', 'depTime': '07:14', 'depDelay': -10.0, 'depDel15': 0.0, 'wheelsOff': '07:24', 'taxiOut': 10.0 }, 'arrival': { 'airport': { 'dest': 'PHX', 'destAirportID': 14107, 'destCityName': 'Phoenix' }, 'crsArrTime': '08:43', 'arrTime': '08:18', 'arrDelay': -25.0, 'arrDel15': 0.0, 'wheelsOn': '08:13', 'taxiIn': 5.0 }, 'aircraft': { 'tailNumber': 'N728SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'SGU', 'originAirportID': 14794 }, 'to': { 'dest': 'PHX', 'destAirportID': 14107 }, 'distance': 262.0, 'crsElapsedTime': '01:19', 'actualElapsedTime': '01:04' }, 'flightInfo': { 'flightDate': "2021, 3, 3, 0, 0", 'isCancelled': false, 'isDiverted': false, 'airTime': '00:49', 'flightNumber': 'OO 3133' } }, 
-        { '_id': '6410b30118b407031e6fe951', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix' }, 'crsDepTime': '09:22', 'depTime': '09:17', 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': '09:40', 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George' }, 'crsArrTime': '10:40', 'arrTime': '10:31', 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': '10:28', 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': '01:18', 'actualElapsedTime': '01:14' }, 'flightInfo': { 'flightDate': "2021, 3, 3, 0, 0", 'isCancelled': false, 'isDiverted': false, 'airTime': '00:48', 'flightNumber': 'OO 3134' } }
-      ],
-      flights_arrival: [
-        { '_id': '6410b30118b407031e6fe950', 'departure': { 'airport': { 'origin': 'SGU', 'originAirportID': 14794, 'originCityName': 'St. George' }, 'crsDepTime': '07:24', 'depTime': '07:14', 'depDelay': -10.0, 'depDel15': 0.0, 'wheelsOff': '07:24', 'taxiOut': 10.0 }, 'arrival': { 'airport': { 'dest': 'PHX', 'destAirportID': 14107, 'destCityName': 'Phoenix' }, 'crsArrTime': '08:43', 'arrTime': '08:18', 'arrDelay': -25.0, 'arrDel15': 0.0, 'wheelsOn': '08:13', 'taxiIn': 5.0 }, 'aircraft': { 'tailNumber': 'N728SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'SGU', 'originAirportID': 14794 }, 'to': { 'dest': 'PHX', 'destAirportID': 14107 }, 'distance': 262.0, 'crsElapsedTime': '01:19', 'actualElapsedTime': '01:04' }, 'flightInfo': { 'flightDate': "2021, 3, 3, 0, 0", 'isCancelled': false, 'isDiverted': false, 'airTime': '00:49', 'flightNumber': 'OO 3133' } }, 
-        { '_id': '6410b30118b407031e6fe951', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix' }, 'crsDepTime': '09:22', 'depTime': '09:17', 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': '09:40', 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George' }, 'crsArrTime': '10:40', 'arrTime': '10:31', 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': '10:28', 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': '01:18', 'actualElapsedTime': '01:14' }, 'flightInfo': { 'flightDate': "2021, 3, 3, 0, 0", 'isCancelled': false, 'isDiverted': false, 'airTime': '00:48', 'flightNumber': 'OO 3134' } },
-        { '_id': '6410b30118b407031e6fe950', 'departure': { 'airport': { 'origin': 'SGU', 'originAirportID': 14794, 'originCityName': 'St. George' }, 'crsDepTime': '07:24', 'depTime': '07:14', 'depDelay': -10.0, 'depDel15': 0.0, 'wheelsOff': '07:24', 'taxiOut': 10.0 }, 'arrival': { 'airport': { 'dest': 'PHX', 'destAirportID': 14107, 'destCityName': 'Phoenix' }, 'crsArrTime': '08:43', 'arrTime': '08:18', 'arrDelay': -25.0, 'arrDel15': 0.0, 'wheelsOn': '08:13', 'taxiIn': 5.0 }, 'aircraft': { 'tailNumber': 'N728SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'SGU', 'originAirportID': 14794 }, 'to': { 'dest': 'PHX', 'destAirportID': 14107 }, 'distance': 262.0, 'crsElapsedTime': '01:19', 'actualElapsedTime': '01:04' }, 'flightInfo': { 'flightDate': "2021, 3, 3, 0, 0", 'isCancelled': true, 'isDiverted': false, 'airTime': '00:49', 'flightNumber': 'OO 3133' } }, 
-        { '_id': '6410b30118b407031e6fe951', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix' }, 'crsDepTime': '09:22', 'depTime': '09:17', 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': '09:40', 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George' }, 'crsArrTime': '10:40', 'arrTime': '10:31', 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': '10:28', 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': '01:18', 'actualElapsedTime': '01:14' }, 'flightInfo': { 'flightDate': "2021, 3, 3, 0, 0", 'isCancelled': false, 'isDiverted': true, 'airTime': '00:48', 'flightNumber': 'OO 3134' } }
-      ],
       showArrivals: false,
       selected: 0,
       menuOptions: [
@@ -72,12 +62,22 @@ export default {
   computed: {
     airport() {
       return this.$store.state.user.user.name
+    },
+    flights_departure() {
+      return this.$store.state.airport.flights_departure
+    },
+    flights_arrival() {
+      return this.$store.state.airport.flights_arrival
     }
   },
   methods: {
     onMenuOptionSelected(index) {
       this.selected = index;
     },
+  },
+  beforeMount() {
+    this.$store.dispatch("airport/getFlightsDep", this.$store.state.user.user);
+    this.$store.dispatch("airport/getFlightsArr", this.$store.state.user.user);
   }
 };
 </script>
@@ -101,7 +101,7 @@ export default {
 }
 
 .form-check-input[type="checkbox"]:checked {
-  background-color:#f6c207;
+  background-color: #f6c207;
   border-color: #f6c207;
 }
 

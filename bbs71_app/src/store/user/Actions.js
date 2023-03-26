@@ -36,13 +36,4 @@ export async function logout(context) {
  
 }
 
-export const fetchUser = (context) =>{
-    if(user === null){
-      context.commit('CLEAR_USER')
-    } else{
-      context.commit('SET_USER', user)
-      if(router.isReady() && router.currentRoute.value.path === '/InicioUsuario'){
-        router.push('/')
-      }
-    }
-}
+
