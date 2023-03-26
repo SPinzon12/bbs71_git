@@ -24,13 +24,25 @@ export async function login(context, details) {
     const message = err.response.data.error; // asumiendo que el mensaje de error se devuelve en una llave llamada "error" en la respuesta de la API
     context.commit("set_error_message", message);
   }
-
-
-
-
 }
 
 export async function logout(context) {
-  context.commit("clear_user");
-  router.push("/");
+  try {
+    context.commit("clear_user");
+    router.push("/");
+  }catch(err){
+    console.error(err);
+  }
+ 
+}
+
+export const fetchUser = (context) =>{
+    if(user === null){
+      context.commit('CLEAR_USER')
+    } else{
+      context.commit('SET_USER', user)
+      if(router.isReady() && router.currentRoute.value.path === '/InicioUsuario'){
+        router.push('/')
+      }
+    }
 }

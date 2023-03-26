@@ -18,7 +18,7 @@
 
           <form class="d-flex align-items-center w-100 form-search">
             <div class="input-group">
-              <input type="search" class="form-control" placeholder="Buscar..." />
+              <input type="search" class="form-control" placeholder="Search..." />
             </div>
             <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
           </form>
@@ -35,7 +35,10 @@
             <ul class="navbar-nav d-flex flex-row me-2">
               <li>
                 <div class="login-options">
-                  <router-link class="btn" id="loginOption" to="/login">
+                  <li v-if="$store.state.user.user" class="btn" id="logoutOption"  @click="unLog">
+                    <i class="fa-solid fa-user"></i> Logout
+                  </li>
+                  <router-link v-else class="btn" id="loginOption" to="/login">
                     <i class="fa-solid fa-user"></i> Sign In
                   </router-link>
                 </div>
@@ -51,18 +54,25 @@
 </template>
 
 <script>
-
+export default {
+methods:{
+    unLog(){
+        this.$store.dispatch('logout');
+    }
+  }
+}
 
 </script>
 
 <style scoped>
-.fa-solid{
+.fa-solid {
   margin-bottom: 5px;
 }
 
-.login-options{
+.login-options {
   width: 140px;
 }
+
 .frame {
   padding: 0px;
 }
@@ -80,7 +90,8 @@
   width: 100px;
   margin-right: 10px;
 }
-#loginOption{
+
+#loginOption {
   margin-top: 5px;
 }
 
@@ -90,9 +101,9 @@
 }
 
 .btn {
-    height: 30px;
-    border: none;
-    color:white;
+  height: 30px;
+  border: none;
+  color: white;
 }
 
 .dropdown-menu {
