@@ -5,17 +5,17 @@
         <i :class="tableName === 'Arrivals' ? 'fas fa-plane-arrival' : 'fas fa-plane-departure'"></i>
         {{ tableName }}
       </label>
-      <input type="text" class="form-control" v-model="filterField" placeholder="Escriba vuelo, aerolínea o ciudad...">
+      <input type="text" class="form-control" v-model="filterField" placeholder="Write the flight, airline or city...">
     </div>
 
     <table class="table">
       <thead class="table-dark">
         <tr>
-          <th scope="col">Fecha</th>
-          <th v-if="flightType === 'arrivals'" scope="col">Origen</th>
-          <th scope="col">Aerolinea</th>
-          <th v-if="flightType !== 'arrivals'" scope="col">Destino</th>
-          <th scope="col">Vuelo</th>
+          <th scope="col">Date</th>
+          <th v-if="flightType === 'arrivals'" scope="col">Origin</th>
+          <th scope="col">Airline</th>
+          <th v-if="flightType !== 'arrivals'" scope="col">Destination</th>
+          <th scope="col">Flight</th>
         </tr>
       </thead>
       <tbody class="overflow-auto">

@@ -1,6 +1,6 @@
 <template>
     <Navbar></Navbar>
-    <h1 class="aero-name">Aerolinea</h1>
+    <h1 class="aero-name">Airline</h1>
     <div class="container">
         <FlightTable :flights="flights"></FlightTable>
     </div>

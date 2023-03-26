@@ -11,25 +11,25 @@
       </div>
       <div class="row d-flex" id="a2">
         <div class="col-5 text-center">
-          <h5 class="card-text">Origen</h5>
+          <h5 class="card-text">Origin</h5>
           <h5>{{ flight.route.from.origin }}</h5>
         </div>
         <div class="col-2 text-center">
           <i class="fa-solid fa-plane fa-beat fa-2xl" style="color: #f1b407; margin-top:30px"></i>
         </div>
         <div class="col-5 text-center">
-          <h5 class="card-text">Destino</h5>
+          <h5 class="card-text">Destination</h5>
           <h5>{{ flight.route.to.dest }}</h5>
         </div>
       </div>
       <div class="row text-center" id="a3">
         <div class="col">
-          <h5 class="card-text">Fecha Salida</h5>
-          <h6>Febrero 15, 8:30am</h6>
+          <h5 class="card-text">Departure Date</h5>
+          <h6>Febrary 15, 8:30am</h6>
         </div>
         <div class="col">
-          <h5 class="card-text">Fecha LLegada</h5>
-          <h6>Febrero 15, 8:30am</h6>
+          <h5 class="card-text">Arrival Date</h5>
+          <h6>Febrary 15, 8:30am</h6>
         </div>
       </div>
       <div class="row text-center" id="a4">

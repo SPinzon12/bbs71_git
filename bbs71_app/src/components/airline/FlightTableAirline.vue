@@ -44,7 +44,7 @@
                     </div>
                     <div :class="isVisibleDestination ? 'visible' : 'invisible'" v-if="isVisibleDestination"
                         class="dropdown-popover">
-                        <input v-model="filterTextDestination" type="text" placeholder="Buscar por Origen">
+                        <input v-model="filterTextDestination" type="text" placeholder="Search Origin">
                         <span v-if="filterDestination.length === 0">No Data Available</span>
                         <div class="options">
                             <ul>

@@ -18,16 +18,16 @@
                                     </div>
 
                                     <form>
-                                        <p>Inicia Sesion</p>
+                                        <p>Sign In</p>
 
                                         <div class="form-outline mb-4">
                                             <input type="text" id="form2Example11" class="form-control"
-                                                placeholder="Nombre de Usuario" v-model="login_form.user" required />
+                                                placeholder="Username" v-model="login_form.user" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <input type="password" id="form2Example22" class="form-control"
-                                                placeholder="Contraseña" v-model="login_form.password" required />
+                                                placeholder="Password" v-model="login_form.password" required />
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">
@@ -35,7 +35,7 @@
                                                 type="button">Log
                                                 in</button>
                                             <br>
-                                            <a class="text-muted">Olvidaste tu contraseña?</a>
+                                            <a class="text-muted">Did you forget your password?</a>
                                         </div>
 
                                     </form>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">Somos mas que simple "Pajaro Negro"</h4>
+                                    <h4 class="mb-4">We are just a single "BlackBird"</h4>
                                     <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                         eiusmod
                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

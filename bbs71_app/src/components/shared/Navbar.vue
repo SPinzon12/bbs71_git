@@ -25,18 +25,18 @@
 
           <ul class="navbar-nav ms-3">
             <li class="nav-item me-3">
-              <a class="nav-link d-flex align-items-center">Aereopuerto</a>
+              <a class="nav-link d-flex align-items-center">Airport</a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center me-3">
-                <i class="fas fa-bookmark pe-2"></i> Aereolineas
+                <i class="fas fa-bookmark pe-2"></i> Airlines
               </a>
             </li>
             <ul class="navbar-nav d-flex flex-row me-2">
               <li>
                 <div class="login-options">
                   <router-link class="btn" id="loginOption" to="/login">
-                    <i class="fa-solid fa-user"></i> Inicia Sesion
+                    <i class="fa-solid fa-user"></i> Sign In
                   </router-link>
                 </div>
               </li>
