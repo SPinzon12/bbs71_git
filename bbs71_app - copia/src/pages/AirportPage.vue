@@ -1,0 +1,76 @@
+<template>
+  <Navbar></Navbar>
+  <div class="container">
+    <h1 class="airport_name">{{ airport }}</h1>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="showArrivals" v-model="showArrivals">
+      <label class="form-check-label" for="showArrivals">Mostrar Llegadas/Salidas</label>
+    </div>
+    <div v-if="showArrivals" class="table">
+      <FlightTable tableName="Salidas" :flights="flights_departure" flightType="departures"/>
+    </div>
+    <div class="table" v-else>
+      <FlightTable tableName="Llegadas" :flights="flights_arrival" flightType="arrivals"/>
+    </div>
+  </div>
+  <Footer></Footer>
+</template>
+<script>
+import FlightTable from '../components/airport/FlightTableAirport.vue';
+import Navbar from '@/components/shared/Navbar.vue';
+import Footer from '@/components/shared/Footer.vue';
+
+export default {
+  components: {
+    FlightTable,
+    Navbar,
+    Footer
+    
+  },
+  data() {
+    return {
+      airport: 'Aeropuerto Internacional',
+      flights_departure: [
+        { 'id': '640cf1b249b9b098688cab16', 'departure': { 'airport': { 'origin': 'SGU', 'originAirportID': 14794, 'originCityName': 'St. George, UT' }, 'crsDepTime': 724.0, 'depTime': 714.0, 'depDelay': -10.0, 'depDel15': 0.0, 'wheelsOff': 724.0, 'taxiOut': 10.0 }, 'arrival': { 'airport': { 'dest': 'PHX', 'destAirportID': 14107, 'destCityName': 'Phoenix, AZ' }, 'crsArrTime': 843.0, 'arrTime': 818.0, 'arrDelay': -25.0, 'arrDel15': 0.0, 'wheelsOn': 813.0, 'taxiIn': 5.0 }, 'aircraft': { 'tailNumber': 'N728SK' }, 'airline': { 'name': 'SkyWest Airlines Inc.', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'SGU', 'originAirportID': 14794 }, 'to': { 'dest': 'PHX', 'destAirportID': 14107 }, 'distance': 262.0, 'crsElapsedTime': 79.0, 'actualElapsedTime': 64.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'DOR', 'originAirportID': 14107, 'originCityName': 'Bogota' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' },
+      ],
+      flights_arrival: [
+        { 'id': '640cf1b249b9b098688cab16', 'departure': { 'airport': { 'origin': 'SGU', 'originAirportID': 14794, 'originCityName': 'St. George, UT' }, 'crsDepTime': 724.0, 'depTime': 714.0, 'depDelay': -10.0, 'depDel15': 0.0, 'wheelsOff': 724.0, 'taxiOut': 10.0 }, 'arrival': { 'airport': { 'dest': 'PHX', 'destAirportID': 14107, 'destCityName': 'Phoenix, AZ' }, 'crsArrTime': 843.0, 'arrTime': 818.0, 'arrDelay': -25.0, 'arrDel15': 0.0, 'wheelsOn': 813.0, 'taxiIn': 5.0 }, 'aircraft': { 'tailNumber': 'N728SK' }, 'airline': { 'name': 'Avianca', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'SGU', 'originAirportID': 14794 }, 'to': { 'dest': 'PHX', 'destAirportID': 14107 }, 'distance': 262.0, 'crsElapsedTime': 79.0, 'actualElapsedTime': 64.0 }, 'date': '' },
+        { 'id': '640cf1b249b9b098688cab17', 'departure': { 'airport': { 'origin': 'PHX', 'originAirportID': 14107, 'originCityName': 'Phoenix, AZ' }, 'crsDepTime': 922.0, 'depTime': 917.0, 'depDelay': -5.0, 'depDel15': 0.0, 'wheelsOff': 940.0, 'taxiOut': 23.0 }, 'arrival': { 'airport': { 'dest': 'SGU', 'destAirportID': 14794, 'destCityName': 'St. George, UT' }, 'crsArrTime': 1040.0, 'arrTime': 1031.0, 'arrDelay': -9.0, 'arrDel15': 0.0, 'wheelsOn': 1028.0, 'taxiIn': 3.0 }, 'aircraft': { 'tailNumber': 'N752SK' }, 'airline': { 'name': 'Wingo', 'iata': 'OO' }, 'route': { 'from': { 'origin': 'PHX', 'originAirportID': 14107 }, 'to': { 'dest': 'SGU', 'destAirportID': 14794 }, 'distance': 262.0, 'crsElapsedTime': 78.0, 'actualElapsedTime': 74.0 }, 'date': '' }
+      ],
+      showArrivals: false,
+    };
+  }
+};
+</script>
+<style scoped>
+.table{
+  min-height: 400px;
+  margin-bottom: 12px;
+}
+.form-check{
+  position: relative;
+  left:630px;
+  top:30px;
+  width: 300px
+}
+.airport_name{
+  margin-top:10px;
+  font-size: 40px;
+  font-weight: 700;
+}
+</style>
