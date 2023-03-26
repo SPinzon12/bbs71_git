@@ -12,22 +12,29 @@
       <thead class="table-dark">
         <tr>
           <th scope="col">Date</th>
+          <th scope="col">Scheduled time</th>
           <th v-if="flightType === 'arrivals'" scope="col">Origin</th>
           <th scope="col">Airline</th>
           <th v-if="flightType !== 'arrivals'" scope="col">Destination</th>
           <th scope="col">Flight</th>
+          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody class="overflow-auto">
         <tr v-for="(flight, i) in filteredFlights" v-bind:key="flight.id" @click="handleRowClick(flight)">
-          <td class="table-light">{{ flight.data }}</td>
-          <td v-if="flightType === 'arrivals'" class="table-light">{{ flightType === 'arrivals' ? flight.route.from.origin
-            :
-            flight.route.to.dest }}</td>
+          <td class="table-light">{{ flight.flightInfo.flightDate }}</td>
+          <td class="table-light">{{ flightType === 'arrivals' ?
+            flight.arrival.crsArrTime : flight.departure.crsDepTime }}</td>
+          <td v-if="flightType === 'arrivals'"  class="table-light">{{ flightType === 'arrivals' ? flight.route.from.origin : flight.route.to.dest }}</td>
           <td class="table-light">{{ flight.airline.name }}</td>
           <td v-if="flightType !== 'arrivals'" class="table-light">{{ flightType !== 'arrivals' ? flight.route.to.dest :
             flight.route.from.origin }}</td>
-          <td class="table-light">{{ flight.id }}</td>
+          <td class="table-light">{{ flight.flightInfo.flightNumber }}</td>
+          <td class="table-light"
+            :style="{ color: flight.flightInfo.isCancelled || flight.flightInfo.isDiverted ? 'red' : 'green' }">
+            {{
+              flight.flightInfo.isDiverted ? 'Diverted' : (flight.flightInfo.isCancelled ? 'Cancelled' :
+                'Arrived') }}</td>
         </tr>
       </tbody>
       <tbody v-if="filteredFlights.length === 0">
@@ -84,7 +91,7 @@ export default {
         const airlineText = flight.airline.name.toLowerCase();
         const originText = flight.route.from.origin.toLowerCase();
         const destText = flight.route.to.dest.toLowerCase();
-        const flightNumber = flight.id.toLowerCase()
+        const flightNumber = flight.flightInfo.flightNumber.toLowerCase()
         console.log(flightNumber)
         if (this.flightType === 'arrivals') {
           const cityText = flight.departure.airport.originCityName.toLowerCase();
