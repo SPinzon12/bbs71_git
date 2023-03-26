@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <div class="form-group">
-      <label class="table-name">{{ tableName }}</label>
+      <label class="table-name">
+        <i :class="tableName === 'Arrivals' ? 'fas fa-plane-arrival' : 'fas fa-plane-departure'"></i>
+        {{ tableName }}
+      </label>
       <input type="text" class="form-control" v-model="filterField" placeholder="Escriba vuelo, aerolínea o ciudad...">
     </div>
 
@@ -41,22 +44,6 @@
   <div class="row" v-if="selectedFlight">
     <flight-card :flight="selectedFlight" @close="closeCard" />
   </div>
-  <nav aria-label="Pagination" class="pagination">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item" href="#"><a
-          class="page-link" href="#">1</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 </template>
 
 <script>
@@ -155,4 +142,5 @@ export default {
   width: 600px;
   position: relative;
   bottom: 120px;
-}</style>
+}
+</style>

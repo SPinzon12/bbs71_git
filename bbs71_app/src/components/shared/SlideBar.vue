@@ -1,8 +1,8 @@
 <template>
     <div class="navigation">
         <ul class="nav nav-pills flex-column mb-auto">
-            <li v-for="(option, index) in menuOptions" class="nav-item"
-                :class="index === 0 && selected === 0 ? 'active' : ''" @click="activateNavItem(index)">
+            <li v-for="(option, index) in menuOptions" class="nav-item" :class="{ active: selected === index }"
+                @click="activateNavItem(index)" :key="index">
                 <span class="icon"><i :class="option.iconClass"></i></span>
                 <span class="title">{{ option.title }}</span>
             </li>
@@ -21,15 +21,9 @@ export default {
             type: Number,
             required: true,
         },
-    }, 
+    },
     methods: {
         activateNavItem(index) {
-            const navItems = document.querySelectorAll(".nav-item");
-            navItems.forEach((item) => {
-                item.classList.remove("active");
-            });
-            navItems[index].classList.add("active");
-
             // emitir evento componenteSeleccionado con la opción seleccionada
             this.$emit("selected", index);
         },
@@ -40,24 +34,24 @@ export default {
 <style scoped>
 .navigation {
     margin-top: 20px;
-    position: fixed;
-    left: 20px;
+    position: relative;
+    left: -20px;
     background: #f6c207;
-    height: 80%;
     width: 300px;
     border-radius: 10px;
     border-left: 5px solid #f6c207;
     box-sizing: initial;
     transition: 0.5s;
+    margin-bottom: 40px;
 }
 
 .navigation ul {
-    position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     padding-left: 5px;
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .navigation ul li {
@@ -67,6 +61,7 @@ export default {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     cursor: pointer;
+
 }
 
 .navigation ul li.active {
@@ -78,7 +73,6 @@ export default {
     margin-bottom: 10px;
     position: relative;
     display: block;
-    width: 100%;
     display: flex;
     font-size: 1.1rem;
 }
