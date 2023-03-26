@@ -123,13 +123,14 @@ export default {
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, #f6c207, #d8363a);
+    
 }
 
 @media (min-width: 768px) {
     .gradient-form {
         height: 100vh !important;
-        background-color:#b8cbd7;
-
+        background-color: #8d8d8d;
+        border-color: #8d8d8d;
     }
 }
 
