@@ -11,10 +11,13 @@
           <FlightTable :flights="flights"></FlightTable>
         </div>
         <div v-if="selected == 1">
-          <h1>Airplanes</h1>
+          <AircraftTable :airplanes="airplanes" />
         </div>
         <div v-if="selected == 2">
           <h1>Flight routes</h1>
+        </div>
+        <div v-if="selected == 3">
+          <DashboardCard :cards="cards" />
         </div>
       </div>
     </div>
@@ -26,13 +29,17 @@ import FlightTable from '../components/airline/FlightTableAirline.vue';
 import Navbar from '@/components/shared/Navbar.vue';
 import Footer from '@/components/shared/Footer.vue';
 import SlideBar from "../components/shared/SlideBar.vue";
+import DashboardCard from '../components/shared/DashboardCard.vue';
+import AircraftTable from '../components/airline/AircraftFlightsTable.vue';
 
 export default {
   components: {
     FlightTable,
     Navbar,
     Footer,
-    SlideBar
+    SlideBar,
+    DashboardCard,
+    AircraftTable
   },
   data() {
     return {
@@ -41,6 +48,7 @@ export default {
         { title: "Flights", iconClass: "fa-regular fa-paper-plane fa-xl" },
         { title: "Airplanes", iconClass: "fa-solid fa-plane-up fa-xl" },
         { title: "Flight routes", iconClass: "fa-solid fa-plane-arrival fa-xl" },
+        { title: "Dashboard", iconClass: "fa-solid fa-chart-line fa-xl" },
       ],
     };
   },
@@ -48,8 +56,14 @@ export default {
     airline() {
       return this.$store.state.user.user.name
     },
-    flights(){
+    flights() {
       return this.$store.state.airline.flights
+    },
+    cards() {
+      return this.$store.state.airline.cards
+    },
+    airplanes() {
+      return this.$store.state.airline.airplanes
     }
   },
   methods: {
@@ -59,6 +73,8 @@ export default {
   },
   beforeMount() {
     this.$store.dispatch("airline/getFlights", this.$store.state.user.user);
+    this.$store.dispatch("airline/getCards", this.$store.state.user.user);
+    this.$store.dispatch("airline/getAirplanes", this.$store.state.user.user);
   }
 };
 </script>

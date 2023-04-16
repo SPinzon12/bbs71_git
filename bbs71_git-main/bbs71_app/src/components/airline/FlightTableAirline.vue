@@ -5,8 +5,8 @@
                 <section class="dropdown-wrapper">
                     <div @click="isVisibleOrigin = !isVisibleOrigin" class="selected-item">
                         <span v-if="selectedOrigin">{{ selectedOrigin }}</span>
-                        <span v-else><i class="fa-solid fa-plane-departure fa-xl" style="color: #ffcc14;"></i> Select
-                            Origin</span>
+                        <span v-else><i class="fa-solid fa-plane-departure fa-xl" style="color: #ffcc14"></i>
+                            Select Origin</span>
                         <svg :class="isVisibleOrigin ? 'dropdown' : ''" class="drop-down-icon"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16">
@@ -15,26 +15,28 @@
                         </svg>
                     </div>
                     <div :class="isVisibleOrigin ? 'visible' : 'invisible'" v-if="isVisibleOrigin" class="dropdown-popover">
-                        <input v-model="filterTextOrigin" type="text" placeholder="Buscar por Origen">
+                        <input v-model="filterTextOrigin" type="text" placeholder="Write the city.." />
                         <span v-if="filterOrigin.length === 0">No Data Available</span>
                         <div class="options">
                             <ul>
                                 <li @click="allOrigins()">All Origins</li>
-                                <li @click="selectOrigin(city)" v-for="city in filterOrigin">{{ city }}</li>
+                                <li @click="selectOrigin(city)" v-for="city in filterOrigin">
+                                    {{ city }}
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </section>
             </div>
             <div class="col-1">
-                <i class="fa-solid fa-person-walking-luggage fa-2xl" style="color: #f4c210; margin-left:10px"></i>
+                <i class="fa-solid fa-person-walking-luggage fa-2xl" style="color: #f4c210; margin-left: 10px"></i>
             </div>
             <div class="col-6">
                 <section class="dropdown-wrapper">
                     <div @click="isVisibleDestination = !isVisibleDestination" class="selected-item">
                         <span v-if="selectedDestination">{{ selectedDestination }}</span>
-                        <span v-else><i class="fa-solid fa-plane-arrival fa-xl" style="color: #ffca0a;"></i> Select
-                            Destination</span>
+                        <span v-else><i class="fa-solid fa-plane-arrival fa-xl" style="color: #ffca0a"></i>
+                            Select Destination</span>
                         <svg :class="isVisibleDestination ? 'dropdown' : ''" class="drop-down-icon"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16">
@@ -44,12 +46,14 @@
                     </div>
                     <div :class="isVisibleDestination ? 'visible' : 'invisible'" v-if="isVisibleDestination"
                         class="dropdown-popover">
-                        <input v-model="filterTextDestination" type="text" placeholder="Search Origin">
+                        <input v-model="filterTextDestination" type="text" placeholder="Write the city.." />
                         <span v-if="filterDestination.length === 0">No Data Available</span>
                         <div class="options">
                             <ul>
                                 <li @click="allDests()">All Destinations</li>
-                                <li @click="selectDestination(city)" v-for="city in filterDestination">{{ city }}</li>
+                                <li @click="selectDestination(city)" v-for="city in filterDestination">
+                                    {{ city }}
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -78,18 +82,27 @@
                         <td class="table-light">{{ flight.aircraft.tailNumber }}</td>
                         <td class="table-light">{{ flight.route.from.origin }}</td>
                         <td class="table-light">{{ flight.route.to.dest }}</td>
-                        <td class="table-light"
-                            :style="{ color: flight.flightInfo.isCancelled || flight.flightInfo.isDiverted ? 'red' : 'green' }">
-                            {{
-                                flight.flightInfo.isDiverted ? 'Diverted' : (flight.flightInfo.isCancelled ? 'Cancelled' :
-                                    'Arrived') }}</td>
+                        <td class="table-light" :style="{
+                            color:
+                                flight.flightInfo.isCancelled || flight.flightInfo.isDiverted
+                                    ? 'red'
+                                    : 'green',
+                        }">
+                            <b>{{
+                                flight.flightInfo.isDiverted
+                                ? "Diverted"
+                                : flight.flightInfo.isCancelled
+                                    ? "Cancelled"
+                                    : "Arrived"
+                            }}</b>
+                        </td>
                         <td class="table-light">{{ flight.departure.depTime }}</td>
                         <td class="table-light">{{ flight.arrival.arrTime }}</td>
                     </tr>
                 </tbody>
                 <tbody v-if="filteredFlights.length === 0">
                     <tr>
-                        <td colspan="4">
+                        <td colspan="7">
                             <div class="alert alert-warning text-center" role="alert">
                                 No flights found.
                             </div>
@@ -97,6 +110,20 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2 mx-auto" role="group" aria-label="Button group with nested dropdown">
+                    <button v-if="page != 1" @click="page--" type="button" class="btn btn-warning">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </button>
+                    <button v-for="(pageNumber, i) in setFlights.slice(page - 1, page + 2)" :key="i"
+                        @click="page = pageNumber" type="button" class="btn btn-warning">
+                        {{ pageNumber }}
+                    </button>
+                    <button v-if="page < pages.length" @click="page++" type="button" class="btn btn-warning">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="row" v-if="selectedFlight">
             <flight-card :flight="selectedFlight" @close="closeCard" />
@@ -105,10 +132,10 @@
 </template>
 
 <script>
-import FlightCard from '../shared/FlightCard.vue';
+import FlightCard from "../shared/FlightCard.vue";
 export default {
     components: {
-        FlightCard
+        FlightCard,
     },
     props: {
         flights: {
@@ -127,20 +154,26 @@ export default {
             selectedDestination: null,
             isVisibleDestination: false,
             selectedFlight: null,
+            page: 1,
+            perPage: 10,
+            pages: [],
+            totalFlights: 0,
         };
     },
     computed: {
         filterOrigin() {
             const filterText = this.filterTextOrigin.toLowerCase();
-            console.log(filterText)
+            console.log(filterText);
             if (this.filterTextOrigin === "") {
                 return this.filteredCitiesOrigin;
             }
             return this.filteredCitiesOrigin.filter((city) => {
                 const originText = this.getAirportCode(city).toLowerCase();
-                const cityText = city.split('(')[0].trim().toLowerCase();
-                return originText.startsWith(filterText) || cityText.startsWith(filterText);
-            })
+                const cityText = city.split("(")[0].trim().toLowerCase();
+                return (
+                    originText.startsWith(filterText) || cityText.startsWith(filterText)
+                );
+            });
         },
         filterDestination() {
             const filterText = this.filterTextDestination.toLowerCase();
@@ -149,43 +182,56 @@ export default {
             }
             return this.filteredCitiesDestination.filter((city) => {
                 const destText = this.getAirportCode(city).toLowerCase();
-                const cityText = city.split('(')[0].trim().toLowerCase();
-                return destText.startsWith(filterText) || cityText.startsWith(filterText);
-            })
+                const cityText = city.split("(")[0].trim().toLowerCase();
+                return (
+                    destText.startsWith(filterText) || cityText.startsWith(filterText)
+                );
+            });
         },
         filteredFlights() {
+            let filtered = []; // variable para almacenar el arreglo filtrado
             // Si no se ha seleccionado ningún origen o destino, devolver todos los vuelos
             if (this.origin === "" && this.destination === "") {
-                return this.flights;
+                filtered = this.flights;
             }
             // Si solo se ha seleccionado un origen o destino, filtrar los vuelos correspondientes
             if (this.origin !== "" && this.destination === "") {
                 const originAirportCode = this.getAirportCode(this.origin);
-                return this.flights.filter(
+                filtered = this.flights.filter(
                     (flight) => flight.route.from.origin === originAirportCode
                 );
             }
             if (this.origin === "" && this.destination !== "") {
                 const destinationAirportCode = this.getAirportCode(this.destination);
-                return this.flights.filter(
+                filtered = this.flights.filter(
                     (flight) => flight.route.to.dest === destinationAirportCode
                 );
             }
             // Si se han seleccionado tanto el origen como el destino, filtrar por ambos
-            const originAirportCode = this.getAirportCode(this.origin);
-            const destinationAirportCode = this.getAirportCode(this.destination);
-            return this.flights.filter(
-                (flight) =>
-                    flight.route.from.origin === originAirportCode &&
-                    flight.route.to.dest === destinationAirportCode
-            );
+            if (this.origin !== "" && this.destination !== "") {
+                const originAirportCode = this.getAirportCode(this.origin);
+                const destinationAirportCode = this.getAirportCode(this.destination);
+                filtered = this.flights.filter(
+                    (flight) =>
+                        flight.route.from.origin === originAirportCode &&
+                        flight.route.to.dest === destinationAirportCode
+                );
+            }
+            this.totalFlights = filtered.length; // variable para almacenar el tamaño del arreglo filtrado
+            return this.paginate(filtered); // enviar el arreglo y su tamaño a la función paginate()
         },
         filteredCitiesOrigin() {
             const cities = [];
-            const selectedDestinationCode = this.destination ? this.getAirportCode(this.destination) : null;
+            const selectedDestinationCode = this.destination
+                ? this.getAirportCode(this.destination)
+                : null;
             for (const flight of this.flights) {
                 const city = `${flight.departure.airport.originCityName} (${flight.route.from.origin})`;
-                if (!cities.includes(city) && (!selectedDestinationCode || flight.route.to.dest === selectedDestinationCode)) {
+                if (
+                    !cities.includes(city) &&
+                    (!selectedDestinationCode ||
+                        flight.route.to.dest === selectedDestinationCode)
+                ) {
                     cities.push(city);
                 }
             }
@@ -193,14 +239,28 @@ export default {
         },
         filteredCitiesDestination() {
             const cities = [];
-            const selectedOriginCode = this.origin ? this.getAirportCode(this.origin) : null;
+            const selectedOriginCode = this.origin
+                ? this.getAirportCode(this.origin)
+                : null;
             for (const flight of this.flights) {
                 const city = `${flight.arrival.airport.destCityName} (${flight.route.to.dest})`;
-                if (!cities.includes(city) && (!selectedOriginCode || flight.route.from.origin === selectedOriginCode)) {
+                if (
+                    !cities.includes(city) &&
+                    (!selectedOriginCode ||
+                        flight.route.from.origin === selectedOriginCode)
+                ) {
                     cities.push(city);
                 }
             }
             return cities;
+        },
+        setFlights() {
+            let numberOfPages = Math.ceil(this.totalFlights / this.perPage);
+            this.pages = [];
+            for (let i = 1; i <= numberOfPages; i++) {
+                this.pages.push(i);
+            }
+            return this.pages;
         },
         // filteredCities() {
         //     let cities = [];
@@ -228,9 +288,6 @@ export default {
         // },
     },
     methods: {
-        pagination() {
-            return Math.ceil(filteredFlights.length / this.elementsByPages)
-        },
         getAirportCode(cityString) {
             return cityString.split("(")[1].replace(")", "");
         },
@@ -240,7 +297,7 @@ export default {
             this.isVisibleOrigin = false;
         },
         allOrigins() {
-            this.origin = '';
+            this.origin = "";
             this.selectedOrigin = null;
             this.isVisibleOrigin = false;
         },
@@ -250,7 +307,7 @@ export default {
             this.isVisibleDestination = false;
         },
         allDests() {
-            this.destination = '';
+            this.destination = "";
             this.selectedDestination = null;
             this.isVisibleDestination = false;
         },
@@ -260,24 +317,19 @@ export default {
         },
         closeCard() {
             this.selectedFlight = null;
-        }
-
-    }
+        },
+        paginate(flights) {
+            let page = this.page;
+            let perPage = this.perPage;
+            let from = page * perPage - perPage;
+            let to = page * perPage;
+            return flights.slice(from, to);
+        },
+    },
 };
 </script>
 
-
 <style scoped>
-.page-item {
-    padding: 0px
-}
-
-.pagination {
-    position: relative;
-    left: 40%;
-    width: 100px
-}
-
 section {
     position: relative;
     z-index: 1;
@@ -287,7 +339,7 @@ section {
     background-color: #f6c207;
     border-radius: 10px 10px 0px 0px;
     height: 50px;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 h3 {
@@ -298,7 +350,7 @@ h3 {
 }
 
 .table-dark {
-    margin-top: 50px
+    margin-top: 50px;
 }
 
 .dropdown-wrapper {
@@ -317,7 +369,6 @@ h3 {
     align-items: center;
     font-size: 18px;
     font-weight: 600;
-
 }
 
 .selected-item .drop-down-icon,
@@ -354,18 +405,16 @@ h3 {
     border-radius: 5px;
 }
 
-
 .dropdown-popover .options {
     width: 100%;
 }
-
-
 
 .dropdown-popover ul {
     width: 100%;
     list-style: none;
     text-align: left;
     padding-left: 0px;
+    max-height: 180px;
     overflow-y: scroll;
     overflow-x: hidden;
     border: 1px solid lightgray;
@@ -393,5 +442,21 @@ h3 {
     font-size: 16px;
     padding-left: 8px;
     border-radius: 5px;
+}
+
+.btn {
+    color: #212529;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:active:focus,
+.btn:focus {
+    box-shadow: none !important;
 }
 </style>

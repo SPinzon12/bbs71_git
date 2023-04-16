@@ -36,4 +36,15 @@ router.get("/stats/:iata", async (req, res) => {
   }
 });
 
+router.get("/aircraft/:iata", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `${airlineMicroserv}/airlines/aircraft/${req.params.iata}`
+    );
+    res.status(200).json(response.data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;

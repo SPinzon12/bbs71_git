@@ -6,7 +6,7 @@ const originAirports = async (req, res) => {
   try {
     const originAirports = await Airport.find({
       "departure.airport.originAirportID": originAirportID,
-    }).limit(10);
+    }).limit(100);
 
     if (originAirports.length == 0) {
       return res.status(401).json({
@@ -33,7 +33,7 @@ const destAirports = async (req, res) => {
   try {
     const destAirports = await Airport.find({
       "arrival.airport.destAirportID": destAirportID,
-    }).limit(10);
+    }).limit(100);
 
     if (destAirports.length == 0) {
       return res.status(401).json({

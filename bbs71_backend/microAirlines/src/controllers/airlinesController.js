@@ -21,7 +21,7 @@ const flightsAirline = async (req, res) => {
   const iata = req.params.iata;
   try {
     const flightsAirline = await Airline.find({ "airline.iata": iata }).limit(
-      10
+      100
     );
 
     if (flightsAirline.length == 0) {
@@ -117,7 +117,6 @@ const airlineStats = async (req, res) => {
         name: "Average Flights Day",
         icon: "fa-solid fa-plane-circle-check",
       },
-
     ];
 
     res.status(200).json({
@@ -133,4 +132,36 @@ const airlineStats = async (req, res) => {
   }
 };
 
-module.exports = { airlines, flightsAirline, airlineStats };
+const aircraftFlights = async (req, res) => {
+  const iata = req.params.iata;
+  try {
+    let airline = await Airline.find({ "airline.iata": iata });
+    if (!airline) {
+      return res.status(401).json({
+        error: "No se encontró ninguna aerolínea con ese código IATA",
+      });
+    }
+    let airplanes = await Airline.aggregate([
+      // Filtrar los vuelos de la aerolínea "Airline A"
+      { $match: { "airline.iata": iata } },
+      // Agrupar los documentos por el número de cola del avión
+      { $group: { _id: "$aircraft.tailNumber", count: { $sum: 1 } } },
+      // Ordenar los resultados en función del número de vuelos (de mayor a menor)
+      { $sort: { count: -1 } },
+      // Proyectar solo los campos que nos interesan
+      { $project: { tailNumber: "$_id", count: 1, _id: 0 } },
+    ]);
+
+    res.status(200).json({
+      ok: true,
+      airplanes,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      ok: false,
+      msg: "Error Interno",
+    });
+  }
+};
+module.exports = { airlines, flightsAirline, airlineStats, aircraftFlights };

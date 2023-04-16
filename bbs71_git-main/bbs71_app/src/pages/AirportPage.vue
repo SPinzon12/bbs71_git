@@ -28,6 +28,9 @@
         <div v-if="selected == 3">
           <h1>Time on the runway</h1>
         </div>
+        <div v-if="selected == 4">
+          <DashboardCard :cards="cards" />
+        </div>
       </div>
     </div>
   </div>
@@ -38,13 +41,15 @@ import FlightTable from '../components/airport/FlightTableAirport.vue';
 import Navbar from '@/components/shared/Navbar.vue';
 import Footer from '@/components/shared/Footer.vue';
 import SlideBar from "../components/shared/SlideBar.vue";
+import DashboardCard from '../components/shared/DashboardCard.vue';
 
 export default {
   components: {
     FlightTable,
     Navbar,
     Footer,
-    SlideBar
+    SlideBar,
+    DashboardCard
 
   },
   data() {
@@ -56,6 +61,7 @@ export default {
         { title: "Airlines", iconClass: "fa-solid fa-cart-flatbed-suitcase fa-xl" },
         { title: "Flight routes", iconClass: "fa-solid fa-plane-up fa-xl" },
         { title: "Time on the runway", iconClass: "fa-solid fa-plane-departure fa-xl" },
+        { title: "Dashboard", iconClass: "fa-solid fa-chart-line fa-xl" }
       ],
     };
   },
@@ -68,6 +74,9 @@ export default {
     },
     flights_arrival() {
       return this.$store.state.airport.flights_arrival
+    },
+    cards(){
+      return this.$store.state.airport.cards
     }
   },
   methods: {
@@ -78,6 +87,7 @@ export default {
   beforeMount() {
     this.$store.dispatch("airport/getFlightsDep", this.$store.state.user.user);
     this.$store.dispatch("airport/getFlightsArr", this.$store.state.user.user);
+    this.$store.dispatch("airport/getCards", this.$store.state.user.user);
   }
 };
 </script>

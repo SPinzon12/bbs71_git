@@ -1,5 +1,6 @@
 export default () => ({
     flights_departure: [],
-    flights_arrival: []
+    flights_arrival: [],
+    cards: []
 })
 

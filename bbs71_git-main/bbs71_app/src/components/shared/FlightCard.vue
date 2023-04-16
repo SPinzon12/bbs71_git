@@ -25,11 +25,11 @@
       <div class="row text-center" id="a3">
         <div class="col">
           <h5 class="card-text"><b>Dep Time</b></h5>
-          <h6>{{ flight.departure.depTime }}</h6>
+          <h6>{{ isNaN(flight.departure.depTime) ? 'N/A' : flight.departure.depTime }}</h6>
         </div>
         <div class="col">
           <h5 class="card-text"><b>Arr Time</b></h5>
-          <h6>{{ flight.arrival.arrTime }}</h6>
+          <h6>{{ isNaN(flight.arrival.arrTime) ? 'N/A' : flight.arrival.arrTime }}</h6>
         </div>
       </div>
       <div class="row text-center" id="a4">
