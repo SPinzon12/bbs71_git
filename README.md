@@ -1,5 +1,6 @@
 # BBS-71 - Blackbird
 ## Desc
+Blackbird es una aplicación web que proporciona un dashboard de información detallada sobre vuelos y aerolíneas que operan en los aeropuertos. La aplicación lee información de dos colecciones de MongoDB que contienen datos sobre vuelos, como la ciudad de origen y destino, si ya despegó, si aterrizó o si se canceló. La aplicación está diseñada para ser utilizada por dos tipos de usuarios: aeropuertos y aerolíneas. Los aeropuertos pueden ver información detallada sobre los vuelos que operan en sus instalaciones, incluyendo qué aerolíneas están activas en el aeropuerto. Las aerolíneas pueden ver información sobre los vuelos que operan en los aeropuertos que les interesan, lo que les permite tomar decisiones informadas sobre sus operaciones y programación de vuelos. Con Blackbird, los usuarios pueden obtener fácilmente una visión general de la actividad y tomar decisiones informadas basadas en los datos.
 ## Instalacion
 Para el funcionamiento de este proyecto se utilizará Docker, que es una plataforma de contenedores que permite empaquetar una aplicación junto con todas sus dependencias en un contenedor virtualizado que se puede ejecutar en cualquier sistema operativo.
 Para instalarlo puedes usar los siguientes comandos:<br>
@@ -17,18 +18,15 @@ Para instalarlo puedes usar los siguientes comandos:<br>
 ## Configuracion
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
 ##### Dockerfile app
-`FROM ubuntu
-RUN apt update
-RUN apt install -y apache2
-RUN apt install -y apache2-utils
-RUN apt clean
 
-COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+##### Dockerfile Backend
 
-RUN mkdir -p /var/www/html/blackbird/dist
+##### Dockerfile Database
 
-COPY ./dist /var/www/html/blackbird/dist/
-EXPOSE 80
-CMD ["apache2ctl", "-D", "FOREGROUND"]`
+##### Dockerfile Haproxy
+
+##### Docker-compose
+
 ## Paso a Paso
+
 
