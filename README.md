@@ -29,6 +29,7 @@ Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y 
 ![](https://i.imgur.com/6OHeyR0.png)
 
 ##### Docker-compose
+![](https://i.imgur.com/EmohthG.png)
 
 ## Paso a Paso
 1. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, luego ejecuta
