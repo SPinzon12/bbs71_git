@@ -18,13 +18,15 @@ Para instalarlo puedes usar los siguientes comandos:<br>
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
 ##### Dockerfile app
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)
-Aqui estaremos definiendo los parametros necesarios para correr nuestra aplicacion web, en este caso estaremos instalando el server de Apache (Apache2) y seguidamente realizaremos una copia de la configuracion de nuestro sitio web dentro del contenedor de la imagen, y por ultimo la creacion de una carpeta tambien dentro de contenedor que tendra todos los archivos de nuestro sitio web.
+En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.
 
 ##### Dockerfile Backend
-
-##### Dockerfile Database
+![](https://i.imgur.com/tbCxBH1.png)
+Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Dockerfile Haproxy
+![](https://i.imgur.com/dyPZKPA.png)
+![](https://i.imgur.com/6OHeyR0.png)
 
 ##### Docker-compose
 
