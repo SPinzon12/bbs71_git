@@ -17,6 +17,7 @@ Para instalarlo puedes usar los siguientes comandos:<br>
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
 ##### Dockerfile app
+![AHHHH](https://i.imgur.com/1AxW2fc.png)
 
 ##### Dockerfile Backend
 
