@@ -4,7 +4,7 @@ Blackbird es una aplicación web que proporciona un dashboard de información de
 Para el funcionamiento de este proyecto se utilizará Docker, que es una plataforma de contenedores que permite empaquetar una aplicación junto con todas sus dependencias en un contenedor virtualizado que se puede ejecutar en cualquier sistema operativo, tambien usaremos Apache Spark para aprovechar su capacidad de procesamiento distribuido y su capacidad para manejar grandes conjuntos de datos.<br>
 Para instalarlos puedes usar los siguientes comandos:<br>
 ### Docker
-#### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:
+#### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
 `sudo apt-get install \
  apt-transport-https \
  ca-certificates \
@@ -16,20 +16,20 @@ Para instalarlos puedes usar los siguientes comandos:<br>
 #### 3. Instala Docker Community Edition:<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### Apache Spark
-#### 1. Instala paquetes de Java:
+#### 1. Instala paquetes de Java:<br>
 `sudo apt install -y openjdk-18-jdk`<br>
-#### 2. Creamos el archivo jdk18.sh para la configuración:
+#### 2. Creamos el archivo jdk18.sh para la configuración:<br>
 `cat <<EOF | sudo tee /etc/profile.d/jdk18.sh
 export JAVA_HOME=/usr/lib/jvm/java-1.18.0-openjdk-amd64
 export PATH=\$PATH:\$JAVA_HOME/bin
 EOF`<br>
-Despues de este, hacemos:
+Despues de este, hacemos:<br>
 `source /etc/profile.d/jdk18.sh`
 #### 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:
 `mkdir labSpark`<br>
-Descargamos el archivo comprimido de Spark:
+Descargamos el archivo comprimido de Spark:<br>
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
-Y lo descomprimimos:
+Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 
 ## Configuración
