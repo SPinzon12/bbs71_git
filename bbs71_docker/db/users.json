@@ -1,0 +1,3484 @@
+[{
+  "_id": {
+    "$oid": "641110161ea5188439047100"
+  },
+  "user_id": "QX",
+  "name": "Horizon Air",
+  "user": "Horizon_Air",
+  "password": "$2b$12$jFiXL3DuvJ6hbv5BgaUHn.ma44m2dm3ZDOb3P.X1eXTWpziNRcjue",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110171ea5188439047101"
+  },
+  "user_id": "MQ",
+  "name": "Envoy Air",
+  "user": "Envoy_Air",
+  "password": "$2b$12$h0TFWjzuxyufYNyhBI947.9F3bLIlBvV5LFhVzCnpNjKvHg1NbXUG",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110171ea5188439047102"
+  },
+  "user_id": "G4",
+  "name": "Allegiant Air",
+  "user": "Allegiant_Air",
+  "password": "$2b$12$4x7MXDvTp.S65JC10RDfyentGHYL6nvEz.FsFHHsLemZHoEoDjLCO",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110181ea5188439047103"
+  },
+  "user_id": "WN",
+  "name": "Southwest Airlines Co.",
+  "user": "Southwest_Airlines",
+  "password": "$2b$12$4gDH8uSymWtx9PoaXAi/EO2IVwBtgEcJLqGK4.d1Mqs2W/nW.tjXa",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110181ea5188439047104"
+  },
+  "user_id": "F9",
+  "name": "Frontier Airlines Inc.",
+  "user": "Frontier_Airlines",
+  "password": "$2b$12$wloXHwzwhAlr7whzv4xC7O8Z0anZ7R5E5cDvUDn74VPpQY.bDsgI.",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110191ea5188439047105"
+  },
+  "user_id": "YV",
+  "name": "Mesa Airlines Inc.",
+  "user": "Mesa_Airlines",
+  "password": "$2b$12$ALmhXsUaAtjrXZFWnnV/SePvakT1xchKdQgCcfEaDvbhgu/Hch9Ba",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110191ea5188439047106"
+  },
+  "user_id": "G7",
+  "name": "GoJet Airlines, LLC d/b/a United Express",
+  "user": "GoJet_Airlines,",
+  "password": "$2b$12$jclZodvy.n7eWcTWJ8Nr7uZ96AKkEppy53ou6cjVW9H810vNxKpc6",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101a1ea5188439047107"
+  },
+  "user_id": "OO",
+  "name": "SkyWest Airlines Inc.",
+  "user": "SkyWest_Airlines",
+  "password": "$2b$12$KkkjPcaY5tJfrn1B83xpWu53IdXTnhBjVFfeX2FD/D99tRiTzY0sK",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101a1ea5188439047108"
+  },
+  "user_id": "YX",
+  "name": "Republic Airlines",
+  "user": "Republic_Airlines",
+  "password": "$2b$12$LKKFbdHzwMY0Hc1kGiTFDe6Tw9RbxTORNRDGkMGuvbFucKrDb8bPC",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101b1ea5188439047109"
+  },
+  "user_id": "DL",
+  "name": "Delta Air Lines Inc.",
+  "user": "Delta_Air",
+  "password": "$2b$12$cYa6jICTEMR2WPKlCdbaW.6blZg81AOx1/jR8.tKF7k90yb5R5122",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101b1ea518843904710a"
+  },
+  "user_id": "ZW",
+  "name": "Air Wisconsin Airlines Corp",
+  "user": "Air_Wisconsin",
+  "password": "$2b$12$CScQiAn0oSI.fskYxfPEmueABW5B5pE8lNOc3wtMJ/SgqlE0ZH37C",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101c1ea518843904710b"
+  },
+  "user_id": "UA",
+  "name": "United Air Lines Inc.",
+  "user": "United_Air",
+  "password": "$2b$12$wFrq8yYY9yhClGpu1XPkm./1H9u6DEjITnzfzOmRCZgEaaOpzLJAG",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101c1ea518843904710c"
+  },
+  "user_id": "NK",
+  "name": "Spirit Air Lines",
+  "user": "Spirit_Air",
+  "password": "$2b$12$ZVCMBfoylBpBbVOPWw9nw.4elVkxpG19Jm1anSCFAldLJ/wYfvCYi",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101d1ea518843904710d"
+  },
+  "user_id": "OH",
+  "name": "Comair Inc.",
+  "user": "Comair_Inc.",
+  "password": "$2b$12$3wS6P6bPs.RyUX7l58sQjOcxSZYojK5Y3Q095mz6Pp2NamCRPLFme",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101d1ea518843904710e"
+  },
+  "user_id": "HA",
+  "name": "Hawaiian Airlines Inc.",
+  "user": "Hawaiian_Airlines",
+  "password": "$2b$12$EyFPG.Eea/UAPNb7t4CixuEkbk5gqg5ZLtHYkQqhjQsYy6ZVBrWFm",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101e1ea518843904710f"
+  },
+  "user_id": "AA",
+  "name": "American Airlines Inc.",
+  "user": "American_Airlines",
+  "password": "$2b$12$yIIs77qMGWspZPmH6ztfdeHJuzVTA4CvoDjLpVbDiSmJXo6sHcRom",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101e1ea5188439047110"
+  },
+  "user_id": "PT",
+  "name": "Capital Cargo International",
+  "user": "Capital_Cargo",
+  "password": "$2b$12$kAtn4xhVUwMUjrv6xOQVwO/il5O8dh4030/CofKJIIDr2vqnhThZG",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101f1ea5188439047111"
+  },
+  "user_id": "B6",
+  "name": "JetBlue Airways",
+  "user": "JetBlue_Airways",
+  "password": "$2b$12$inngkEul4/eC4IR3WZL9pO1rXMGh6iaB8iwuD/wWpLiiQikbJZeou",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "6411101f1ea5188439047112"
+  },
+  "user_id": "AS",
+  "name": "Alaska Airlines Inc.",
+  "user": "Alaska_Airlines",
+  "password": "$2b$12$tr6O8EYIwQCaOOAlKIxqtu5yGvSBzLGH.to/vw5ahcpzbEnapXtmC",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110201ea5188439047113"
+  },
+  "user_id": "C5",
+  "name": "Commutair Aka Champlain Enterprises, Inc.",
+  "user": "Commutair_Aka",
+  "password": "$2b$12$hbNYxPSP3mAAf09d36MaEOeHTiYf/rG1Kq0gDLzA23uCwJ/ovni3q",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110201ea5188439047114"
+  },
+  "user_id": "9E",
+  "name": "Endeavor Air Inc.",
+  "user": "Endeavor_Air",
+  "password": "$2b$12$3mhQE9Lq5JIOaOnKN0HU/esoQLmCeFTykr9IU9aAE.9HJ/LvisIn.",
+  "type": "airline"
+},{
+  "_id": {
+    "$oid": "641110241ea5188439047115"
+  },
+  "user_id": "10620",
+  "name": "Billings (BIL)",
+  "user": "BIL",
+  "password": "$2b$12$p03daiH.oW831LanS9majuYD.kwJai2qvuLExg2kPSR7aKlfxw8BS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110241ea5188439047116"
+  },
+  "user_id": "11775",
+  "name": "Sioux Falls (FSD)",
+  "user": "FSD",
+  "password": "$2b$12$zgXoaR72gfyMAQfUcdIifulEhGKeVInh/qgXLGh9mL/TIzz8/.hNu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110251ea5188439047117"
+  },
+  "user_id": "14633",
+  "name": "Rochester (RST)",
+  "user": "RST",
+  "password": "$2b$12$9s810hi/QVp9OCscgzOrNu17VoVCTASpwdsSg.FfclSxa9yNoEFIi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110251ea5188439047118"
+  },
+  "user_id": "11630",
+  "name": "Fairbanks (FAI)",
+  "user": "FAI",
+  "password": "$2b$12$1xbZeovsF6KlXrP0D6ancOP2fElQxoEHzZaHZPwb0UhRe2xmg.DDq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110261ea5188439047119"
+  },
+  "user_id": "10245",
+  "name": "King Salmon (AKN)",
+  "user": "AKN",
+  "password": "$2b$12$zSP2lh432/BO3gtrGNT8K.S6lRD2X0/ylwJ/6x9XwKo8NAYpucUr2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110261ea518843904711a"
+  },
+  "user_id": "14711",
+  "name": "State College (SCE)",
+  "user": "SCE",
+  "password": "$2b$12$BW77iXdQsMmVpF4wk3pZQuJSaPL2kqeEeAAyS/6kfTGltRJLYcuj6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110271ea518843904711b"
+  },
+  "user_id": "13264",
+  "name": "Medford (MFR)",
+  "user": "MFR",
+  "password": "$2b$12$BzyLOaZGEioVdPzZAbpCFuXiLg5z/QFzZx4ujAhesuRhEucTAPIUq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110271ea518843904711c"
+  },
+  "user_id": "12343",
+  "name": "International Falls (INL)",
+  "user": "INL",
+  "password": "$2b$12$LN8VZPh8RlgMW86ASwNB3edQzgFddzFu4GhX9/j4Lp.2NHbdYonpi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110281ea518843904711d"
+  },
+  "user_id": "13830",
+  "name": "Kahului (OGG)",
+  "user": "OGG",
+  "password": "$2b$12$7z/ogzR6xgeQnrsxRu6jJOsPZdFt2MdBpSSjpP9kLTrdkZ4Ak9412",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110281ea518843904711e"
+  },
+  "user_id": "14828",
+  "name": "Sitka (SIT)",
+  "user": "SIT",
+  "password": "$2b$12$UFYtr7jNsYOzxt4TW1NY8.TLFa3WftK.FOuyrsU4dDWmHD8wVr.2S",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110291ea518843904711f"
+  },
+  "user_id": "15016",
+  "name": "St. Louis (STL)",
+  "user": "STL",
+  "password": "$2b$12$n6CuUvfPM3PpmDn79HaVCOz4gRYVhaJFlUbr3eVPTDYdJw3b.Jtrq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110291ea5188439047120"
+  },
+  "user_id": "14812",
+  "name": "Sheridan (SHR)",
+  "user": "SHR",
+  "password": "$2b$12$kvN/zL.31PNa.pnuJUs6R.QqSUVtT3Ps6ameHk9DWLi2ylW3M2qHO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102a1ea5188439047121"
+  },
+  "user_id": "10868",
+  "name": "Columbia (CAE)",
+  "user": "CAE",
+  "password": "$2b$12$PFxr6Py0boB38NVaSmpca.QBHegDaNGJPnoLYJ3BU..l0pKXyvrGy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102a1ea5188439047122"
+  },
+  "user_id": "15412",
+  "name": "Knoxville (TYS)",
+  "user": "TYS",
+  "password": "$2b$12$eX0D5tUr2XmHXjYmjl/21unrJV9PwZKLfm99/VZmhoLvwlopFhwJW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102b1ea5188439047123"
+  },
+  "user_id": "15389",
+  "name": "Twin Falls (TWF)",
+  "user": "TWF",
+  "password": "$2b$12$07MYiRN6yIC/bqy5eD/wOe2rU4WYHK.ep3NEkGN2RTs3LllG04gz.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102b1ea5188439047124"
+  },
+  "user_id": "10693",
+  "name": "Nashville (BNA)",
+  "user": "BNA",
+  "password": "$2b$12$s6b7tRcSgOCwGQWAzLiIiOdbNAAsg3YnrO.CyOwV0F7ssP5kmAPNy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102c1ea5188439047125"
+  },
+  "user_id": "12884",
+  "name": "Lansing (LAN)",
+  "user": "LAN",
+  "password": "$2b$12$qEewPjIPPKqdLjey9c6W.O1eJmqhu/CncbtpaKtfUboRp87uW1qXm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102c1ea5188439047126"
+  },
+  "user_id": "10135",
+  "name": "Allentown/Bethlehem/Easton (ABE)",
+  "user": "ABE",
+  "password": "$2b$12$h7bBrb0VcU4YnhXcJDNwhelI2t5/vxKpb1fCnW22LvoQbgAqXW4.O",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102d1ea5188439047127"
+  },
+  "user_id": "14574",
+  "name": "Roanoke (ROA)",
+  "user": "ROA",
+  "password": "$2b$12$qe7tMs2EzUGJNAxcbT9r7u4RWlXg2GaE7NMb9xa9b0ZbIPfpGs1O2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102d1ea5188439047128"
+  },
+  "user_id": "14952",
+  "name": "Springfield (SPI)",
+  "user": "SPI",
+  "password": "$2b$12$I8NsiBOFZS1DhpK3xTn2ZebTNfCG.RBihpLklIL.iTgrBtfs4ZTR2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102e1ea5188439047129"
+  },
+  "user_id": "15841",
+  "name": "Wrangell (WRG)",
+  "user": "WRG",
+  "password": "$2b$12$WeO.oh6tHjfW14u4UnLdW.X7w5c6hHbGZ4brjHQXAuhWrUmhBGq4q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102e1ea518843904712a"
+  },
+  "user_id": "15041",
+  "name": "Sun Valley/Hailey/Ketchum (SUN)",
+  "user": "SUN",
+  "password": "$2b$12$R19zQXL2fQA2sDgtdIxcH.UrE5H85f7ZnSx3WFo2rzVNrflhLXcMS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102f1ea518843904712b"
+  },
+  "user_id": "12278",
+  "name": "Wichita (ICT)",
+  "user": "ICT",
+  "password": "$2b$12$bU.dNhjPPXdvVafaGRFQgeZ.VvejledTeoRtksovTI4o28546ZT5S",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411102f1ea518843904712c"
+  },
+  "user_id": "11003",
+  "name": "Cedar Rapids/Iowa City (CID)",
+  "user": "CID",
+  "password": "$2b$12$yUgIzJmRdkLVj26IhJY2wOwPjWyaKsoPnWGsZLYDfT/5dBY/vluUa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110301ea518843904712d"
+  },
+  "user_id": "13277",
+  "name": "Montgomery (MGM)",
+  "user": "MGM",
+  "password": "$2b$12$nC8jr05Yt05obdRgGQZB7OIiMgKnuhz7H03IQ1ArjGusmR3HWSGbC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110301ea518843904712e"
+  },
+  "user_id": "10676",
+  "name": "Belleville (BLV)",
+  "user": "BLV",
+  "password": "$2b$12$QlI3iXks2N56wPP93Jw.ZuXdDgMQXp/Y5o0XwImOqrLhLpMa14Fwi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110311ea518843904712f"
+  },
+  "user_id": "11980",
+  "name": "Grand Island (GRI)",
+  "user": "GRI",
+  "password": "$2b$12$dMMxOGOWFYN5sCxODiTu0.t3pGOP3qJXEfW5b6/Qhp8et5tm2pR56",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110311ea5188439047130"
+  },
+  "user_id": "10466",
+  "name": "Phoenix (AZA)",
+  "user": "AZA",
+  "password": "$2b$12$eW7rZJv59OBVNYHXR2JXXOJBWjpQqyAJYZlZs/7/n9Hzu6U99dz0q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110321ea5188439047131"
+  },
+  "user_id": "10333",
+  "name": "Alpena (APN)",
+  "user": "APN",
+  "password": "$2b$12$54iF8ukR.eub/l2nPY1Vyu//FQFvngTFWBQCmaXCALquOqaGYsAOy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110321ea5188439047132"
+  },
+  "user_id": "13964",
+  "name": "North Bend/Coos Bay (OTH)",
+  "user": "OTH",
+  "password": "$2b$12$OLfRwxgTKphhAT7k3guEQ.F6mOGYctn5tAx5fFnadRH3XHb.Ui7TW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110331ea5188439047133"
+  },
+  "user_id": "12003",
+  "name": "Great Falls (GTF)",
+  "user": "GTF",
+  "password": "$2b$12$Ri.BRvI55vvBSPSs0PegbOL.TReUGOfBmG2VaFyD5a31w/ThwbKsm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110331ea5188439047134"
+  },
+  "user_id": "11111",
+  "name": "Columbia (COU)",
+  "user": "COU",
+  "password": "$2b$12$iFfUOh7DNuHSYTT4qWsm5up63cli3wRdkFu625C6U34ds2d.1YPS2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110341ea5188439047135"
+  },
+  "user_id": "10408",
+  "name": "Appleton (ATW)",
+  "user": "ATW",
+  "password": "$2b$12$fn8ogdVt.WryOsaDX0ps7.w0RaJPTGX/uQEJ7kAVeQTn/RWvy.yQa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110341ea5188439047136"
+  },
+  "user_id": "11725",
+  "name": "Fort Dodge (FOD)",
+  "user": "FOD",
+  "password": "$2b$12$e6T/Y4I2AeNt8YKPIUdVcujbSG6NuGyx7aXMKl7zLr7.RYywEn6iG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110351ea5188439047137"
+  },
+  "user_id": "10994",
+  "name": "Charleston (CHS)",
+  "user": "CHS",
+  "password": "$2b$12$qduNu1CYLlKCujhVHFDSY.qIz3SwhrIPVulelpt8Ai7.xqpllK/ka",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110361ea5188439047138"
+  },
+  "user_id": "14307",
+  "name": "Providence (PVD)",
+  "user": "PVD",
+  "password": "$2b$12$Uvg0NqSLYnoZEwvQp2nHuOleGs/H5RzsAHjkCpxuzTTxZFUeXE6AK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110361ea5188439047139"
+  },
+  "user_id": "15295",
+  "name": "Toledo (TOL)",
+  "user": "TOL",
+  "password": "$2b$12$BLTOOTVE2L24nDbCTge7weRGuVdu5Th1soJlZTmblZKuNYVn4SpZO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110371ea518843904713a"
+  },
+  "user_id": "15411",
+  "name": "Tyler (TYR)",
+  "user": "TYR",
+  "password": "$2b$12$fVuDOH1Bkulet1sf5LSm6eRU5pMGBi/ZB42Al.YnVqJUooB0QwPrS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110371ea518843904713b"
+  },
+  "user_id": "11481",
+  "name": "Panama City (ECP)",
+  "user": "ECP",
+  "password": "$2b$12$y.PswGlUKgmaCmqk/KZmZe1XhyvhW9IsFs0NxSAS5JjqUyNi4f5Vu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110381ea518843904713c"
+  },
+  "user_id": "15323",
+  "name": "Bristol/Johnson City/Kingsport (TRI)",
+  "user": "TRI",
+  "password": "$2b$12$OXkz1JSiirOx7fe91VMfeeaISHYGlOo5FTSti5//taf04EY.5G7gW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110381ea518843904713d"
+  },
+  "user_id": "14877",
+  "name": "Salina (SLN)",
+  "user": "SLN",
+  "password": "$2b$12$/rew9X3FjYr3dUK7tOSGDeqzbsSOFI.uLSGtL8FttZ1/fVDmZ16Sm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110391ea518843904713e"
+  },
+  "user_id": "11699",
+  "name": "Florence (FLO)",
+  "user": "FLO",
+  "password": "$2b$12$eo/kzTJ0H3EkGpEOmqAc/.MpoPc9WUK4T6wECYbav3lS9j39haWHK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110391ea518843904713f"
+  },
+  "user_id": "10434",
+  "name": "Scranton/Wilkes-Barre (AVP)",
+  "user": "AVP",
+  "password": "$2b$12$xEhFsH64sICYnwJYD7ycHOG1kVaoBNeXTpyCF.JuFJy2ZYpbb/14q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103a1ea5188439047140"
+  },
+  "user_id": "14716",
+  "name": "Stockton (SCK)",
+  "user": "SCK",
+  "password": "$2b$12$Bqavz/XAQ8/Aj8yfCmB5z.O7b8U2gBp/KkJkwMRJSyBSJk8PbKZOG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103a1ea5188439047141"
+  },
+  "user_id": "10849",
+  "name": "Bozeman (BZN)",
+  "user": "BZN",
+  "password": "$2b$12$2dG0TN2VyRmjQANg.8SScOGqWx7w/sRQRpk5x5X/.iem95XPWgI26",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103b1ea5188439047142"
+  },
+  "user_id": "12124",
+  "name": "Hilton Head (HHH)",
+  "user": "HHH",
+  "password": "$2b$12$gV0FEaPkvQhJnDXhxaEQhuJZ6rGPaY.f4LXzD914ts4mAGNZ7ytom",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103b1ea5188439047143"
+  },
+  "user_id": "13795",
+  "name": "Jacksonville/Camp Lejeune (OAJ)",
+  "user": "OAJ",
+  "password": "$2b$12$6LL4aJykJSkngsHq2x3aT.D.YJfYjupqYW6LbnZoWiufqoAAqPnhi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103c1ea5188439047144"
+  },
+  "user_id": "11470",
+  "name": "Wenatchee (EAT)",
+  "user": "EAT",
+  "password": "$2b$12$ZtXVLueEZ.iNUQTKw05QwOZmE6sLD7BM3OK75//UqoEZsZ6iw6W0m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103d1ea5188439047145"
+  },
+  "user_id": "10728",
+  "name": "Beaumont/Port Arthur (BPT)",
+  "user": "BPT",
+  "password": "$2b$12$pZckLW0Cc867dJsRa2fUAuYTss8/in8iFf/6YM1rnYXlKrtkZ4jim",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103d1ea5188439047146"
+  },
+  "user_id": "14689",
+  "name": "Santa Barbara (SBA)",
+  "user": "SBA",
+  "password": "$2b$12$qZ/6qBidTffODZlpJYFUfeJfmbwNd0MDtXe4A9rOGts/yTvyQgjvC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103e1ea5188439047147"
+  },
+  "user_id": "10967",
+  "name": "Cape Girardeau (CGI)",
+  "user": "CGI",
+  "password": "$2b$12$YZP3m329ojPnhL5s6WsrteSvRA0d0x.bQ5Ex2ySOWJikHj.HfH7pW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103e1ea5188439047148"
+  },
+  "user_id": "12177",
+  "name": "Hobbs (HOB)",
+  "user": "HOB",
+  "password": "$2b$12$XlXfM3oXv4eMrkaG1q7vYOQdJEIxTpu54NG4MLXYwAxWRwDIJnd0C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103f1ea5188439047149"
+  },
+  "user_id": "12898",
+  "name": "Latrobe (LBE)",
+  "user": "LBE",
+  "password": "$2b$12$6.fDrV2zD9aiR61EawaBc.xHV5wUhKDuLoAEP7Q28ZN5WvpYQG2/K",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411103f1ea518843904714a"
+  },
+  "user_id": "12544",
+  "name": "Concord (USA)",
+  "user": "USA",
+  "password": "$2b$12$LPOPgp/4/ePMDTrgg4RpleCda70gQ2GlEKUfvyaxc1UlDW1l8/IKW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110401ea518843904714b"
+  },
+  "user_id": "13829",
+  "name": "Ogden (OGD)",
+  "user": "OGD",
+  "password": "$2b$12$6is/2ojXr26XcvZcipghouvpiz1VqGruZ5EYC78YVpbpgev3XlFe6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110401ea518843904714c"
+  },
+  "user_id": "11259",
+  "name": "Dallas (DAL)",
+  "user": "DAL",
+  "password": "$2b$12$wnyq9GYviAOEr1nEfqDWyeRlRL9ZyikW1aYahmi82RiAKN5fOF0bi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110411ea518843904714d"
+  },
+  "user_id": "14025",
+  "name": "Plattsburgh (PBG)",
+  "user": "PBG",
+  "password": "$2b$12$vOWjHLv2gnJTCdLXftZ6..8S/RClKYNrWiyiRKyv7my7H/eHKVS1u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110411ea518843904714e"
+  },
+  "user_id": "14842",
+  "name": "San Angelo (SJT)",
+  "user": "SJT",
+  "password": "$2b$12$WZuqzyO9ssGwiUiHGEJBuekwR6oTO9P0kEf8wqIt9yCCeoQG/ZPPu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110421ea518843904714f"
+  },
+  "user_id": "15624",
+  "name": "Valparaiso (VPS)",
+  "user": "VPS",
+  "password": "$2b$12$3RxPZ8oTg52ttCq4X3U5IO5KTcChLWFYpDht74UjVT8UbbRTGWRe2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110421ea5188439047150"
+  },
+  "user_id": "14986",
+  "name": "Sarasota/Bradenton (SRQ)",
+  "user": "SRQ",
+  "password": "$2b$12$7ftkMrM8FNEfinvERSaLO.qR9CUM01SqaCMImedCbNTrVq9Vj6aJm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110431ea5188439047151"
+  },
+  "user_id": "13204",
+  "name": "Orlando (MCO)",
+  "user": "MCO",
+  "password": "$2b$12$SoqsgaYODac0..WT8ugXXOza5eg.e8OFj6iIAzTjqZadTVgqv5Xca",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110431ea5188439047152"
+  },
+  "user_id": "11867",
+  "name": "Garden City (GCK)",
+  "user": "GCK",
+  "password": "$2b$12$FpWQJ4FbnmA9b6yaR/FNoOXQX.bahFlsL86GSu1iwahp6T2469CXe",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110441ea5188439047153"
+  },
+  "user_id": "15070",
+  "name": "Newburgh/Poughkeepsie (SWF)",
+  "user": "SWF",
+  "password": "$2b$12$ZA3FrBaYNe7uRggBcnCH5u6fShVVCfwSqkL/I7SH8F0K9tWR4GSZi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110441ea5188439047154"
+  },
+  "user_id": "14576",
+  "name": "Rochester (ROC)",
+  "user": "ROC",
+  "password": "$2b$12$QxD0c3szUe6wdhdzwIG8DuPUMY5uh/YF9LFt/ZS0Ee3dIjc/OvKs.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110451ea5188439047155"
+  },
+  "user_id": "14683",
+  "name": "San Antonio (SAT)",
+  "user": "SAT",
+  "password": "$2b$12$C3GmtDC7rMTAuQ/7IlbAuextJnAugUpnShdYcjTC/GAoZGnXaaqri",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110451ea5188439047156"
+  },
+  "user_id": "13184",
+  "name": "Saginaw/Bay City/Midland (MBS)",
+  "user": "MBS",
+  "password": "$2b$12$b6E/eSl1FtpSU5F.WLeHdut5Ce6xVG2uEozSzYk/KbeSwVoQKv/p.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110461ea5188439047157"
+  },
+  "user_id": "14679",
+  "name": "San Diego (SAN)",
+  "user": "SAN",
+  "password": "$2b$12$/wt7roQ4b/AnMBvyoIE9Me2A4fedoqW03ZIXCzVZt/TUHOf57t8SO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110471ea5188439047158"
+  },
+  "user_id": "14237",
+  "name": "Prescott (PRC)",
+  "user": "PRC",
+  "password": "$2b$12$q1ZAs9I1ntrUSxvZnbBk6eyqeBjTAIQLSiU0Pcde7KX7cMe/DEeLO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110471ea5188439047159"
+  },
+  "user_id": "13983",
+  "name": "Owensboro (OWB)",
+  "user": "OWB",
+  "password": "$2b$12$qh6MkeHPDNVrm8qB6IpDJOik8YzSYWvmr5pDnJYT0Cc3mTVs2lrTi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110481ea518843904715a"
+  },
+  "user_id": "11109",
+  "name": "Colorado Springs (COS)",
+  "user": "COS",
+  "password": "$2b$12$L/CuA1DirfBOpb/5LvscPe1S0Edv4XyF1dHu1jY1kEMLwVUZqTyX2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110481ea518843904715b"
+  },
+  "user_id": "12953",
+  "name": "New York (LGA)",
+  "user": "LGA",
+  "password": "$2b$12$fBus/2jnCNJl3b47wn/IIOBdUDDyRAuoAKp1Ks8NYAhzt4ssAV6nm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110491ea518843904715c"
+  },
+  "user_id": "11298",
+  "name": "Dallas/Fort Worth (DFW)",
+  "user": "DFW",
+  "password": "$2b$12$g6r2j3oZ/v9na5VMgxkJPe7RiEIKkbL/P4zWzLi8ZNoyL05rpxiFC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110491ea518843904715d"
+  },
+  "user_id": "13495",
+  "name": "New Orleans (MSY)",
+  "user": "MSY",
+  "password": "$2b$12$QqExWZK8rg8fHtLhD4pNzewys0gWg6S0d1pjitE7iboizxwh6xwG.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104a1ea518843904715e"
+  },
+  "user_id": "13476",
+  "name": "Monterey (MRY)",
+  "user": "MRY",
+  "password": "$2b$12$v00R5P59zmOTxFMJq2VBEuLKSDAWTk9fxpoaoXGJtNRVJmWeqzu3q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104a1ea518843904715f"
+  },
+  "user_id": "11203",
+  "name": "Mosinee (CWA)",
+  "user": "CWA",
+  "password": "$2b$12$BCyTAe3J/PJxpDgTa0DD8eSmMiraa/eKyiYYP5KYo7PtW1QZHDdya",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104b1ea5188439047160"
+  },
+  "user_id": "10268",
+  "name": "Waterloo (ALO)",
+  "user": "ALO",
+  "password": "$2b$12$2IDc24QJzQaVjGVl8HrBuOzs6zDrvLDj2MgqGwF8xsaq6XhV2/hCK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104b1ea5188439047161"
+  },
+  "user_id": "11337",
+  "name": "Duluth (DLH)",
+  "user": "DLH",
+  "password": "$2b$12$E6.PwPHh2X29CSdgVf.EmerdMXeUAOqZWJdmgQRHXCf.uE0joZJQC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104c1ea5188439047162"
+  },
+  "user_id": "10739",
+  "name": "Brainerd (BRD)",
+  "user": "BRD",
+  "password": "$2b$12$JLKA87m6qDLqZZWDOYUEQ.8r42C9nJ8Vzj9bXi9qll4/tE4IYkglK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104c1ea5188439047163"
+  },
+  "user_id": "11315",
+  "name": "Dickinson (DIK)",
+  "user": "DIK",
+  "password": "$2b$12$/QeYuIIwoRCnH5tl4T6EBecQ0oJrbiFelIlPYHsiHmzFeYpwKHAMO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104d1ea5188439047164"
+  },
+  "user_id": "14674",
+  "name": "Santa Fe (SAF)",
+  "user": "SAF",
+  "password": "$2b$12$ZyZJup9gTcW27nKzSmPt/.uzYWajioX1ALBMy7FISJZ2FJyCEROcW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104e1ea5188439047165"
+  },
+  "user_id": "12206",
+  "name": "Harlingen/San Benito (HRL)",
+  "user": "HRL",
+  "password": "$2b$12$/jw0qE9gPyaVaRNAqNRaVOTzy//hfiUTDjCS4LUmJ/PUK4Q64cSju",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104e1ea5188439047166"
+  },
+  "user_id": "11612",
+  "name": "Evansville (EVV)",
+  "user": "EVV",
+  "password": "$2b$12$25QCjUciEj9XPYiJr2tcue1jJnHbWxgswn/VhnxHGIRREFUuo9Udq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104e1ea5188439047167"
+  },
+  "user_id": "14489",
+  "name": "Bend/Redmond (RDM)",
+  "user": "RDM",
+  "password": "$2b$12$HjkdSPQVJyHB4kfi6RVlfOF0/kAFIX2JMltY3zrIpLMr7v1vbXiqG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411104f1ea5188439047168"
+  },
+  "user_id": "11076",
+  "name": "Hancock/Houghton (CMX)",
+  "user": "CMX",
+  "password": "$2b$12$rEu3d7hhzfu.qgRjChcigOX3Nr5xm.38vFm/0d9SVnLDQBh5tY2w6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110501ea5188439047169"
+  },
+  "user_id": "12523",
+  "name": "Juneau (JNU)",
+  "user": "JNU",
+  "password": "$2b$12$egDDb3fIi3EC16VNiMKB8.MjAqLlwFUX6cHOkyuA8r1RSq2WzeGF.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110501ea518843904716a"
+  },
+  "user_id": "12889",
+  "name": "Las Vegas (LAS)",
+  "user": "LAS",
+  "password": "$2b$12$jjLbX3Y8ZuTqQWtQcne1euwJ0tloOiJOXw4S4rWyUKBts31QQcs9W",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110511ea518843904716b"
+  },
+  "user_id": "13433",
+  "name": "Minot (MOT)",
+  "user": "MOT",
+  "password": "$2b$12$Dh3STyzUQG0YMLpbf84Sxewpur0iS8WetD/PYcu0K35GlTgWc9kG.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110511ea518843904716c"
+  },
+  "user_id": "10141",
+  "name": "Aberdeen (ABR)",
+  "user": "ABR",
+  "password": "$2b$12$PPitQECrZJY5bi.FUeQSZuKdc8pcVrSK2m7hI7vGNLHsjjxpsdkaS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110521ea518843904716d"
+  },
+  "user_id": "11587",
+  "name": "Escanaba (ESC)",
+  "user": "ESC",
+  "password": "$2b$12$Q30xKpq3GdHs4OCErL.5IOMtMUGPinNELXiuDE2WnzSpAqsFWYoeu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110521ea518843904716e"
+  },
+  "user_id": "11525",
+  "name": "Elko (EKO)",
+  "user": "EKO",
+  "password": "$2b$12$NWsVCMJ7.pLEZj7CM7Y9xO6yqPs2GJx1F3FXOQMBw76AalrzPFFhi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110531ea518843904716f"
+  },
+  "user_id": "12902",
+  "name": "Liberal (LBL)",
+  "user": "LBL",
+  "password": "$2b$12$oKxJokNEOfSZWMgMlEcU1.IuW20vFABjUZ4U9j4f9lgX4OTrPsgDS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110531ea5188439047170"
+  },
+  "user_id": "12255",
+  "name": "Hays (HYS)",
+  "user": "HYS",
+  "password": "$2b$12$2ZQo5FLSYlQGIqRfxNNOveoymf1w7Id/Z4nufF5JzfwMvPbFl3gY6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110541ea5188439047171"
+  },
+  "user_id": "12915",
+  "name": "Lake Charles (LCH)",
+  "user": "LCH",
+  "password": "$2b$12$o91e6zxiosotyCBLK/sBPugwhvf2vyRtMrWW3G.Ey05hAP.CqZTMu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110541ea5188439047172"
+  },
+  "user_id": "10158",
+  "name": "Atlantic City (ACY)",
+  "user": "ACY",
+  "password": "$2b$12$sHU8KWGI8tAQoCmykUgdLughiQuGSpezo7FnjiFqErqEC0q6VPpiW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110551ea5188439047173"
+  },
+  "user_id": "13344",
+  "name": "Muskegon (MKG)",
+  "user": "MKG",
+  "password": "$2b$12$QR/WRRc0NXk2e2zr6qHl9uM2F2Z3ClungdY8SgroBxDsze84oDI7.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110551ea5188439047174"
+  },
+  "user_id": "14492",
+  "name": "Raleigh/Durham (RDU)",
+  "user": "RDU",
+  "password": "$2b$12$42jJX4xKDmG7CGYuebqpBe.Aly5hUGNK6FtASPu46JC0eyCNIibfu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110561ea5188439047175"
+  },
+  "user_id": "12891",
+  "name": "Lawton/Fort Sill (LAW)",
+  "user": "LAW",
+  "password": "$2b$12$cOYl8bjPhGuIF6b/kTzbpeeL81ePcY6FBQ5uZEEdcWOTb1LoxLEs6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110561ea5188439047176"
+  },
+  "user_id": "10917",
+  "name": "Cold Bay (CDB)",
+  "user": "CDB",
+  "password": "$2b$12$bVIsw0XG/qoVZKu2B/TWRO5PLMfSqgyp32rJ9iV7iTxVAjXn3MD4a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110571ea5188439047177"
+  },
+  "user_id": "16869",
+  "name": "Williston (XWA)",
+  "user": "XWA",
+  "password": "$2b$12$yBRLPWul.mBEo95AZgTzP.jOqVZefpBgd6hl5fXHz5QuRvrnseuES",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110581ea5188439047178"
+  },
+  "user_id": "11042",
+  "name": "Cleveland (CLE)",
+  "user": "CLE",
+  "password": "$2b$12$6ryZJ9aTgUX0EJwxZakKheNe/Axrv9J9FBy9/GLmKVB96A1wyww0G",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110581ea5188439047179"
+  },
+  "user_id": "10397",
+  "name": "Atlanta (ATL)",
+  "user": "ATL",
+  "password": "$2b$12$OUxSfhQRRwwL7yrknLP/7.Nw8ntyQFCmHn9akCaVT2vqV1K18ZKda",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110591ea518843904717a"
+  },
+  "user_id": "15370",
+  "name": "Tulsa (TUL)",
+  "user": "TUL",
+  "password": "$2b$12$8qjFzIQ3sF95XmqYosUNXO1/UaVlTXR7P.qWW1/diPu.4sK0zgHYW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110591ea518843904717b"
+  },
+  "user_id": "12888",
+  "name": "Laramie (LAR)",
+  "user": "LAR",
+  "password": "$2b$12$NU/GgXmoC6p6ZyebalHbqOjPcMoqs0YJs4aMM3cFSL1Z0noOVMFAC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105a1ea518843904717c"
+  },
+  "user_id": "13851",
+  "name": "Oklahoma City (OKC)",
+  "user": "OKC",
+  "password": "$2b$12$3GlG03B5AIEluN2NEeE/Mu48/P/9s5uYJOFHW5P1YQzx0tSCEvLcG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105a1ea518843904717d"
+  },
+  "user_id": "11471",
+  "name": "Eau Claire (EAU)",
+  "user": "EAU",
+  "password": "$2b$12$B8ilgBiSXonOzLg1ACiVgeNXyHf6OeHDRVxNN3EmpDqgaInofcMce",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105b1ea518843904717e"
+  },
+  "user_id": "14193",
+  "name": "Pensacola (PNS)",
+  "user": "PNS",
+  "password": "$2b$12$lqmG/tyRnbNqLGHcNPk9FOo5eR1zNpVzAYHkCsD/GAeRdAqFCpkB6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105b1ea518843904717f"
+  },
+  "user_id": "11336",
+  "name": "Dillingham (DLG)",
+  "user": "DLG",
+  "password": "$2b$12$pi5LGJt4wwtGwQinGYcGAeMR9ulAkB8ccodzkFSwu2St1S5PCnOam",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105c1ea5188439047180"
+  },
+  "user_id": "11049",
+  "name": "College Station/Bryan (CLL)",
+  "user": "CLL",
+  "password": "$2b$12$HnttV6qqF5BxedVo639PjO3hKLHx5tvRwlvMbuQ5SsP343Bq1tvKK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105d1ea5188439047181"
+  },
+  "user_id": "13871",
+  "name": "Omaha (OMA)",
+  "user": "OMA",
+  "password": "$2b$12$o28f/8EiBRsSpd0t.tyGPuMGuHJmicKWK4CeQjV8wveV3ETzgKPc.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105d1ea5188439047182"
+  },
+  "user_id": "10165",
+  "name": "Adak Island (ADK)",
+  "user": "ADK",
+  "password": "$2b$12$KXN1fGVizlXq5MG9nfhP.eADTd2YnMZhNdtu9o91KxdeIzsiu39DC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105e1ea5188439047183"
+  },
+  "user_id": "13930",
+  "name": "Chicago (ORD)",
+  "user": "ORD",
+  "password": "$2b$12$DfhwgiRrNwYaPXcZxUmcCeYnShYRK7uRzW9OtW.3i4VlLzYVWCFRK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105e1ea5188439047184"
+  },
+  "user_id": "12951",
+  "name": "Lafayette (LFT)",
+  "user": "LFT",
+  "password": "$2b$12$a9POv7j4KLMmGDjccQBRtOjI1UoDPD5ZeIeTqzPrl1JAwabUtkBX6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105f1ea5188439047185"
+  },
+  "user_id": "11865",
+  "name": "Gillette (GCC)",
+  "user": "GCC",
+  "password": "$2b$12$1TgvMKBY5a294WUtpmfv4eyLYqQu3PXJRLdsEuvCyqD.TbmRHwPZm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411105f1ea5188439047186"
+  },
+  "user_id": "10685",
+  "name": "Bloomington/Normal (BMI)",
+  "user": "BMI",
+  "password": "$2b$12$3FOJx79Z.gSGyRk/dvUiPe.YhuXDNJIAswi5MSYWch4lmRFHQvwGm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110601ea5188439047187"
+  },
+  "user_id": "11637",
+  "name": "Fargo (FAR)",
+  "user": "FAR",
+  "password": "$2b$12$PBKXcc5Gd7BEmhyanmlfzuczFtzG3EiZIgtZOXo7g7W05oQiRTXyC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110601ea5188439047188"
+  },
+  "user_id": "12266",
+  "name": "Houston (IAH)",
+  "user": "IAH",
+  "password": "$2b$12$Aa66C6TjB004ktsoX3QEBe5X63agVAZiK/BYM4VhXU5eH/8dvBT1a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110611ea5188439047189"
+  },
+  "user_id": "10409",
+  "name": "Watertown (ATY)",
+  "user": "ATY",
+  "password": "$2b$12$tc7GLQhHBZzhx/eSxah.nu0zZSXucgtTFVHr.1RfPtMBCv/TTrz5O",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110611ea518843904718a"
+  },
+  "user_id": "13832",
+  "name": "Ogdensburg (OGS)",
+  "user": "OGS",
+  "password": "$2b$12$i8hFjIhg2eZgRxCa/mPEVefBkp4mwEgx1DW6gACYLnfstOXj3kvie",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110621ea518843904718b"
+  },
+  "user_id": "10185",
+  "name": "Alexandria (AEX)",
+  "user": "AEX",
+  "password": "$2b$12$EPBG6WN3BKOUuJOIBhPs/uif3IJckkBLt0vFmWVLV4D0px6gVEGcW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110631ea518843904718c"
+  },
+  "user_id": "15074",
+  "name": "Stillwater (SWO)",
+  "user": "SWO",
+  "password": "$2b$12$YpLEDXJ3bHshgJY3tSF0W.UVry1CdKmb8qgxtG8gwC2ickRU2uF.a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110631ea518843904718d"
+  },
+  "user_id": "12945",
+  "name": "Lexington (LEX)",
+  "user": "LEX",
+  "password": "$2b$12$0RX10D8YABZmhk6kJLUCA.GqHXpnQMatpJZRxAiupAK15CPZTCCYG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110641ea518843904718e"
+  },
+  "user_id": "15048",
+  "name": "Sioux City (SUX)",
+  "user": "SUX",
+  "password": "$2b$12$ncxo5HDlq4B3rsxvv6T10uoW6FjHAXpq8byBaJPDQ9INeTCUnjC5S",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110641ea518843904718f"
+  },
+  "user_id": "14092",
+  "name": "Greenville (PGV)",
+  "user": "PGV",
+  "password": "$2b$12$L8lbcdkA3dVoq/TdgEO.YeJ1.6VkL3s2m0cIiTe2JyuMt4tlNaAz2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110651ea5188439047190"
+  },
+  "user_id": "11252",
+  "name": "Daytona Beach (DAB)",
+  "user": "DAB",
+  "password": "$2b$12$XkaTMYbgX/jKJcm0Rk7tyeIt6FX1HxPpnh5jCueDD6PtW/wmrsM2q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110651ea5188439047191"
+  },
+  "user_id": "11884",
+  "name": "Spokane (GEG)",
+  "user": "GEG",
+  "password": "$2b$12$QacmRHeCHX2HhzrvCf2swO6Z8oMBYocC89oxhYLS9UIYADSaFrFYy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110661ea5188439047192"
+  },
+  "user_id": "10170",
+  "name": "Kodiak (ADQ)",
+  "user": "ADQ",
+  "password": "$2b$12$XZlyXK5MRzs8HCtg3.2qL.CazMauvPbln1rHlcCNwqCueXdJm6/w6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110661ea5188439047193"
+  },
+  "user_id": "15569",
+  "name": "Victoria (VCT)",
+  "user": "VCT",
+  "password": "$2b$12$0f0.cEVbux0FcDZ.jSD4d.wMuHZzW5.iMUUxU2hH8JdMZjmDZbq4e",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110671ea5188439047194"
+  },
+  "user_id": "11503",
+  "name": "Eagle (EGE)",
+  "user": "EGE",
+  "password": "$2b$12$ZDa.fMr323G55DX.ew3TreL641s.lhx3j4Uf.6VxJHTtARkXof7s2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110671ea5188439047195"
+  },
+  "user_id": "10208",
+  "name": "Augusta (AGS)",
+  "user": "AGS",
+  "password": "$2b$12$10nwY8u1JOBbGJkhEOZJzuuD8om.tJDbj4HtfMJK1RsGvSNIB4x/O",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110681ea5188439047196"
+  },
+  "user_id": "11921",
+  "name": "Grand Junction (GJT)",
+  "user": "GJT",
+  "password": "$2b$12$eTABkg9TQ5t61Hyk3w8CyOWKjnuPibJfvGJMSiDwLPHtNTi.Qri0W",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110681ea5188439047197"
+  },
+  "user_id": "11986",
+  "name": "Grand Rapids (GRR)",
+  "user": "GRR",
+  "password": "$2b$12$KXb6Bc8RzgrEJcKKTH.BF.fH9Z0MgDy9s0A5qXSaojUuUBL1T7PoG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110691ea5188439047198"
+  },
+  "user_id": "13076",
+  "name": "La Crosse (LSE)",
+  "user": "LSE",
+  "password": "$2b$12$2SGDAAt4hym2174pa7K0DOJQCWH3VKAZgdA6CpBohhfuptWI21fUu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110691ea5188439047199"
+  },
+  "user_id": "11283",
+  "name": "Dodge City (DDC)",
+  "user": "DDC",
+  "password": "$2b$12$hGyT82ek4NZoHtsK9fz06OW7yPPtq9YZs6HfioOZomCwMQKbWrwBu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106a1ea518843904719a"
+  },
+  "user_id": "10299",
+  "name": "Anchorage (ANC)",
+  "user": "ANC",
+  "password": "$2b$12$QWfZgF9lzAX6ehLR.72ySuYt/wO762Kb5vDmGl.F3izWxEFjuk.nG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106a1ea518843904719b"
+  },
+  "user_id": "14908",
+  "name": "Santa Ana (SNA)",
+  "user": "SNA",
+  "password": "$2b$12$gB.oCiW8c76rBlw45z2HhevqPSOvZWzKrxLWb2U1V9rPLTDYI0rnO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106b1ea518843904719c"
+  },
+  "user_id": "11823",
+  "name": "Fort Wayne (FWA)",
+  "user": "FWA",
+  "password": "$2b$12$LXgjgfLR/NC/KxYlRrvHxuak/x0DuhlR8qc5Fx3sHx3coCUYyimxa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106b1ea518843904719d"
+  },
+  "user_id": "14534",
+  "name": "Riverton/Lander (RIW)",
+  "user": "RIW",
+  "password": "$2b$12$6Svos8MYmuGUP3mYihVLMOVvO4D3TLxnqciAXaMx/W73FmqeNWBLu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106c1ea518843904719e"
+  },
+  "user_id": "11996",
+  "name": "Greer (GSP)",
+  "user": "GSP",
+  "password": "$2b$12$8u7.NcHHZRruy1Pz4wTqke4MhEeRJIRm9o9ERXI.K4essOjEO3dCC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106c1ea518843904719f"
+  },
+  "user_id": "10721",
+  "name": "Boston (BOS)",
+  "user": "BOS",
+  "password": "$2b$12$lyw3oJ3ChpfX7JQu0slfwe2S76O3lOL721YAUQV37j0bKHGIr0ZBi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106d1ea51884390471a0"
+  },
+  "user_id": "15027",
+  "name": "Christiansted (STX)",
+  "user": "STX",
+  "password": "$2b$12$/QGZ4U4TEbnJWfxtMC29yuQztTQpcZmJbHjD0QtBLWSYLlBtqWb3i",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106d1ea51884390471a1"
+  },
+  "user_id": "10980",
+  "name": "Chattanooga (CHA)",
+  "user": "CHA",
+  "password": "$2b$12$ZI7FkWwQjpVDlFIjJvTsj.MBVc.RsL9pWOm7jdyvVapokb/hcNNLu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106e1ea51884390471a2"
+  },
+  "user_id": "11617",
+  "name": "New Bern/Morehead/Beaufort (EWN)",
+  "user": "EWN",
+  "password": "$2b$12$H5nVetX7joUFKRz47v1CL.gGkg8zhfxedyrUNcfsCcgwKuqxkOWVu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106e1ea51884390471a3"
+  },
+  "user_id": "10800",
+  "name": "Burbank (BUR)",
+  "user": "BUR",
+  "password": "$2b$12$cdQi1AqasEZU//hMusM05.ymB2o4njJHpqW2Ira8Xo2qr9kkCID9C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106f1ea51884390471a4"
+  },
+  "user_id": "12896",
+  "name": "Lubbock (LBB)",
+  "user": "LBB",
+  "password": "$2b$12$1ARcCUQIFQaWIOHjFsiNX.qGGmr3ZCB2qFufVAX0Lptrq9wZT6GOO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411106f1ea51884390471a5"
+  },
+  "user_id": "14685",
+  "name": "Savannah (SAV)",
+  "user": "SAV",
+  "password": "$2b$12$iC3Aypj0OXXbWmfxyLEW0.ve0IjddwfnEV1cZv61RQKzWLVEuPHsG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110701ea51884390471a6"
+  },
+  "user_id": "12559",
+  "name": "Johnstown (JST)",
+  "user": "JST",
+  "password": "$2b$12$/1.7rOUOpc2xdavpRC8s.O79ZaQScv2lrOR5.e./NcxzHVuE2xzPy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110701ea51884390471a7"
+  },
+  "user_id": "11146",
+  "name": "Charleston/Dunbar (CRW)",
+  "user": "CRW",
+  "password": "$2b$12$nfizYXK0kBUZAQ0Kn3v/huzHE0l9HYCTjmIKPeC25nnh7BHYxNV5i",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110711ea51884390471a8"
+  },
+  "user_id": "13502",
+  "name": "Montrose/Delta (MTJ)",
+  "user": "MTJ",
+  "password": "$2b$12$Wx1u1lRcj1hVlt.ioGQXheglp07ilXWM0EfqA0vGBf2Xju4y3sqZ6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110711ea51884390471a9"
+  },
+  "user_id": "12451",
+  "name": "Jacksonville (JAX)",
+  "user": "JAX",
+  "password": "$2b$12$AIFvIdLUGxbk533TIJ9NCeda3lGG1tNqrTnj9woR.TiXVWphU3C8u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110721ea51884390471aa"
+  },
+  "user_id": "14843",
+  "name": "San Juan (SJU)",
+  "user": "SJU",
+  "password": "$2b$12$y1wM/q8TT8vHnpbHTcktCeJJckYe1ZrAiRu1ZbALV1LWDdWVVH6dC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110721ea51884390471ab"
+  },
+  "user_id": "13377",
+  "name": "Monroe (MLU)",
+  "user": "MLU",
+  "password": "$2b$12$t/Jd1TmDeD41rN2WwwyFve6t9icKdOcmJxnouV.9Sfmzvamhib/V2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110731ea51884390471ac"
+  },
+  "user_id": "11067",
+  "name": "Champaign/Urbana (CMI)",
+  "user": "CMI",
+  "password": "$2b$12$8G.PLZuDB8f1kqJXpDEO2usJbpGghN.YT4SSdqB44LKFWkySYCn2y",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110731ea51884390471ad"
+  },
+  "user_id": "11540",
+  "name": "El Paso (ELP)",
+  "user": "ELP",
+  "password": "$2b$12$Ddv4O.Z0cJM0Q7Bpls306.17LyRvVvwJHaWMvGrWNLz.6kGK1PTXG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110741ea51884390471ae"
+  },
+  "user_id": "14100",
+  "name": "Philadelphia (PHL)",
+  "user": "PHL",
+  "password": "$2b$12$hGUw0C3zqq/QJVUExS2TSOleJ.nVGjUBySWEwp9vTg2fhY7pufpfO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110741ea51884390471af"
+  },
+  "user_id": "14098",
+  "name": "Newport News/Williamsburg (PHF)",
+  "user": "PHF",
+  "password": "$2b$12$3YHwvjPWWWlLjOUmTKAAF.DCf2qEt6HN.ZtNQ3ccFQ6Qnc0e7M/Ci",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110751ea51884390471b0"
+  },
+  "user_id": "12758",
+  "name": "Kona (KOA)",
+  "user": "KOA",
+  "password": "$2b$12$efk4Dzf4hNo8nMbDhUmUIO2rJCY3n.SVOiSfdcaNITRnb6XPpVJVu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110751ea51884390471b1"
+  },
+  "user_id": "10361",
+  "name": "Watertown (ART)",
+  "user": "ART",
+  "password": "$2b$12$xTit6jq2cOYWV.HvPReKW.RjN0hoigtU0zbJFLPZ0ujYd487NqEAi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110761ea51884390471b2"
+  },
+  "user_id": "14256",
+  "name": "Petersburg (PSG)",
+  "user": "PSG",
+  "password": "$2b$12$.ve5WiyoTKAIRFmm0cumsepfHmmpXuEotGKS4uAm/t2UJwolU8YpG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110761ea51884390471b3"
+  },
+  "user_id": "12129",
+  "name": "Hibbing (HIB)",
+  "user": "HIB",
+  "password": "$2b$12$Hkvc1qAAwOBx.InyjwYMx.MevqNp0CqdqoDM2GxR56QPWYGaayq7O",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110771ea51884390471b4"
+  },
+  "user_id": "13256",
+  "name": "Mission/McAllen/Edinburg (MFE)",
+  "user": "MFE",
+  "password": "$2b$12$4rvLFV2LxOQFDH3Cg8TcH.R.iFWUWpPSKmKRurJay31w3FVsxwov2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110771ea51884390471b5"
+  },
+  "user_id": "15304",
+  "name": "Tampa (TPA)",
+  "user": "TPA",
+  "password": "$2b$12$7jAHVmJbwaPv6rEla0j.0e5zqQGXBAZqYYCSLv73rUZ8dIAxlTUeW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110781ea51884390471b6"
+  },
+  "user_id": "15380",
+  "name": "Traverse City (TVC)",
+  "user": "TVC",
+  "password": "$2b$12$NivVOYhVcsHWQcXDF3cZcOY.1o7H6aZOD7LOwtTzbVaRzaBhIJhv6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110781ea51884390471b7"
+  },
+  "user_id": "14231",
+  "name": "Presque Isle/Houlton (PQI)",
+  "user": "PQI",
+  "password": "$2b$12$jc/2Md.IuZ/GBf.O0FCM0.VA69LtOwVJU2civkFNqBTtgrQ4rLsrK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110791ea51884390471b8"
+  },
+  "user_id": "13290",
+  "name": "Manhattan/Ft. Riley (MHK)",
+  "user": "MHK",
+  "password": "$2b$12$PxqDHQjEhMW.RL4uu70CZOLXMba1ZN48Xlvc2QIMmLAgJxfiOrE/i",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110791ea51884390471b9"
+  },
+  "user_id": "13139",
+  "name": "Lynchburg (LYH)",
+  "user": "LYH",
+  "password": "$2b$12$eqvoBC5Bfy3iWnDc1X.ZtuCNT5wjhsU/wTVU2BBmWH1Rp0Y8HsxQC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107a1ea51884390471ba"
+  },
+  "user_id": "15401",
+  "name": "Texarkana (TXK)",
+  "user": "TXK",
+  "password": "$2b$12$uBHU2YW/JpcZBUbeClLKMesiudrhIROAfyE1h0ym7yzTZIBm4kCOS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107a1ea51884390471bb"
+  },
+  "user_id": "14802",
+  "name": "Staunton (SHD)",
+  "user": "SHD",
+  "password": "$2b$12$I6O/x3S2FhkguWgTTisl7eHyEx2PkM3ElbMdiZ5mHEwLS0Q/wpaNO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107b1ea51884390471bc"
+  },
+  "user_id": "14831",
+  "name": "San Jose (SJC)",
+  "user": "SJC",
+  "password": "$2b$12$OkkXk/.dixucVwSNlx2Lr.fYPkdew4oYb7An3Ql8OKfjC.96w.KVq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107b1ea51884390471bd"
+  },
+  "user_id": "15008",
+  "name": "St. Cloud (STC)",
+  "user": "STC",
+  "password": "$2b$12$NQ3RD6Ni9MXjXQnEfqbldug6m2FZOOyVO/9r0JLLMb0vaxLBeeSk2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107c1ea51884390471be"
+  },
+  "user_id": "14960",
+  "name": "Wichita Falls (SPS)",
+  "user": "SPS",
+  "password": "$2b$12$kks3feH2AoLL8YCucqmC9Os/DuihpI1b.5RNvGrE/s67DRuxEFALi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107c1ea51884390471bf"
+  },
+  "user_id": "12365",
+  "name": "Williamsport (IPT)",
+  "user": "IPT",
+  "password": "$2b$12$amzbMvZSlGL5OAsIsCJmdublAHhH.Oc3EqEqO5u/p0nobY/Ys/h0m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107d1ea51884390471c0"
+  },
+  "user_id": "14006",
+  "name": "Paducah (PAH)",
+  "user": "PAH",
+  "password": "$2b$12$NqJN9wOt7cEHhjXc1gHyceFU3X7yQHt7G/oSYqLRqvTMfCpZxs0Oy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107d1ea51884390471c1"
+  },
+  "user_id": "13198",
+  "name": "Kansas City (MCI)",
+  "user": "MCI",
+  "password": "$2b$12$RVC1gKVZBvDLqzICBCj7OO4Qxlj8/yZdG6hfUivcCFDRr5AD/HIKi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107e1ea51884390471c2"
+  },
+  "user_id": "10157",
+  "name": "Arcata/Eureka (ACV)",
+  "user": "ACV",
+  "password": "$2b$12$9V/QhWLKZiWtSMY7B7Ms/ee8Ma7QPzdbkU6RAcW2b9m8fKzcwjMYO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107e1ea51884390471c3"
+  },
+  "user_id": "11648",
+  "name": "Kalispell (FCA)",
+  "user": "FCA",
+  "password": "$2b$12$o8d7MSudk5Md.m/7n474DOniAZJB8ykypskBJq9nzGUUxKlJ.VGGW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107f1ea51884390471c4"
+  },
+  "user_id": "14520",
+  "name": "Rhinelander (RHI)",
+  "user": "RHI",
+  "password": "$2b$12$tniagaUucKFtoLV/ZyVycuQ0DsiOOU0PapRI8BEDpUDAHoYo7xeVe",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411107f1ea51884390471c5"
+  },
+  "user_id": "14109",
+  "name": "Hattiesburg/Laurel (PIB)",
+  "user": "PIB",
+  "password": "$2b$12$9yR4TPvd9aVZN7/BSAJNMOyYAPFnCHp93hstpfMKzXpTbzF1l22ha",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110801ea51884390471c6"
+  },
+  "user_id": "14027",
+  "name": "West Palm Beach/Palm Beach (PBI)",
+  "user": "PBI",
+  "password": "$2b$12$l8meLKb.xfqGECEfvOcVX.8.CLhsGzRWnYOzbtJDmRHbqAZJYqJfC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110801ea51884390471c7"
+  },
+  "user_id": "14955",
+  "name": "Saipan (SPN)",
+  "user": "SPN",
+  "password": "$2b$12$4EzeD4n3iygUwFQqhanBvOx1QmL8Egnm.DEv5fQFvbeCxh3hmrCYa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110811ea51884390471c8"
+  },
+  "user_id": "14314",
+  "name": "Provo (PVU)",
+  "user": "PVU",
+  "password": "$2b$12$bTjU4LP3LAx1HvkA3I5Opexx9pJvJMCmCAWWt2CuZcLczAkcGluLm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110811ea51884390471c9"
+  },
+  "user_id": "12156",
+  "name": "Helena (HLN)",
+  "user": "HLN",
+  "password": "$2b$12$jty8gUvIx8RSSX1V8bzrDeaszQrRLpH43ETcMolZhLNCt3BQ1tSo.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110821ea51884390471ca"
+  },
+  "user_id": "12016",
+  "name": "Guam (GUM)",
+  "user": "GUM",
+  "password": "$2b$12$ywFjfuyELSV0hTV5Ix37lOer2D/GOPoP3l5TTff6/ZqyA6szslRmK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110821ea51884390471cb"
+  },
+  "user_id": "13891",
+  "name": "Ontario (ONT)",
+  "user": "ONT",
+  "password": "$2b$12$SFsr6MpZLEF9eDvvP7Up7O26L7xQihA6.wfd0ySHENJXoUbDYv7s.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110831ea51884390471cc"
+  },
+  "user_id": "15096",
+  "name": "Syracuse (SYR)",
+  "user": "SYR",
+  "password": "$2b$12$AhnuEsgOzOlm0OdfW.2.0uBbV.t17lSwDA.FO.Jb6YoYVsO/KgN2m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110831ea51884390471cd"
+  },
+  "user_id": "14783",
+  "name": "Springfield (SGF)",
+  "user": "SGF",
+  "password": "$2b$12$YaMIkKhZGQnZ.MrYSGZA9.vKEljT7beWb54esvBCtyPV0lUIoEzwu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110841ea51884390471ce"
+  },
+  "user_id": "12441",
+  "name": "Jackson (JAC)",
+  "user": "JAC",
+  "password": "$2b$12$qpUaUcVRuC7f2gUCCXGHuOJywK.d5sWQbhF1B.FY8.QKPgNUTPHWi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110841ea51884390471cf"
+  },
+  "user_id": "13061",
+  "name": "Laredo (LRD)",
+  "user": "LRD",
+  "password": "$2b$12$zyBaZROuY8IO8S.yH5xQw..10jV3WqtCcZoikAGeZSkN6sPwVASfC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110851ea51884390471d0"
+  },
+  "user_id": "13485",
+  "name": "Madison (MSN)",
+  "user": "MSN",
+  "password": "$2b$12$.nID55nL3V7Uof.Ipa1YSu7kGojc.XUq4MvQKqSshYQltGqnejuY6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110851ea51884390471d1"
+  },
+  "user_id": "10561",
+  "name": "Bakersfield (BFL)",
+  "user": "BFL",
+  "password": "$2b$12$vW5/Xctphn.Tx9OX7SGrT.Fid6.wo6D4I/0p95o/7RYLZM8TVnfAq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110861ea51884390471d2"
+  },
+  "user_id": "11288",
+  "name": "Decatur (DEC)",
+  "user": "DEC",
+  "password": "$2b$12$7jw7UFZZg/nNsRvCbNB8quZdbaAxslkHwiRuVP5SHx8N8bMlMcu7K",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110861ea51884390471d3"
+  },
+  "user_id": "13241",
+  "name": "Meridian (MEI)",
+  "user": "MEI",
+  "password": "$2b$12$QdRbRjp5KDKAkIf0RLFgre1EcCGbYFL0JSIIsZtj.FQC43eAwOQzC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110871ea51884390471d4"
+  },
+  "user_id": "10423",
+  "name": "Austin (AUS)",
+  "user": "AUS",
+  "password": "$2b$12$uVWUuLsMoTKNOE7YLAt4puHh.eByQvzIewGRdbQp8auHPWE3UNnKq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110871ea51884390471d5"
+  },
+  "user_id": "10713",
+  "name": "Boise (BOI)",
+  "user": "BOI",
+  "password": "$2b$12$UZiEhHQpATPkT2j6ph202.i.PP3AM5XoFOQPTFOliMXT6IoBHetxC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110881ea51884390471d6"
+  },
+  "user_id": "13127",
+  "name": "Lewiston (LWS)",
+  "user": "LWS",
+  "password": "$2b$12$zYEUeF/qwC1K5P.vx.MNOu/3A7MX3R5sWK06t8du4nn5KzPOLrk5y",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110881ea51884390471d7"
+  },
+  "user_id": "10792",
+  "name": "Buffalo (BUF)",
+  "user": "BUF",
+  "password": "$2b$12$SzM8SeZ/uL7VEV8e2iy4ieV2JbZ4tZleKGUKNSaV8eDt1wfxlXovu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110891ea51884390471d8"
+  },
+  "user_id": "14112",
+  "name": "St. Petersburg (PIE)",
+  "user": "PIE",
+  "password": "$2b$12$hrFj0j4e3aYioWLXIiWkluUkRD8/enqKtvrJDwMRWjSDPhHYK.ilm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110891ea51884390471d9"
+  },
+  "user_id": "14869",
+  "name": "Salt Lake City (SLC)",
+  "user": "SLC",
+  "password": "$2b$12$PCCmzOCvmlRKS7S3uVfjAOEOL241RQIdioI./EYaE8Mqx.ra29dgC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108a1ea51884390471da"
+  },
+  "user_id": "14696",
+  "name": "South Bend (SBN)",
+  "user": "SBN",
+  "password": "$2b$12$.N2EIvqtUic2z2J5IROBBe2W0sFCk7RSMZSIP2tiTSjfrD7mvcjLO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108a1ea51884390471db"
+  },
+  "user_id": "12917",
+  "name": "Columbus (LCK)",
+  "user": "LCK",
+  "password": "$2b$12$vsfg6J8OvxS8NqQaMJH9XepAFDcsmrX4XoaTG.QwfqeBAyUzBgGXK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108b1ea51884390471dc"
+  },
+  "user_id": "14814",
+  "name": "Shreveport (SHV)",
+  "user": "SHV",
+  "password": "$2b$12$FIj57aEmtT37BxNg4h9XhOaB8Z0hhuZLBIUw/gwAL3z5PPuH/spsy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108b1ea51884390471dd"
+  },
+  "user_id": "11274",
+  "name": "Dubuque (DBQ)",
+  "user": "DBQ",
+  "password": "$2b$12$oW7z6ZIqM7xeF1XF4fIx3OGWTB4PVZd2V9nYjJ7ZDzks34Zsf0l5m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108c1ea51884390471de"
+  },
+  "user_id": "12320",
+  "name": "Wilmington (ILG)",
+  "user": "ILG",
+  "password": "$2b$12$5XVQQSVoNTzxG/m85BsELeu1qWIh3fFTHEe/ytJQDfLXV6g8y5J.q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108c1ea51884390471df"
+  },
+  "user_id": "12478",
+  "name": "New York (JFK)",
+  "user": "JFK",
+  "password": "$2b$12$UZ.AaQlYckVhCLkBO3/sR.f3nkrgijfCfoaXF6G7QsgQx9pGGpBBW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108d1ea51884390471e0"
+  },
+  "user_id": "11057",
+  "name": "Charlotte (CLT)",
+  "user": "CLT",
+  "password": "$2b$12$wA5cyk1ZmdLlRqSxFeINqOwZH12woH5VFHQJTuiQ8XtHC389vB2Cy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108d1ea51884390471e1"
+  },
+  "user_id": "11721",
+  "name": "Flint (FNT)",
+  "user": "FNT",
+  "password": "$2b$12$phm3imNzbI5ePdBpXKz76uegIV1/CM0jmc0a7iWCRdy10ilF520S6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108e1ea51884390471e2"
+  },
+  "user_id": "11308",
+  "name": "Dothan (DHN)",
+  "user": "DHN",
+  "password": "$2b$12$lOa/sRgTKc8.XmOSfY2.G.RIIktX7Q3lDau2DSP637FAGaApGhBa6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108e1ea51884390471e3"
+  },
+  "user_id": "13158",
+  "name": "Midland/Odessa (MAF)",
+  "user": "MAF",
+  "password": "$2b$12$uFSoao9nUClRRrEq2MbxxOF2TiUWGLMB16M9HEHZgGSyzerNlPW3u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108f1ea51884390471e4"
+  },
+  "user_id": "14487",
+  "name": "Redding (RDD)",
+  "user": "RDD",
+  "password": "$2b$12$ppZskVGQhZ16tvwpvKromeWnQA7eIJbIu6UgB/3Yb1bkJecFvIyua",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411108f1ea51884390471e5"
+  },
+  "user_id": "11995",
+  "name": "Greensboro/High Point (GSO)",
+  "user": "GSO",
+  "password": "$2b$12$IeHijIgPzBu50qSipRFGheOCnmbq54MJ78Weq6nQutK2INZGNPR16",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110901ea51884390471e6"
+  },
+  "user_id": "14771",
+  "name": "San Francisco (SFO)",
+  "user": "SFO",
+  "password": "$2b$12$7v0XsYj6JYt1yxb619YWVuZA6hSWL60CwgnGWxphkg7lExacHZ8uu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110911ea51884390471e7"
+  },
+  "user_id": "12339",
+  "name": "Indianapolis (IND)",
+  "user": "IND",
+  "password": "$2b$12$vwIzgMhL.6KfmDWBf7ElEO61dPtry2tK1OV.GcKkI9rzB83FY8jLK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110911ea51884390471e8"
+  },
+  "user_id": "10136",
+  "name": "Abilene (ABI)",
+  "user": "ABI",
+  "password": "$2b$12$4PSfV5ri3eEc7fjFnt2iUOeSPer8yBSvXMg8dEBUgqpnQlaOQPwa.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110921ea51884390471e9"
+  },
+  "user_id": "14108",
+  "name": "Peoria (PIA)",
+  "user": "PIA",
+  "password": "$2b$12$In8/SOBczxxmu8UDcFT7quzyGkU3j3X59Slulm1X66ulOyiz5yAKS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110921ea51884390471ea"
+  },
+  "user_id": "12954",
+  "name": "Long Beach (LGB)",
+  "user": "LGB",
+  "password": "$2b$12$sjbKYdVxy.JT02XUn2TbKOPPauZEBe4R2zPGJ0oPCSYoxa60omFZa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110931ea51884390471eb"
+  },
+  "user_id": "12280",
+  "name": "Idaho Falls (IDA)",
+  "user": "IDA",
+  "password": "$2b$12$yd5ZzlmTCqvUtOK1/zRDLO7FLgm6k/722/QyA.G1NLTSSfcuV8EVu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110931ea51884390471ec"
+  },
+  "user_id": "14120",
+  "name": "Pierre (PIR)",
+  "user": "PIR",
+  "password": "$2b$12$mPMwJ4YSIYxct6v.7hmwwejyHJ4j02ehgFWmHysHugQx.LyCpLoXC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110941ea51884390471ed"
+  },
+  "user_id": "12519",
+  "name": "Jamestown (JMS)",
+  "user": "JMS",
+  "password": "$2b$12$VWRQKTuUxrm8Xn1hO/frF.Li4AslP7GN2KzhHkfW1oYNfbBFj5//a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110941ea51884390471ee"
+  },
+  "user_id": "12264",
+  "name": "Washington (IAD)",
+  "user": "IAD",
+  "password": "$2b$12$VMIacVKMJqV4UwnfTEHLYOx1eh90GfKbUGAPK/Z3aZ.KJnF6SbFz6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110951ea51884390471ef"
+  },
+  "user_id": "11267",
+  "name": "Dayton (DAY)",
+  "user": "DAY",
+  "password": "$2b$12$DQwDOpmPNJiUj6lXmqNObe5kixXPWk/Orn2E8TRYJutYsn6cW6oEK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110951ea51884390471f0"
+  },
+  "user_id": "14905",
+  "name": "Santa Maria (SMX)",
+  "user": "SMX",
+  "password": "$2b$12$rYrjho9UcCMz2d09tXtQG.U4ilUSdioKVWWFUiMxKmEryMU6dTR22",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110961ea51884390471f1"
+  },
+  "user_id": "14543",
+  "name": "Rock Springs (RKS)",
+  "user": "RKS",
+  "password": "$2b$12$qBj3ZgF2/i6lha5LhSvYoOzub5argt04w9OPGNghNwjyh2EFjiyKa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110961ea51884390471f2"
+  },
+  "user_id": "11982",
+  "name": "Killeen (GRK)",
+  "user": "GRK",
+  "password": "$2b$12$TS6wULfSuDlRvDkKUSZLwO5QF4M2jPuOYaKHIQmoHYyyUmMaCZD7C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110971ea51884390471f3"
+  },
+  "user_id": "10747",
+  "name": "Brownsville (BRO)",
+  "user": "BRO",
+  "password": "$2b$12$HNjnkCro1HNwFauP1DW9iuatUhFSEX5e5R0Zgimsc/nh/ZUhaWkgO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110971ea51884390471f4"
+  },
+  "user_id": "11122",
+  "name": "Casper (CPR)",
+  "user": "CPR",
+  "password": "$2b$12$6RPgMIo9eTwO9VoiOxbKNeXuoNtg4vvaRPHewQXxv2tr6BZO6aliC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110981ea51884390471f5"
+  },
+  "user_id": "15023",
+  "name": "Santa Rosa (STS)",
+  "user": "STS",
+  "password": "$2b$12$MdIbg.7b.AiGzDv7YdjVM.z3iTnxlBUkBEnfyIictK/rFxMnVVFja",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110981ea51884390471f6"
+  },
+  "user_id": "14570",
+  "name": "Reno (RNO)",
+  "user": "RNO",
+  "password": "$2b$12$sNjVLvwfY3EQIMpDozrrCOjMObpTCnFUimDeKB8P5dJDy6EyVBolu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110991ea51884390471f7"
+  },
+  "user_id": "13303",
+  "name": "Miami (MIA)",
+  "user": "MIA",
+  "password": "$2b$12$03tzz2vnyjzCPv/LHqpPjeAMThIAQY1d4pELgV0OFPzOBZ1DvItSu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110991ea51884390471f8"
+  },
+  "user_id": "10821",
+  "name": "Baltimore (BWI)",
+  "user": "BWI",
+  "password": "$2b$12$bvKILlrBpXY/WMSsZ9LRnewpDfFWhw1cYZzYuuf8J2VNn2nlDNAt.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109a1ea51884390471f9"
+  },
+  "user_id": "10874",
+  "name": "Akron (CAK)",
+  "user": "CAK",
+  "password": "$2b$12$Fc5NLRzVRcKctl.8dG5eNuB1I.hD4QDJsXGi23FvYZ9kc9UaNFqP6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109a1ea51884390471fa"
+  },
+  "user_id": "11577",
+  "name": "Erie (ERI)",
+  "user": "ERI",
+  "password": "$2b$12$uhoCJyB8uNG5uB.4/PSE5Ogv249siNhsJ9j1qoS7Igez7nwPk/nFq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109b1ea51884390471fb"
+  },
+  "user_id": "12265",
+  "name": "Niagara Falls (IAG)",
+  "user": "IAG",
+  "password": "$2b$12$oscsxBQrjyW1ANtQVjmSFOnCUGyk6FxxoprMwHhePHiSqQAEfM0lC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109c1ea51884390471fc"
+  },
+  "user_id": "12223",
+  "name": "Ashland (HTS)",
+  "user": "HTS",
+  "password": "$2b$12$TmESw./W3OoDOqdGJ/PDTeosl5FDdFMDATKLBQ5mjgg/bql8sHXuK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109c1ea51884390471fd"
+  },
+  "user_id": "11150",
+  "name": "Columbus (CSG)",
+  "user": "CSG",
+  "password": "$2b$12$1hRdWGDak6F.tejCQtpFYuW36lQCqnNvlbjyAmsu7y.YE00mHetH2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109d1ea51884390471fe"
+  },
+  "user_id": "14252",
+  "name": "Pasco/Kennewick/Richland (PSC)",
+  "user": "PSC",
+  "password": "$2b$12$NAmeu5dBftTSTxwzoeI4rueVeoPsT7yTdqVqbEvHd9XsdKnG.Qd32",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109d1ea51884390471ff"
+  },
+  "user_id": "15919",
+  "name": "Fayetteville (XNA)",
+  "user": "XNA",
+  "password": "$2b$12$jUWPqfccAjoh1d/QuFHdbevnN2pdVwqvQpSB6fyEP2gtwf9zA83yC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109e1ea5188439047200"
+  },
+  "user_id": "12007",
+  "name": "Columbus (GTR)",
+  "user": "GTR",
+  "password": "$2b$12$AZFA29AAjP6.MxcNCYBQsejtLg9hwXi57pnKU7rAJLRh2GBPQrNwy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109e1ea5188439047201"
+  },
+  "user_id": "14303",
+  "name": "Pullman (PUW)",
+  "user": "PUW",
+  "password": "$2b$12$6doh6t2aboa61GXXFf5v2.GUe7P.swqjmte7RXG0oU392oHWyjpn6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109f1ea5188439047202"
+  },
+  "user_id": "14524",
+  "name": "Richmond (RIC)",
+  "user": "RIC",
+  "password": "$2b$12$TurQg8b2i16JTdPd3s3hQOK6cTiDoiIGrax2ZlJKzVYk8iRjAndCa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "6411109f1ea5188439047203"
+  },
+  "user_id": "15582",
+  "name": "Vernal (VEL)",
+  "user": "VEL",
+  "password": "$2b$12$qEM5LHfb68pqr1UCqzQ1W.85ruwFk2F7V81I.2ruVopATnp467/8y",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a01ea5188439047204"
+  },
+  "user_id": "14709",
+  "name": "Deadhorse (SCC)",
+  "user": "SCC",
+  "password": "$2b$12$HcdlNiwwj0mwxrDgCwkHwempMfMiaaJCMOp0KjnwBqAlPfitqdHVi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a01ea5188439047205"
+  },
+  "user_id": "13487",
+  "name": "Minneapolis (MSP)",
+  "user": "MSP",
+  "password": "$2b$12$quRwwo4InGHUiUN5sn1lcup7yVWaWx.jncEim1jEcgfhyL54lvQ5e",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a11ea5188439047206"
+  },
+  "user_id": "14457",
+  "name": "Rapid City (RAP)",
+  "user": "RAP",
+  "password": "$2b$12$Un4ZuMM.WkYNKXsnQKWlZO6YAD7nVXkbWvNsZiwUJYUqubk9L8Plq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a11ea5188439047207"
+  },
+  "user_id": "13296",
+  "name": "Manchester (MHT)",
+  "user": "MHT",
+  "password": "$2b$12$4/QA9jUiXNfUSQ0vHEzINOSwJ4l/2jV/EszIcCqxp//QLYPjRPgR2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a21ea5188439047208"
+  },
+  "user_id": "14150",
+  "name": "Pellston (PLN)",
+  "user": "PLN",
+  "password": "$2b$12$uWnG0hNReD/l8NQBPAbNre5x7lLuZeluUobEwteqd9bPZFDVnX86u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a21ea5188439047209"
+  },
+  "user_id": "13367",
+  "name": "Moline (MLI)",
+  "user": "MLI",
+  "password": "$2b$12$eOfK0vqq.wcnlh7sx3dfx.b/eAmGdIPwXe5t57hv9wtQsg8eApJXO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a31ea518843904720a"
+  },
+  "user_id": "10754",
+  "name": "Barrow (BRW)",
+  "user": "BRW",
+  "password": "$2b$12$/LgahcU3PxYtnurnGdl07eeg5enxNOfcJgDE1Iez6nzVOKkFks6MG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a31ea518843904720b"
+  },
+  "user_id": "10529",
+  "name": "Hartford (BDL)",
+  "user": "BDL",
+  "password": "$2b$12$pVt59uitrFMZnwzVO5WQye/CnbxAfmwQVG3E/mz/iww7/2m6Lfr7u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a41ea518843904720c"
+  },
+  "user_id": "12094",
+  "name": "Hayden (HDN)",
+  "user": "HDN",
+  "password": "$2b$12$jzU.u.ACdJ.NS5l7Js9kQOSPtq9uIiR0Pge6MhWJaRIRdzSxyE9Xe",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a51ea518843904720d"
+  },
+  "user_id": "12244",
+  "name": "New Haven (HVN)",
+  "user": "HVN",
+  "password": "$2b$12$5g3aN8n0gj.JWDuQD/Dsgezy8fou.qe3S4moRKYXY81cc9HinwFVm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a51ea518843904720e"
+  },
+  "user_id": "10558",
+  "name": "Scottsbluff (BFF)",
+  "user": "BFF",
+  "password": "$2b$12$XlmgfZ75mS7SrmBwrPtureKL9YifibAaOjD1PZs1.bXOf3YZPkmS.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a61ea518843904720f"
+  },
+  "user_id": "13360",
+  "name": "Melbourne (MLB)",
+  "user": "MLB",
+  "password": "$2b$12$bVjNV5NUVsVi1HEmmLYRz.SwUKJwguG.rGzgT8VGChFRdN7uir3tu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a61ea5188439047210"
+  },
+  "user_id": "14588",
+  "name": "Roswell (ROW)",
+  "user": "ROW",
+  "password": "$2b$12$zApI1KTpCSAnTCIJqH7DoOKg.crPNHyroG8XcVmFBZRcThLUXi68u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a71ea5188439047211"
+  },
+  "user_id": "11292",
+  "name": "Denver (DEN)",
+  "user": "DEN",
+  "password": "$2b$12$ayt6BBuy5MHZmYHK9/Gv0.Jh4/mu4iOyy70WuF5OLaCeMCtUv6djm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a71ea5188439047212"
+  },
+  "user_id": "11468",
+  "name": "Kearney (EAR)",
+  "user": "EAR",
+  "password": "$2b$12$j4Jsd2T9gsafhDmXP9MkQ.ATGdBhbc/hLQEZxDHrF1cUj84Vy1OXa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a81ea5188439047213"
+  },
+  "user_id": "12899",
+  "name": "North Platte (LBF)",
+  "user": "LBF",
+  "password": "$2b$12$xg14G2NYvk0eCTcNyd23Q.L9.d9BtPM1IRd555maOThTyZUF25u5.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a81ea5188439047214"
+  },
+  "user_id": "16218",
+  "name": "Yuma (YUM)",
+  "user": "YUM",
+  "password": "$2b$12$PvML5/FfOmi31CyCvpUHveubx04r9KBM1ekiUaTLWQmLwHQJNn0Pi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a91ea5188439047215"
+  },
+  "user_id": "12173",
+  "name": "Honolulu (HNL)",
+  "user": "HNL",
+  "password": "$2b$12$.hhMde2ax61YjEslEfbwGuXtyqnxDvBHEHOQzxZ5UztIHE9M.5Lv.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110a91ea5188439047216"
+  },
+  "user_id": "14321",
+  "name": "Portland (PWM)",
+  "user": "PWM",
+  "password": "$2b$12$XjE/24Kb2oLX.bdbmatdUeqWEoV8My3SVMYWcJ9Y5owkByjYuQ5.q",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110aa1ea5188439047217"
+  },
+  "user_id": "10627",
+  "name": "Bismarck/Mandan (BIS)",
+  "user": "BIS",
+  "password": "$2b$12$rBMeHtu4/Ellp7l3qQ.ozOWLyCivl2dny6KKu5iMTS.dm1KRODeCW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110aa1ea5188439047218"
+  },
+  "user_id": "10599",
+  "name": "Birmingham (BHM)",
+  "user": "BHM",
+  "password": "$2b$12$agIUgQlFjHarVuizrRArzORcceGyU3mmnZq8BA7.ApnikkkQso6HG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ab1ea5188439047219"
+  },
+  "user_id": "12191",
+  "name": "Houston (HOU)",
+  "user": "HOU",
+  "password": "$2b$12$wKrg97rhlxc5.Y/IiGd2H.JEJu2BE0pz7X7OE/rMKpcdIcMfMwcju",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ab1ea518843904721a"
+  },
+  "user_id": "12197",
+  "name": "White Plains (HPN)",
+  "user": "HPN",
+  "password": "$2b$12$5QWZCatb13GGkOSeMsmusOVQntWu0vOa7RWLqEKnDnhIF9C4.l3EC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ac1ea518843904721b"
+  },
+  "user_id": "11433",
+  "name": "Detroit (DTW)",
+  "user": "DTW",
+  "password": "$2b$12$14Ghi16xnEmjx6GYPdN.Yub.VCZB9u2uI8cwyv6wsyCDo3dJ5nRCG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ac1ea518843904721c"
+  },
+  "user_id": "11603",
+  "name": "Eugene (EUG)",
+  "user": "EUG",
+  "password": "$2b$12$yGZB/AzW/c./7pG.gh0itOWBAT2tVRO.uxdET3q0/F2hOnCTJcgP6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ad1ea518843904721d"
+  },
+  "user_id": "11066",
+  "name": "Columbus (CMH)",
+  "user": "CMH",
+  "password": "$2b$12$eYVP2H3oLVigbhS8aUp07.5h/WshSKp9F2k3lGqHErJkaf3EF6Phm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ae1ea518843904721e"
+  },
+  "user_id": "10272",
+  "name": "Alamosa (ALS)",
+  "user": "ALS",
+  "password": "$2b$12$sahV4CiavuCYXcnkq/4rd.jjsPuD.akqM7nagB6mrXjPMhEZKi1EO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ae1ea518843904721f"
+  },
+  "user_id": "10581",
+  "name": "Bangor (BGR)",
+  "user": "BGR",
+  "password": "$2b$12$jmPtCZf5seC7Smx2YHVJ8eOTXpaOqhwIdugCkRiOFQr0GjFcfXRtO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110af1ea5188439047220"
+  },
+  "user_id": "14288",
+  "name": "Pueblo (PUB)",
+  "user": "PUB",
+  "password": "$2b$12$O1hUu5/80ixD8WTOYm8EcO39/4E/hp1f9Km3h4ADkyyysv9kFIz3O",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110af1ea5188439047221"
+  },
+  "user_id": "11624",
+  "name": "Key West (EYW)",
+  "user": "EYW",
+  "password": "$2b$12$hilYhUwGUxPGKP30CtnmLuoPsn2zApIPIv4BuQ6Jo3IUT1wNj5/7C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b01ea5188439047222"
+  },
+  "user_id": "15607",
+  "name": "Valdosta (VLD)",
+  "user": "VLD",
+  "password": "$2b$12$TxTBnFntRx3LQl7/CaXLs.s6BJvgfuHEUbqmyL2pCWbfkSWJlDB0G",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b01ea5188439047223"
+  },
+  "user_id": "12217",
+  "name": "Huntsville (HSV)",
+  "user": "HSV",
+  "password": "$2b$12$rEbjRgeBQVROYlX4lmlvOeKeNvKi8ASpiqcP0qNhGcIlC.nzLMi06",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b11ea5188439047224"
+  },
+  "user_id": "10146",
+  "name": "Albany (ABY)",
+  "user": "ABY",
+  "password": "$2b$12$geHjeR7Acql2hcOs1lUnQO2dEIZbArKLDFfUMAFuiwl5oTEnJyiUq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b11ea5188439047225"
+  },
+  "user_id": "11278",
+  "name": "Washington (DCA)",
+  "user": "DCA",
+  "password": "$2b$12$uZEmPADlpjPSWI1jht0ZwOSf4TCST6IWMkCEho11HX5aW2CgLkx4C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b21ea5188439047226"
+  },
+  "user_id": "11695",
+  "name": "Flagstaff (FLG)",
+  "user": "FLG",
+  "password": "$2b$12$dwHXLeImSzn6LHa0Hc.lueIMRhjeLvDRV4VkoknrXqRfAVyLa/MH2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b21ea5188439047227"
+  },
+  "user_id": "11898",
+  "name": "Grand Forks (GFK)",
+  "user": "GFK",
+  "password": "$2b$12$gHKRsSZFt9YNls6Qe0zpnOEI2w5fOrAc21QoYmtGSIGIAMOZEbwBm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b31ea5188439047228"
+  },
+  "user_id": "12335",
+  "name": "Iron Mountain/Kingsfd (IMT)",
+  "user": "IMT",
+  "password": "$2b$12$wfUcFDnUsnkFpCrzLJ5qguk2TUPRBy0k.L8PjILadJEwJv.vPU0C2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b31ea5188439047229"
+  },
+  "user_id": "12391",
+  "name": "Islip (ISP)",
+  "user": "ISP",
+  "password": "$2b$12$SUVdk4S4wHTOecJoX33mPu86bl08ZB.awv7/v62i6YPVKZzVUdVbu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b41ea518843904722a"
+  },
+  "user_id": "14113",
+  "name": "Pocatello (PIH)",
+  "user": "PIH",
+  "password": "$2b$12$J90axUwosObJnoVK.Cjd6OiIAtlxeFvQSSEHtsAtDqWzRw5L1aKV2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b41ea518843904722b"
+  },
+  "user_id": "10731",
+  "name": "Brunswick (BQK)",
+  "user": "BQK",
+  "password": "$2b$12$H1bzilYvdTkimOR3IrQGlerohYO3yK37T8IUF.zPJPa7EPadgxn16",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b51ea518843904722c"
+  },
+  "user_id": "11415",
+  "name": "Del Rio (DRT)",
+  "user": "DRT",
+  "password": "$2b$12$YDtUtdMwwL68AAsJSASfmONrCoTev9KhCE5/01qXlYIqSMkhLkdZ2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b51ea518843904722d"
+  },
+  "user_id": "13230",
+  "name": "Harrisburg (MDT)",
+  "user": "MDT",
+  "password": "$2b$12$HmS1ldOkEM9SIT9O/KF2Dupd5Mk0NOyemTZFMsZaqae.2cz5zxloi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b61ea518843904722e"
+  },
+  "user_id": "13796",
+  "name": "Oakland (OAK)",
+  "user": "OAK",
+  "password": "$2b$12$D5NLOjYVOtD970Sqq3/5vunYzk4ZUYtRZ0EctAa7qTf0ktEKMYoei",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b61ea518843904722f"
+  },
+  "user_id": "13486",
+  "name": "Missoula (MSO)",
+  "user": "MSO",
+  "password": "$2b$12$G75yK/eC5v3CTAJF/jtRz.WnUNqM6w6FuYkuEVb7e5780euyGvg6m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b71ea5188439047230"
+  },
+  "user_id": "11778",
+  "name": "Fort Smith (FSM)",
+  "user": "FSM",
+  "password": "$2b$12$wW55pqds43vb78mG78lN7eo.WxJtb7ZYnPtgw8SSOB2e65RwRMIWO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b71ea5188439047231"
+  },
+  "user_id": "14512",
+  "name": "Rockford (RFD)",
+  "user": "RFD",
+  "password": "$2b$12$hj58A9JH0MpOc.nswJMVD.3Rs6nuJrFA12Um/wL8YL0UrILZdLW26",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b81ea5188439047232"
+  },
+  "user_id": "11537",
+  "name": "Elmira/Corning (ELM)",
+  "user": "ELM",
+  "password": "$2b$12$YNcMTu87akdvmNAR63tcLOjK33drnpDdToK3Xk0NZsacK1JH9vLSK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b81ea5188439047233"
+  },
+  "user_id": "11641",
+  "name": "Fayetteville (FAY)",
+  "user": "FAY",
+  "password": "$2b$12$MKQxbIBP1ndk1JupZzXOYOZ9tI11FquUawYN2i3WUpv5OCpbNjFkm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b91ea5188439047234"
+  },
+  "user_id": "11638",
+  "name": "Fresno (FAT)",
+  "user": "FAT",
+  "password": "$2b$12$7leIaJ99btw7SLhrs3wSu.LoDJX9L1TXXuowvShifsdTmKg.fDFSi",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110b91ea5188439047235"
+  },
+  "user_id": "11977",
+  "name": "Green Bay (GRB)",
+  "user": "GRB",
+  "password": "$2b$12$5r5DTHaD.3AwNWDuVwT75.OZBWV.TDz9DyaE1k4Ijc1IFSBXLYOvO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ba1ea5188439047236"
+  },
+  "user_id": "13873",
+  "name": "Nome (OME)",
+  "user": "OME",
+  "password": "$2b$12$3teBm/xgkK.D2dIvTHMyAe39I5O1yxB7X4oeU9aqnrX0KkK2wp3IK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ba1ea5188439047237"
+  },
+  "user_id": "10257",
+  "name": "Albany (ALB)",
+  "user": "ALB",
+  "password": "$2b$12$Tq8JjPy5BBqKP.nGjN9Nt.Cv1aevpWX3xdWAcnksgTvbe.lKcosdK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bb1ea5188439047238"
+  },
+  "user_id": "12397",
+  "name": "Ithaca/Cortland (ITH)",
+  "user": "ITH",
+  "password": "$2b$12$OWWj8uV98X9NORPlBfxt3ezHPKRzjGX8vehcQDjjGrwKmmAaZYLey",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bb1ea5188439047239"
+  },
+  "user_id": "11423",
+  "name": "Des Moines (DSM)",
+  "user": "DSM",
+  "password": "$2b$12$WzB8G7MAzeUq3cUqmGVTsugIu4zp8WZQqqfRIZbWQvczRsADzo7ee",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bc1ea518843904723a"
+  },
+  "user_id": "10781",
+  "name": "Baton Rouge (BTR)",
+  "user": "BTR",
+  "password": "$2b$12$p3BRDGBcrzWmVMsU3C0Ah.7H6VIXmqSM7booJhppWI6DZLIz/ey/K",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bc1ea518843904723b"
+  },
+  "user_id": "14082",
+  "name": "Punta Gorda (PGD)",
+  "user": "PGD",
+  "password": "$2b$12$Ml1c0ZHSFlQ4IPd9YBRvoemijS8US5I0LyrnXGBRUMJ9H6kIMbfvq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bd1ea518843904723c"
+  },
+  "user_id": "13577",
+  "name": "Myrtle Beach (MYR)",
+  "user": "MYR",
+  "password": "$2b$12$Q6ozle65oM87e5FsvG1pSeAQMTkGAYmK3iWtEAeT000lBHs34H7Tq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bd1ea518843904723d"
+  },
+  "user_id": "15991",
+  "name": "Yakutat (YAK)",
+  "user": "YAK",
+  "password": "$2b$12$CSO9Xkv12UHXflJnvK5WKOelp0NG/PU04mdc2dr4sLP1IXZdqn/bS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110be1ea518843904723e"
+  },
+  "user_id": "10990",
+  "name": "Charlottesville (CHO)",
+  "user": "CHO",
+  "password": "$2b$12$VvdeVFoaZ.aVLAFdb5oODuCSBVgXcugWT/jGtcVXAS/Mt.K9jNLzO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bf1ea518843904723f"
+  },
+  "user_id": "14893",
+  "name": "Sacramento (SMF)",
+  "user": "SMF",
+  "password": "$2b$12$eEegQ2EJGwdHHNwR8WL3IOeh4CkyiYlTCmXySovI.GTZnCOjGNV.2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110bf1ea5188439047240"
+  },
+  "user_id": "11618",
+  "name": "Newark (EWR)",
+  "user": "EWR",
+  "password": "$2b$12$eTpKXUW90Q1Q3AwL72mOjOHAXEtKo/RdrZOoUE.qdq7fOK5k8c85e",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c01ea5188439047241"
+  },
+  "user_id": "13211",
+  "name": "Mason City (MCW)",
+  "user": "MCW",
+  "password": "$2b$12$Gl/x1.i7gOYt.WaY4R8B1eZWzupvPBXjgcoLW9Wv5cspBJ57yL7c2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c01ea5188439047242"
+  },
+  "user_id": "13121",
+  "name": "Lewisburg (LWB)",
+  "user": "LWB",
+  "password": "$2b$12$GtYrWQKHxQVuuNpgXkHzKeNIJN7NP26HxDtbmzPaUcnyfHPYudy66",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c11ea5188439047243"
+  },
+  "user_id": "11413",
+  "name": "Durango (DRO)",
+  "user": "DRO",
+  "password": "$2b$12$fworBUc.uCihUyAL4ODJk.riis4GFwrM3guAbgQZpu7abXty/zBrS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c11ea5188439047244"
+  },
+  "user_id": "14698",
+  "name": "San Luis Obispo (SBP)",
+  "user": "SBP",
+  "password": "$2b$12$YocBa2x2HjPDU706qLARGOMLgVmbmNIXDJ59k0KIZjGOCLDBkJm9C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c21ea5188439047245"
+  },
+  "user_id": "15376",
+  "name": "Tucson (TUS)",
+  "user": "TUS",
+  "password": "$2b$12$4fsx/6bM0DLz0uMgZyf3T.AEa4XQSQYI9Je/f.tOgs5t7M//bpbAW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c21ea5188439047246"
+  },
+  "user_id": "14057",
+  "name": "Portland (PDX)",
+  "user": "PDX",
+  "password": "$2b$12$JU7uccDmuhYFIGhEhhLAYuH7LJ8qNaJykRyeVb.ZAmx9hkd.MhgMm",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c31ea5188439047247"
+  },
+  "user_id": "12012",
+  "name": "Gunnison (GUC)",
+  "user": "GUC",
+  "password": "$2b$12$fJHUUVZVdhykhH22fkFnhONr8mBUbR6v8u3norVqSLkBceO6SqWAS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c31ea5188439047248"
+  },
+  "user_id": "11097",
+  "name": "Cody (COD)",
+  "user": "COD",
+  "password": "$2b$12$T/S9y12z2a37SZrzT3OKkex33eEepMu38etgCwfUawNgmJQdqzAMu",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c41ea5188439047249"
+  },
+  "user_id": "11013",
+  "name": "Sault Ste. Marie (CIU)",
+  "user": "CIU",
+  "password": "$2b$12$K2VtEjyHT2Lrxz/43S2bU.JCSe8NbWPfHvZm078rw..l9uGQNJa0u",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c41ea518843904724a"
+  },
+  "user_id": "12119",
+  "name": "Hagerstown (HGR)",
+  "user": "HGR",
+  "password": "$2b$12$4eou5vKbdGLIC1JEj09m6OhM4mTMTNhcPmb7oRMQp/7ow2QskoEYG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c51ea518843904724b"
+  },
+  "user_id": "14259",
+  "name": "Portsmouth (PSM)",
+  "user": "PSM",
+  "password": "$2b$12$51qVblQXt8jxw9J5YQvpoeJ5P257KlRvU9uSiWWrCnn/Cz7MkD166",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c51ea518843904724c"
+  },
+  "user_id": "10926",
+  "name": "Cordova (CDV)",
+  "user": "CDV",
+  "password": "$2b$12$7K0cg3.3T6hSP6eApWNyn.0DsRo6kYEk5u.ClW2BiC0PQ2QhoRHuO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c61ea518843904724d"
+  },
+  "user_id": "13970",
+  "name": "Kotzebue (OTZ)",
+  "user": "OTZ",
+  "password": "$2b$12$Tij7Q8ITcNgifRKQrxGLYOywpPY555gmWOUyvgWAfNFTKf6rAwspW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c61ea518843904724e"
+  },
+  "user_id": "11905",
+  "name": "Longview (GGG)",
+  "user": "GGG",
+  "password": "$2b$12$ZLHvVHnFj1BcoVhxij.HiOKhp8O7RcFRVo8WFLojwRTGuQsRRZmhW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c71ea518843904724f"
+  },
+  "user_id": "12992",
+  "name": "Little Rock (LIT)",
+  "user": "LIT",
+  "password": "$2b$12$5WnNzX26mKBTezO9VymVWulySnfeE4I0Hok/UrxK6.TTbSiaauyCG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c71ea5188439047250"
+  },
+  "user_id": "13029",
+  "name": "Lincoln (LNK)",
+  "user": "LNK",
+  "password": "$2b$12$4ktt9EemVV.7ZusIW7OkdepaMvKau8t/duZ3ir05ungCjzW/u2l4m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c81ea5188439047251"
+  },
+  "user_id": "10577",
+  "name": "Binghamton (BGM)",
+  "user": "BGM",
+  "password": "$2b$12$seaB/AnjSDYxvik61GVfjeU8jkJ7Bn4dgA7MeKpOF0nlGX3U73.dW",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c81ea5188439047252"
+  },
+  "user_id": "12402",
+  "name": "Hilo (ITO)",
+  "user": "ITO",
+  "password": "$2b$12$WcEL7xJGMCb0pyuFSTaz1.CmrCb/NrUr7BhkkgLrrkU6NSWkfWGHa",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c91ea5188439047253"
+  },
+  "user_id": "12819",
+  "name": "Ketchikan (KTN)",
+  "user": "KTN",
+  "password": "$2b$12$ws7wXCQ5.Fp8dZ9dOPuOhOtMmBwTYPDG0zlS/XFtzZUjMPK74iNES",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110c91ea5188439047254"
+  },
+  "user_id": "13931",
+  "name": "Norfolk (ORF)",
+  "user": "ORF",
+  "password": "$2b$12$wQ9FyY5w5.t7ETbSOrddiezxuVvPJ5MV8v.ya31Oj0RFl/93jEK.a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ca1ea5188439047255"
+  },
+  "user_id": "12511",
+  "name": "Joplin (JLN)",
+  "user": "JLN",
+  "password": "$2b$12$pGlsTkA1yR3Q0Toz8kAxdO8p2Xi9gh4EdFJfcJiIaP12Cd9EohQMC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ca1ea5188439047256"
+  },
+  "user_id": "10279",
+  "name": "Amarillo (AMA)",
+  "user": "AMA",
+  "password": "$2b$12$SsCmUwAImYUqDLxJXAlSX.u705MRokzRbKb.i1BeoazaaTX/XS3pq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cb1ea5188439047257"
+  },
+  "user_id": "15356",
+  "name": "Trenton (TTN)",
+  "user": "TTN",
+  "password": "$2b$12$pYO8zwXz6IIzQ8AZklz0tekcwxbMqlZ1LDVUfDeq0.UtHmCZtJ0kO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cb1ea5188439047258"
+  },
+  "user_id": "10140",
+  "name": "Albuquerque (ABQ)",
+  "user": "ABQ",
+  "password": "$2b$12$N/RlWQNZvE3bHxksubOQEODFNnACa/BCSdJ0L5B78mLUTd/eaOZXK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cc1ea5188439047259"
+  },
+  "user_id": "13244",
+  "name": "Memphis (MEM)",
+  "user": "MEM",
+  "password": "$2b$12$KZaaQOSIfMLN1jWDs9eGsuw5U3L6g2khq6C2mzBTXnGJ8EzKGHESO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cc1ea518843904725a"
+  },
+  "user_id": "10779",
+  "name": "Butte (BTM)",
+  "user": "BTM",
+  "password": "$2b$12$1EhiorP.Xn/SGcrs8QMINe5EjIsUtFm35h3iIPQ2YI/rdBRS5jP.W",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cd1ea518843904725b"
+  },
+  "user_id": "11697",
+  "name": "Fort Lauderdale (FLL)",
+  "user": "FLL",
+  "password": "$2b$12$avlRwDb/fS3dvsBjd9dkDe6Ocu5uT8VvghBQznOg77fOO0VSW2FPy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ce1ea518843904725c"
+  },
+  "user_id": "14004",
+  "name": "Everett (PAE)",
+  "user": "PAE",
+  "password": "$2b$12$9Hs20nvQ9dt/rffmwkj2reNmPH7mLz88UVYZ028yfsaQOUgP94pEC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110ce1ea518843904725d"
+  },
+  "user_id": "12892",
+  "name": "Los Angeles (LAX)",
+  "user": "LAX",
+  "password": "$2b$12$hqRIHZ8NwSJXdUVwZpk/aO1aYidrLFK7rdoNlCXBVeskHAaHNNi9i",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cf1ea518843904725e"
+  },
+  "user_id": "11092",
+  "name": "Moab (CNY)",
+  "user": "CNY",
+  "password": "$2b$12$ekk3.pqwfJcshXca49AKZOvdCSAGqycUQgu2Ew2hmkJKKppp48NRy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110cf1ea518843904725f"
+  },
+  "user_id": "11953",
+  "name": "Gainesville (GNV)",
+  "user": "GNV",
+  "password": "$2b$12$P8CvnIImYb4ttV0C7y5i9uUdu.BD0u5iYKpOHlP6QEPP7Dlah1C0i",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d01ea5188439047260"
+  },
+  "user_id": "14794",
+  "name": "St. George (SGU)",
+  "user": "SGU",
+  "password": "$2b$12$QBypdfk8RZEWpUfFQaOiqOCTgxq1ZrEh/KEV8SuxopwSnBuZpstUq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d01ea5188439047261"
+  },
+  "user_id": "16101",
+  "name": "Yakima (YKM)",
+  "user": "YKM",
+  "password": "$2b$12$vYdJjFjXKXsgFUKujpTXh.enrOr1mUVjw8ta4MIFdHi37wGSyNrWG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d11ea5188439047262"
+  },
+  "user_id": "11140",
+  "name": "Corpus Christi (CRP)",
+  "user": "CRP",
+  "password": "$2b$12$zTr7GlDci1NB7Nd/xnoE2OoB59nYrqkCq.9WzkF1j8rwkVAzQFZqK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d11ea5188439047263"
+  },
+  "user_id": "10631",
+  "name": "Bemidji (BJI)",
+  "user": "BJI",
+  "password": "$2b$12$pHAqnZHXAZfIHWoTNQjyveQSGJ42Eum18yK3p9cWhnGTF/CXxGHr6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d21ea5188439047264"
+  },
+  "user_id": "12448",
+  "name": "Jackson/Vicksburg (JAN)",
+  "user": "JAN",
+  "password": "$2b$12$E4x548HaiT/MuhBb1z8K6.nt6MJQTvbAk0JjjDt2HmTPxw/.jk77W",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d31ea5188439047265"
+  },
+  "user_id": "10275",
+  "name": "Walla Walla (ALW)",
+  "user": "ALW",
+  "password": "$2b$12$8HFZ6GkWNGABLM1b3yHFkOs7/vEZoeK0YN2YeqwjYjxb5VzocV.2a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d31ea5188439047266"
+  },
+  "user_id": "12323",
+  "name": "Wilmington (ILM)",
+  "user": "ILM",
+  "password": "$2b$12$.bOJEwcfk2JSdREjgM2UBuk/z32erXKS7utX4nOJWeBfdfX4F1DFy",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d41ea5188439047267"
+  },
+  "user_id": "13232",
+  "name": "Chicago (MDW)",
+  "user": "MDW",
+  "password": "$2b$12$noQv.Paasi5TZVitEkQ3ze2vHeWHw6id/zEYbkWtCbFwTJENmtqG6",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d41ea5188439047268"
+  },
+  "user_id": "11193",
+  "name": "Cincinnati (CVG)",
+  "user": "CVG",
+  "password": "$2b$12$.YfWn9oosqhPYvX4HKNRnuxg.isLMdnSOyHx8rvL4Rt7xBnKxlfJG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d51ea5188439047269"
+  },
+  "user_id": "10372",
+  "name": "Aspen (ASE)",
+  "user": "ASE",
+  "password": "$2b$12$v5GjIFXSu3mBTqYTBjH4hOPojh19ieQd/zJT3TB8H0.B2tpQgaUFS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d51ea518843904726a"
+  },
+  "user_id": "10431",
+  "name": "Asheville (AVL)",
+  "user": "AVL",
+  "password": "$2b$12$.urC0y2kptRDrIe9gPxDaeQTObgovzx.D4czUYBqSy6x9mPNBxFeS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d61ea518843904726b"
+  },
+  "user_id": "10155",
+  "name": "Waco (ACT)",
+  "user": "ACT",
+  "password": "$2b$12$IV4l1pTKP3DWjHTgqJFFKeri20VE8UBh4YC43MBP8iuD6vc7D4fwK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d61ea518843904726c"
+  },
+  "user_id": "14747",
+  "name": "Seattle (SEA)",
+  "user": "SEA",
+  "password": "$2b$12$hwWV74zio.5iqJhAwJFbTuV4U0IbLAhTFlz2/feYKhvOt193fFyga",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d71ea518843904726d"
+  },
+  "user_id": "10785",
+  "name": "Burlington (BTV)",
+  "user": "BTV",
+  "password": "$2b$12$HzhwwzbCq10XVTL3cgJ4v.o.DNYe5Pr7bpKJ8A9XOcO7qixERgJ7e",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d71ea518843904726e"
+  },
+  "user_id": "11233",
+  "name": "Cheyenne (CYS)",
+  "user": "CYS",
+  "password": "$2b$12$Tr3LLsM.WwCtbpQ8cdc4fu.qNkfL3N015gYhGXlcStwtRHf2JB4/y",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d81ea518843904726f"
+  },
+  "user_id": "10551",
+  "name": "Bethel (BET)",
+  "user": "BET",
+  "password": "$2b$12$LdOxuljTh/H0Z7Afzwtz4O5j1srMQcaQ2lhsxdkHTZLFg29wc3Lma",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d81ea5188439047270"
+  },
+  "user_id": "14761",
+  "name": "Sanford (SFB)",
+  "user": "SFB",
+  "password": "$2b$12$KKh6e0nZ9SDWVSb0DphN0OreNOliiurypj0Om6CqK0HKQImr/qh3K",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d91ea5188439047271"
+  },
+  "user_id": "15024",
+  "name": "Charlotte Amalie (STT)",
+  "user": "STT",
+  "password": "$2b$12$E6mlzZJjhoANrDnQQSLkW.SZiuup0HpihDdbDpMOVWq6zAecOfQeG",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110d91ea5188439047272"
+  },
+  "user_id": "11447",
+  "name": "Devils Lake (DVL)",
+  "user": "DVL",
+  "password": "$2b$12$gsEdfNkcKIY53ctOQoPFC.np0LGPtLqw5ZURSjZoeXRRAqcmIMIia",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110da1ea5188439047273"
+  },
+  "user_id": "14262",
+  "name": "Palm Springs (PSP)",
+  "user": "PSP",
+  "password": "$2b$12$//O9iuc.SiK8ROLqujg/YeZw/FMeJVE.1hq3EYtpQY3OlKb3nn90C",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110da1ea5188439047274"
+  },
+  "user_id": "14730",
+  "name": "Louisville (SDF)",
+  "user": "SDF",
+  "password": "$2b$12$iSsd7eyyW7rQRlaeS.xiXehTkG80v90tupCSrlwxJ9XliGdXP8V7m",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110db1ea5188439047275"
+  },
+  "user_id": "10918",
+  "name": "Cedar City (CDC)",
+  "user": "CDC",
+  "password": "$2b$12$mTvfeF.fMMRsGrYL97Bk4O6MhkRgLPmFkWkt/JKjh9mEh3dSadkai",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110db1ea5188439047276"
+  },
+  "user_id": "13342",
+  "name": "Milwaukee (MKE)",
+  "user": "MKE",
+  "password": "$2b$12$SxYccxEslBPkRhlaw2eSP.FjrsIdwr2bCZtcxfJoYKa.zCwW/v/hq",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110dc1ea5188439047277"
+  },
+  "user_id": "14635",
+  "name": "Fort Myers (RSW)",
+  "user": "RSW",
+  "password": "$2b$12$7fFbfjhDmTZV//PbWf9GAuPsQTDpgjPnDgd/rvWsq1S1y75vt/ikS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110dd1ea5188439047278"
+  },
+  "user_id": "14122",
+  "name": "Pittsburgh (PIT)",
+  "user": "PIT",
+  "password": "$2b$12$1k3wi3idVqkBcxG2D5jb0.qJBQRu7Psp1k9suYVbQtsxbLMBnt7qC",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110dd1ea5188439047279"
+  },
+  "user_id": "11973",
+  "name": "Gulfport/Biloxi (GPT)",
+  "user": "GPT",
+  "password": "$2b$12$N/yHWOaMh2qtfjhmofN1veD8Mwy0rhUzmxrz2DoiMWSqoBw5Yir4a",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110de1ea518843904727a"
+  },
+  "user_id": "10469",
+  "name": "Kalamazoo (AZO)",
+  "user": "AZO",
+  "password": "$2b$12$CSZxu1qVGjd6pWx1YkJa3.D60MQzbMImRPNJ2dT95zSzF4vHUmHXK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110de1ea518843904727b"
+  },
+  "user_id": "14107",
+  "name": "Phoenix (PHX)",
+  "user": "PHX",
+  "password": "$2b$12$y4SDw935RpncLyDiW4p.QeSwBOMwG9hjNP5c6BzhncBogmSuuvpN2",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110df1ea518843904727c"
+  },
+  "user_id": "13459",
+  "name": "Marquette (MQT)",
+  "user": "MQT",
+  "password": "$2b$12$VdKZ1pl.v.7onFoiCL22GuOJj8XLLu2GjSwNGZTniBpVSXyA6s9KO",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110df1ea518843904727d"
+  },
+  "user_id": "13422",
+  "name": "Mobile (MOB)",
+  "user": "MOB",
+  "password": "$2b$12$TMtoLkpvwCCN7ZijvxdeSuNwdBFkj3lHQmtoTfVrERLARFHONyGku",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110e01ea518843904727e"
+  },
+  "user_id": "10666",
+  "name": "Bellingham (BLI)",
+  "user": "BLI",
+  "password": "$2b$12$HStNWUuFPJBAE7R5jzP5zuCPotZ/ZUs3Ux13Lh6F5gqbkL9I5fucS",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110e01ea518843904727f"
+  },
+  "user_id": "12982",
+  "name": "Lihue (LIH)",
+  "user": "LIH",
+  "password": "$2b$12$lJ.UjEFNUWgboiFfRIHJKezlnpKTZcNcJlY4MBsN74sYg5c1WpRy.",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110e11ea5188439047280"
+  },
+  "user_id": "11027",
+  "name": "Clarksburg/Fairmont (CKB)",
+  "user": "CKB",
+  "password": "$2b$12$KUPgRkS7tDu50yKmuxDqM./.gA5zh0kNzNFfM/cjQaWMNFeaGAJce",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110e11ea5188439047281"
+  },
+  "user_id": "15249",
+  "name": "Tallahassee (TLH)",
+  "user": "TLH",
+  "password": "$2b$12$Ajd25y5cOm6/KpNZmgF0q.QSoXTNxZe5zBN5S4wUcxu4BrooaPEaK",
+  "type": "airport"
+},{
+  "_id": {
+    "$oid": "641110e21ea5188439047282"
+  },
+  "user_id": "14704",
+  "name": "Salisbury (SBY)",
+  "user": "SBY",
+  "password": "$2b$12$tZqkBcblVsDZGbZIANpvLeVdcLh57s6KlT9WqDciqbTPP/YiGPDvi",
+  "type": "airport"
+}]
