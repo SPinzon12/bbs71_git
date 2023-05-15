@@ -43,11 +43,15 @@ En este punto se establecerán los parámetros necesarios para el funcionamiento
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Dockerfile Haproxy<br>
-![](https://i.imgur.com/dyPZKPA.png)<br>
+![](https://i.imgur.com/3uvJ6LF.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)
 
+#### Dockerfile Mongodb
+
+#### Dockerfile MQTT
+
 ##### Docker-compose
-![](https://i.imgur.com/EmohthG.png)
+![](https://i.imgur.com/r0TJAfZ.png)
 
 ## Paso a Paso
 1. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, luego ejecuta
