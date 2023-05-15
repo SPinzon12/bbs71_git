@@ -43,19 +43,28 @@ En este punto se establecerán los parámetros necesarios para el funcionamiento
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Dockerfile Haproxy<br>
-![](https://i.imgur.com/3uvJ6LF.png)<br>
+![](https://i.imgur.com/cqEJ45D.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)
 
-#### Dockerfile Mongodb
-
-#### Dockerfile MQTT
-
-##### Docker-compose
+#### Docker-compose Mongodb<br>
+![]()<br>
+#### Docker-compose MQTT<br>
+![](https://i.imgur.com/7MxsjlY.png)<br>
+##### Docker-compose del proyecto<br>
 ![](https://i.imgur.com/r0TJAfZ.png)
 
 ## Paso a Paso
-1. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, luego ejecuta
-`docker compose up -d`
+1. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad.
+`docker swarm init --advertise-addr 192.168.100.2`<br>
+`swarm join --token SWMTKN-1-
+4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo
+192.168.100.3:2377`<br>
+
+2. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar<br>
+el siguiente comando:
+`docker stack -c docker-compose.yml bbs71`
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.
+3. Y por ultimo escalamos los servicios que queramos:
+`docker service scale bbs71_app-1=6`
 
 
