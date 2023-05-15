@@ -60,7 +60,7 @@ Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y 
 4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo
 192.168.100.3:2377`<br>
 
-2. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar<br>
+2. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar
 el siguiente comando:<br>
 `docker stack -c docker-compose.yml bbs71`
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
