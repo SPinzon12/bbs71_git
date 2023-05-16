@@ -52,15 +52,15 @@ App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs e
 ##### Haproxy:
 Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
 ![](https://i.imgur.com/r0TJAfZ.png)
-##### Dockerfile app web
+#### Dockerfile app web
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.<br>
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
 
-##### Dockerfile Backend
+#### Dockerfile Backend
 ![](https://i.imgur.com/tbCxBH1.png)<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
-##### Dockerfile Haproxy<br>
+#### Dockerfile Haproxy<br>
 Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, para despues crear el directorio `/run/haproxy` dentro del contenedor. Por ultimo realizamos la copia de dos archivos, uno para la configuracion del haproxy y el otro para una pagina personalizada del error 503.
 ![](https://i.imgur.com/cqEJ45D.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)
