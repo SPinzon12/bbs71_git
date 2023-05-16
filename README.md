@@ -67,7 +67,7 @@ Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra ap
 Este es en definitiva el mismo visto anteriormente en el docker-compose principal, es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, y la cual fue usada para el testeo de la imagen.
 ![]()<br>
 #### Docker-compose MQTT<br>
-MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.
+MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.<br>
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
 ## Paso a Paso
