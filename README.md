@@ -49,6 +49,8 @@ MicroAirlines es el microservicio encargado de gestionar la información relacio
 MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta dedicada unicamente a los aeropuertos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
 ##### App:<br>
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.
+##### Haproxy:
+Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
 ![](https://i.imgur.com/r0TJAfZ.png)
 ##### Dockerfile app web
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.<br>
@@ -59,7 +61,7 @@ En este punto se establecerán los parámetros necesarios para el funcionamiento
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Dockerfile Haproxy<br>
-Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
+Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, para despues crear el directorio `/run/haproxy` dentro del contenedor. Por ultimo realizamos la copia de dos archivos, uno para la configuracion del haproxy y el otro para una pagina personalizada del error 503.
 ![](https://i.imgur.com/cqEJ45D.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)
 
@@ -75,10 +77,8 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 1. Scripts:<br>
 <br>
 2. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad y para ello necesitamos que tengas enciendidas tus dos maquinas virtuales (servidorUbuntu y clienteUbuntu).<br>
-   En servidor:<br>
-   `docker swarm init --advertise-addr 192.168.100.2`<br>
-   En cliente:<br>
-   `swarm join --token SWMTKN-1-
+   En servidor: `docker swarm init --advertise-addr 192.168.100.2`<br>
+   En cliente:  `swarm join --token SWMTKN-1-
 4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo
 192.168.100.3:2377`<br>
 <br>
@@ -96,5 +96,6 @@ este comando creará y ejecutará los contenedores de Docker necesarios para cad
 <br>
 6. Y por ultimo escalamos los servicios que queramos:<br>
 `docker service scale bbs71_app-1=6`
+7. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto ``
 
 
