@@ -34,8 +34,8 @@ Y lo descomprimimos:<br>
 
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
-##### Docker-compose del proyecto<br>
-En el docker compose se definen las imagenes de cada uno de los servicios que se van a usar, para este proyecto utilizamos los siguientes servicios:
+##### Docker-compose principal<br>
+En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
 ##### Mongodb:<br>
 Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
 ##### Apigateway:<br>
@@ -50,36 +50,41 @@ MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta 
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.
 ![](https://i.imgur.com/r0TJAfZ.png)
 ##### Dockerfile app web
-![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.
+![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
 
 ##### Dockerfile Backend
 ![](https://i.imgur.com/tbCxBH1.png)<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Dockerfile Haproxy<br>
-Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas:<br>
+Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
 ![](https://i.imgur.com/cqEJ45D.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)
 
 #### Docker-compose Mongodb<br>
-
+Este es en definitiva el mismo visto anteriormente en el docker-compose principal, es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, y la cual fue usada para el testeo de la imagen.
 ![]()<br>
 #### Docker-compose MQTT<br>
+MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
 ## Paso a Paso
-1. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad.<br>
+A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
+1.Scripts:<br>
+2. Descargaremos el repositorio de Blackbird en nuestra maquina virtual utilizando el siguiente comando:<br>
+`git clone https://github.com/SPinzon12/bbs71_git`<br>
+Luego navegamos a la carpeta '/bbs71_git/bbs71_docker' en donde encontraremos el docker-compose principal junto a las carpetas de cada servicio, cada una con su dockerfile correspondiente.<br>
+3. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad.<br>
 `docker swarm init --advertise-addr 192.168.100.2`<br>
 `swarm join --token SWMTKN-1-
 4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo
 192.168.100.3:2377`<br>
-
-2. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar
+4. Navega hasta el directorio donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar
 el siguiente comando:<br>
 `docker stack -c docker-compose.yml bbs71`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
-3. Y por ultimo escalamos los servicios que queramos:<br>
+5. Y por ultimo escalamos los servicios que queramos:<br>
 `docker service scale bbs71_app-1=6`
 
 
