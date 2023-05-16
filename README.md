@@ -73,7 +73,8 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
 ## Paso a Paso
-A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:
+A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
+1. Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos contruido unos scripts en Python, lo cuales se encargaran de organizar los archivos en sus directorios correspondiendes por nosotros.
 2. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad y para ello necesitamos que tengas enciendidas tus dos maquinas virtuales (servidorUbuntu y clienteUbuntu).<br>
    En servidor: `docker swarm init --advertise-addr 192.168.100.2`<br>
    En cliente:  `swarm join --token SWMTKN-1-
@@ -85,7 +86,7 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 <br>
 4. Abrimos otra termina, nos conectamos servidorUbuntu y descargaremos el repositorio de Blackbird utilizando el siguiente comando:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
-Luego navegamos a la carpeta '/bbs71_git/bbs71_docker' en donde encontraremos el docker-compose principal junto a las carpetas de cada servicio, cada una con su dockerfile correspondiente.<br>
+Luego navegamos a la carpeta `/bbs71_git/bbs71_docker` en donde encontraremos el docker-compose principal junto a las carpetas de cada servicio, cada una con su dockerfile correspondiente.<br>
 `cd /bbs71_git/bbs71_docker`<br>
 <br>
 5. Navega hasta el directorio '/bbs71_git/bbs71_docker' donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar el siguiente comando:<br>
