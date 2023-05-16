@@ -39,9 +39,12 @@ En el docker compose se definen las imagenes de cada uno de los servicios que se
 ##### Mongodb:<br>
 Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
 ##### Apigateway:<br>
-Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos mediante un solo puerto, que en este caso es el puerto 3000.
+Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
 ##### Microuser:<br>
-Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos
+Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos.
+##### MicroAirlines:<br>
+MicroAirlines es el microservicio encargado de gestionar la información relacionada con las aerolíneas y sus tablas de informacion.
+##### MicroAirports:<br>
 ![](https://i.imgur.com/r0TJAfZ.png)
 ##### Dockerfile app
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
