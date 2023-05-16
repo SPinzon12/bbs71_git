@@ -51,7 +51,8 @@ MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta 
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.
 ##### Haproxy:
 Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
-![](https://i.imgur.com/r0TJAfZ.png)
+![](https://i.imgur.com/r0TJAfZ.png)<br>
+<br>
 #### Dockerfile app web
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.<br>
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
