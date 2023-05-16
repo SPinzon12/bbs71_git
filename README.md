@@ -35,6 +35,13 @@ Y lo descomprimimos:<br>
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
 ##### Docker-compose del proyecto<br>
+En el docker compose se definen las imagenes de cada uno de los servicios que se van a usar, para este proyecto utilizamos los siguientes servicios:
+##### Mongodb:<br>
+Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
+##### Apigateway:<br>
+Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos mediante un solo puerto, que en este caso es el puerto 3000.
+##### Microuser:<br>
+Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos
 ![](https://i.imgur.com/r0TJAfZ.png)
 ##### Dockerfile app
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
