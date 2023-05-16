@@ -41,12 +41,15 @@ Es una imagen ya construida y disponible en Docker Hub de la base de datos mongo
 ##### Apigateway:<br>
 Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
 ##### Microuser:<br>
-Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos.
+Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
 ##### MicroAirlines:<br>
-MicroAirlines es el microservicio encargado de gestionar la información relacionada con las aerolíneas y sus tablas de informacion.
+MicroAirlines es el microservicio encargado de gestionar la información relacionada con las aerolíneas y sus tablas de informacion, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
 ##### MicroAirports:<br>
+MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta dedicada unicamente a los aeropuertos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
+##### App:<br>
+App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.
 ![](https://i.imgur.com/r0TJAfZ.png)
-##### Dockerfile app
+##### Dockerfile app web
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.
 
@@ -60,6 +63,7 @@ Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra ap
 ![](https://i.imgur.com/6OHeyR0.png)
 
 #### Docker-compose Mongodb<br>
+
 ![]()<br>
 #### Docker-compose MQTT<br>
 ![](https://i.imgur.com/7MxsjlY.png)<br>
