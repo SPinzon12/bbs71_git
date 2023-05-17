@@ -9,5 +9,6 @@ services:
             - ./mongo/data:/data/db
             - ./flights.json:/json/flights.json
             - ./users.json:/json/users.json
+            - ./db/flight_stats.json:/json/flight_stats
         ports:
             - 27017:27017
