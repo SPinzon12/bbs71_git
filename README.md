@@ -209,5 +209,26 @@ Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark
 `docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
 12. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
+13. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`, con usuario y contraseña `admin`
+14. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
+
+##### Aeropuertos:
+Usuario:<br>
+`BNA`<br>
+Contraseña:<br>
+`10693`<br>
+Usuario:<br>
+`ROA`<br>
+Contraseña:<br>
+`14574`<br>
+#### Aerolineas:
+Usuario:<br>
+`Horizon_Air`<br>
+Constraseña:<br>
+`QX`<br>
+Usuario:<br>
+`Delta_Air`
+Constraseña:<br>
+`DL`<br>
 
 
