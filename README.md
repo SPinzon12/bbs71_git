@@ -181,7 +181,7 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 4. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
 Usaremos vim para visualizarlo:<br>
 `vim bbs71_etl.py`<br>
-Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/root/proyecto/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/root/proyecto/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
+Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/home/vagrant/bbs71-git/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/home/vagrant/bbs71-git/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
 Si todo esta bien, podemos entonces ejecutar el archivo de python:<br>
 `python3 bbs71_etl.py`<br>
 6. Luego en la terminal cmd nro2 de la maquina lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
