@@ -213,22 +213,21 @@ este comando creará y ejecutará los contenedores de Docker necesarios para cad
 14. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
 
 ##### Aeropuertos:
-Usuario:<br>
+1. Usuario:<br>
 `BNA`<br>
 Contraseña:<br>
 `10693`<br>
------------------------------------------------------------
-Usuario:<br>
+
+2. Usuario:<br>
 `ROA`<br>
 Contraseña:<br>
 `14574`<br>
 #### Aerolineas:
-Usuario:<br>
+1. Usuario:<br>
 `Horizon_Air`<br>
 Constraseña:<br>
 `QX`<br>
-------------------------------------------------------------
-Usuario:<br>
+2. Usuario:<br>
 `Delta_Air`
 Constraseña:<br>
 `DL`<br>
