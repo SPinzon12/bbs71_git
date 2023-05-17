@@ -72,11 +72,11 @@ sudo add-apt-repository \
 `sudo apt-get update`<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### DockerCompose:
-Instale DockerCompose:<br>
+1. Instale DockerCompose:<br>
 `sudo apt-get install docker-compose-plugin`<br>
-Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
+2. Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
 `vim ~/.vimrc`<br>
-Agregar la siguiente configuración para trabajar conlos archivos yaml.<br>
+3. Agregar la siguiente configuración para trabajar conlos archivos yaml.<br>
 
 ```
 " Configuracion para trabajar con archivos yaml
@@ -195,12 +195,19 @@ Estos comandos suben los archivos .json especificando el nombre de la base de da
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
 8. Una vez hecho esto ya podemos salir del contenedor con `exit` para despues dirigirnos a la carpeta `/bbs71_docker/mqtt` con el fin de probar el broker de mensajeria, he iniciamos tambien su docker compose:<br>
 `docker compose up -d`<br>
-Una vez hecho este paso, volvemos a la terminal cmd nro1 que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos el paso 4 pero con el archivo `bbs71_stream.py` verificamos las rutas, y si estan bien lo ejecutamos:<br>
-`python3 bbs71_stream.py`<br>
-9. Ya realizado los docker compose up, ahora podemos detener los contenedores de mongo y mqtt con `docker ps` para verlos y `docker stop <id del contenedor>` para detenerlos.<br>
-10. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
+Una vez hecho este paso, volvemos a la terminal cmd nro1 que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos el paso 4 de verificación de rutas pero con el archivo `bbs71_stream.py`.
+9. Despues de esto nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker (en la misma maquina):<br>
+Master:<br>
+`./start-master.sh`<br>
+Worker:<br>
+`./start-worker.sh spark://192.168.100.2:7077`<br>
+Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con ./pyspark y una vez dentro ejecutamos el siguiente comando:<br>
+`./spark-submit --master spark://192.168.100.3:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_stream.py`<br>
+
+10. Ya realizado los docker compose up, ahora podemos detener los contenedores de mongo y mqtt con `docker ps` para verlos y `docker stop <id del contenedor>` para detenerlos.<br>
+11. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
-11. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
+12. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
 
 
