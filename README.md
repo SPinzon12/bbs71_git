@@ -32,6 +32,17 @@ Descargamos el archivo comprimido de Spark:<br>
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
 Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
+### Github y Git LFS
+Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:
+Primero instalamos git:<br> 
+`apt-get install git`<br>
+Luego instalamos git lfs:<br>
+`apt-get install git-lfs`<br>
+### MQTT
+`pip install paho-mqtt`
+### Pip y libreria de pymongo
+`apt-get install pip`
+`pip install pymongo`
 
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
@@ -75,10 +86,22 @@ Este es en definitiva el mismo visto anteriormente en el docker-compose principa
 MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.<br>
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
-## Paso a Paso
+## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
-1. Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos contruido unos scripts en Python, lo cuales se encargaran de organizar los archivos en sus directorios correspondiendes por nosotros.
-2. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad y para ello necesitamos que tengas enciendidas tus dos maquinas virtuales (servidorUbuntu y clienteUbuntu).<br>
+1. Primero sera descargar el respositirio de bbs71:<br>
+`git clone https://github.com/SPinzon12/bbs71_gi`<br>
+Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, lo que haremos sera terminar de descargar el archivo flights.json que es demasiado pesado para git, con el siguiente comando:<br>
+`git lfs pull`<br>
+Luego que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio:<br>
+`docker compose up -d`<br>
+Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
+`docker exec -it <id del contenedor> /bin/bash`<br>
+Y navegamos al directorio `/json` y ejecutamos los siguientes comandos:<br>
+`mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
+`mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
+`mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
+, una vez creada la carpeta podemos para el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
+3. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad y para ello necesitamos que tengas enciendidas tus dos maquinas virtuales (servidorUbuntu y clienteUbuntu).<br>
    En servidor: `docker swarm init --advertise-addr 192.168.100.2`<br>
    En cliente:  `swarm join --token SWMTKN-1-
 4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo
