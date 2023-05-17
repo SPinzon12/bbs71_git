@@ -105,6 +105,9 @@ Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos 
 
 #### 3. /Backend:
 Aqui se encuentrar los 3 microservicios y el apigetway, para la creacion de la imagen de cada uno ellos se uso el mismo dockerfile, pero con una ligera diferencia como algunos parametros y lo mas importante, el puerto por donde salen pero en si tienen la misma estructura:<br>
+#### Dockerfile de los microservicios y apigateway
+![](https://i.imgur.com/tbCxBH1.png)<br>
+Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 #### Apigateway:<br>
 Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
@@ -117,10 +120,6 @@ MicroAirlines es el microservicio encargado de gestionar la información relacio
 
 #### MicroAirports:<br>
 MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta dedicada unicamente a los aeropuertos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.<br>
-
-#### Dockerfile de los microservicios y apigateway
-![](https://i.imgur.com/tbCxBH1.png)<br>
-Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ### 4. /App:
 #### App:<br>
