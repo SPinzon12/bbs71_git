@@ -135,16 +135,20 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
 ## Guia
-A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otra ventana de cmd para realizar algunos pasos a la vez):<br>
+A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otra ventana de cmd en la misma maquina para realizar algunos pasos a la vez):<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
 2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
-4. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Puedo tardar un tiempo cuando se ejecute):
-`python3 bbs71_etl.py`
-6. Luego lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
+4. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
+Usaremos vim para visualizarlo:<br>
+`vim bbs71_etl.py`<br>
+Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/root/proyecto/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/root/proyecto/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
+Si todo esta bien, podemos entonces ejecutar el archivo de python:<br>
+`python3 bbs71_etl.py`<br>
+6. Luego en la segunda terminal cmd de la maquina lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
 `docker compose up -d`<br>
 3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
 `docker exec -it <id del contenedor> /bin/bash`<br>
@@ -153,8 +157,9 @@ Estos comandos suben los archivos .json especificando el nombre de la base de da
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
-4. Una vez hecho esto ya podemos salir del contenedor con `exit` para despues dirigirnos a la carpeta `/bbs71_docker/mqtt` he iniciamos tambien su docker compose:<br>
+4. Una vez hecho esto ya podemos salir del contenedor con `exit` para despues dirigirnos a la carpeta `/bbs71_docker/mqtt` con el fin de probar el broker de mensajeria, he iniciamos tambien su docker compose:<br>
 `docker compose up -d`<br>
+Una vez hecho este paso, volvemos a la terminal cmd nro1 que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos el paso 4 pero con el archivo `bbs71_stream.py`.
 6. Ya realizado los docker compose up, ahora podemos detener los contenedores de mongo y mqtt con `docker ps` para verlos y `docker stop <id del contenedor>` para detenerlos.<br>
 7. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
