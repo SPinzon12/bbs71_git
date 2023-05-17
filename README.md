@@ -47,21 +47,23 @@ Instalamos PIP y PyMongo:<br>
 `pip install pymongo`
 
 ## Configuración
-Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las siguientes subcarpetas:<br> `db` correspondiende a la base de datos de mongodb, `app` donde se encuentra todos los archivos de nuestra aplicacion web, `haproxy` donde esta nuestro balanceador, `mqtt` el broker de mensajeria que usaremos, `a`, dentro de cada u se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
+Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las siguientes subcarpetas: `db` correspondiende a la base de datos de mongodb, `app` donde se encuentra todos los archivos de nuestra aplicacion web, `haproxy` donde esta nuestro balanceador, `mqtt` el broker de mensajeria que usaremos, `a`, dentro de cada u se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
 
 ### bbs71_docker:<br>
 
-#### Docker-compose principal<br>
+#### 1. Docker-compose principal<br>
 Este es el docker-compose.yml principal, encargado de desplegar todos los servicios que necesitamos:<br>
 ![](https://i.imgur.com/ehSEfSF.png) ![](https://i.imgur.com/M0kbx30.png)<br>
 En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
 
-### Backend
+#### 2. /Db:
 
-#### Mongodb:<br>
+##### Mongodb:<br>
 Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
 ![](https://i.imgur.com/CACLSJV.png)<br>
 Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos volumenes con los archivos .json, los cuales deben de estar dentro del contenedor.<br>
+
+#### 3. /Backend:
 
 #### Apigateway:<br>
 Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
@@ -77,16 +79,21 @@ MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta 
 ![](https://i.imgur.com/tbCxBH1.png)<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
+### 4. /App:
 #### App:<br>
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.<br>
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.<br>
+
+### 5. /Haproxy:
 
 #### Haproxy:
 Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
 ![](https://i.imgur.com/cqEJ45D.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)<br>
 Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, para despues crear el directorio `/run/haproxy` dentro del contenedor. Por ultimo realizamos la copia de dos archivos, uno para la configuracion del haproxy y el otro para una pagina personalizada del error 503.<br>
+
+### 6. /MQTT:
 #### MQTT:
 MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.<br>
 ![](https://i.imgur.com/7MxsjlY.png)<br>
