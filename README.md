@@ -104,18 +104,21 @@ Es una imagen ya construida y disponible en Docker Hub de la base de datos mongo
 Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos volumenes con los archivos .json, los cuales deben de estar dentro del contenedor.<br>
 
 #### 3. /Backend:
+Aqui se encuentrar los 3 microservicios y el apigetway, para la creacion de la imagen de cada uno ellos se uso el mismo dockerfile, pero con una ligera diferencia como algunos parametros y lo mas importante, el puerto por donde salen pero en si tienen la misma estructura:<br>
 
 #### Apigateway:<br>
 Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
 
 #### Microuser:<br>
-Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
+Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos, estara conectado a la base de datos.
 
 #### MicroAirlines:<br>
 MicroAirlines es el microservicio encargado de gestionar la información relacionada con las aerolíneas y sus tablas de informacion, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
 
 #### MicroAirports:<br>
 MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta dedicada unicamente a los aeropuertos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.<br>
+
+#### Dockerfile de los microservicios y apigateway
 ![](https://i.imgur.com/tbCxBH1.png)<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
