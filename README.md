@@ -201,7 +201,7 @@ Master:<br>
 `./start-master.sh`<br>
 Worker:<br>
 `./start-worker.sh spark://192.168.100.2:7077`<br>
-Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con ./pyspark y una vez dentro ejecutamos el siguiente comando:<br>
+Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.3:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_stream.py`<br>
 
 10. Ya realizado los docker compose up, ahora podemos detener los contenedores de mongo y mqtt con `docker ps` para verlos y `docker stop <id del contenedor>` para detenerlos.<br>
