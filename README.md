@@ -73,6 +73,10 @@ EOF
 6. Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 ### Librerias:
+1. Editor de texto Vim:<br>
+`apt-get install vim -y`<br>
+2. Zip y Unzip para descomprimir archivos:<br>
+`apt-get install zip unzip -y`<br>
 ### Pip y libreria de Python:
 1. Instalamos PIP y Python:<br>
 `apt-get install python3`<br>
