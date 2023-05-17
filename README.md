@@ -48,7 +48,7 @@ Instalamos PIP y PyMongo:<br>
 
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
-##### Docker-compose principal<br>
+#### Docker-compose principal<br>
 Este es el docker-compose.yml principal, encargado de desplegar todos los servicios que necesitamos:<br>
 ![](https://i.imgur.com/ehSEfSF.png) ![](https://i.imgur.com/M0kbx30.png)<br>
 En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
