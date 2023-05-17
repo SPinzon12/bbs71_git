@@ -7,8 +7,12 @@ Para instalarlos puedes usar los siguientes comandos:<br>
 ### Vagrantfile: 
 Para el despligue de este proyecto necesitaremos una maquina virtual Linux Ubuntu 22.04 con una IP en especifico, la `192.168.100.2`, el motivo de esto es porque la configuración del proyecto esta mapeada sobre dicha IP, por lo que usar otra IP diferente podria generar conflictos y pasos innecesarios, y por ende hemos decidido especificarla:<br>
 ```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant.configure("2") do |config|
-if Vagrant.has_plugin? "vagrant-vbguest"
+
+  if Vagrant.has_plugin? "vagrant-vbguest"
     config.vbguest.no_install  = true
     config.vbguest.auto_update = false
     config.vbguest.no_remote   = true
@@ -54,10 +58,12 @@ end
 #### 1. Instala paquetes de Java:<br>
 `sudo apt install -y openjdk-18-jdk`<br>
 #### 2. Creamos el archivo jdk18.sh para la configuración:<br>
-`cat <<EOF | sudo tee /etc/profile.d/jdk18.sh
+```
+cat <<EOF | sudo tee /etc/profile.d/jdk18.sh
 export JAVA_HOME=/usr/lib/jvm/java-1.18.0-openjdk-amd64
 export PATH=\$PATH:\$JAVA_HOME/bin
-EOF`<br>
+EOF
+```
 Despues de este, hacemos:<br>
 `source /etc/profile.d/jdk18.sh`
 #### 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:
