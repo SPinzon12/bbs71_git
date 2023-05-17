@@ -46,7 +46,7 @@ end
 1. Quitar versiones de docker anteriores:<br>
 `sudo apt-get remove docker docker-engine docker.io containerd runc`<br>
 y luego  `sudo apt-get update`<br>
-2. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
+2. Instala paquetes para permitir que APT use un repositorio sobre HTTPS: <br>
 ```
  sudo apt-get install \
  apt-transport-https \
