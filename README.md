@@ -36,7 +36,7 @@ if Vagrant.has_plugin? "vagrant-vbguest"
     vb.gui = true
   end
 end
-```<br>
+```
 
 ### Docker:
 #### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
