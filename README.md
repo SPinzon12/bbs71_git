@@ -75,7 +75,7 @@ EOF
 ### Librerias:
 ### Pip y libreria de Python:
 1. Instalamos PIP y Python:<br>
-`apt-get install python3`
+`apt-get install python3`<br>
 `apt-get install pip`
 2. Instalamos la libreria Pymogno:<br>
 `pip install pymongo`
