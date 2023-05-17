@@ -66,7 +66,7 @@ EOF
 ```
 Despues de este, hacemos:<br>
 `source /etc/profile.d/jdk18.sh`<br>
- 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:
+ 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:<br>
 `mkdir labSpark`<br>
 Descargamos el archivo comprimido de Spark:<br>
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
