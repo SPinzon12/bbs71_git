@@ -35,9 +35,9 @@ Y lo descomprimimos:<br>
 ### Github y Git LFS
 Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:<br>
 Primero instalamos git:<br> 
-`apt-get install git`<br>
+`apt install git`<br>
 Luego instalamos git lfs:<br>
-`apt-get install git-lfs`<br>
+`apt install git-lfs`<br>
 ### MQTT
 Instalamos la libreria del Broker de mensajeria MQTT:<br>
 `pip install paho-mqtt`
