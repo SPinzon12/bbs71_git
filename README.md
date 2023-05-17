@@ -4,6 +4,42 @@ Blackbird es una aplicación web que proporciona un dashboard de información de
 Para el funcionamiento de este proyecto se utilizará Docker, que es una plataforma de contenedores que permite empaquetar una aplicación junto con todas sus dependencias en un contenedor virtualizado que se puede ejecutar en cualquier sistema operativo, tambien usaremos Apache Spark para aprovechar su capacidad de procesamiento distribuido y su capacidad para manejar grandes conjuntos de datos.<br>
 Recuerda que como vamos a usar dos maquinas virtuales, ambas necesitaran tener instalados estos elementos.<br>
 Para instalarlos puedes usar los siguientes comandos:<br>
+### Vagrantfile: 
+Para el despligue de este proyecto necesitaremos una maquina virtual Linux Ubuntu 22.04 con una IP en especifico, la `192.168.1002`, el motivo de esto es porque la configuración del proyecto esta mapeada sobre dicha IP, por lo que usar otra IP diferente podria generar conflictos y pasos innecesarios, y por ende hemos decidido especificarla:<br>
+`# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  if Vagrant.has_plugin? "vagrant-vbguest"
+    config.vbguest.no_install  = true
+    config.vbguest.auto_update = false
+    config.vbguest.no_remote   = true
+  end
+
+  config.vm.define :clienteUbuntu do |clienteUbuntu|
+    clienteUbuntu.vm.box = "bento/ubuntu-22.04"
+    clienteUbuntu.vm.network :private_network, ip: "192.168.100.3"
+    clienteUbuntu.vm.hostname = "clienteUbuntu"
+    clienteUbuntu.vm.box_download_insecure=true
+  end
+
+  config.vm.define :servidorUbuntu do |servidorUbuntu|
+    servidorUbuntu.vm.box = "bento/ubuntu-22.04"
+    servidorUbuntu.vm.network :private_network, ip: "192.168.100.2"
+    servidorUbuntu.vm.hostname = "servidorUbuntu"
+    servidorUbuntu.vm.box_download_insecure=true
+    servidorUbuntu.vm.provider "virtualbox" do |v|
+      v.cpus = 4
+      v.memory = 6144      
+    end
+  end
+  
+  config.vm.provider :virtualbox do |vb|
+    vb.gui = true
+  end
+end`<br>
+
 ### Docker:
 #### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
 `sudo apt-get install \
