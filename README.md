@@ -90,33 +90,20 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
 `git clone https://github.com/SPinzon12/bbs71_gi`<br>
-Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, lo que haremos sera terminar de descargar el archivo flights.json que es demasiado pesado para git, con el siguiente comando:<br>
+2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, lo que haremos sera terminar de descargar el archivo flights.json que es demasiado pesado para git, con el siguiente comando:<br>
 `git lfs pull`<br>
-Luego que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio:<br>
+Luego lo que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio:<br>
 `docker compose up -d`<br>
-Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
+3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
 `docker exec -it <id del contenedor> /bin/bash`<br>
-Y navegamos al directorio `/json` y ejecutamos los siguientes comandos:<br>
+Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para subirlos al cluster:<br>
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
-, una vez creada la carpeta podemos para el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
-3. Crearemos un Docker swarm entre 2 maquinas diferentes, con el fin de poder realizar pruebas de balanceo y escalabilidad y para ello necesitamos que tengas enciendidas tus dos maquinas virtuales (servidorUbuntu y clienteUbuntu).<br>
-   En servidor: `docker swarm init --advertise-addr 192.168.100.2`<br>
-   En cliente:  `swarm join --token SWMTKN-1-
-4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo
-192.168.100.3:2377`
-3. Nos ubicaremos la carpeta de spark '/spark-3.4.0../sbin' e iniciaremos el master, con el siguiente comando:<br>
-`./start-master.sh` y luego el worker  `./startworker.sh spark://192.168.100.3:7077`
-4. Abrimos otra termina, nos conectamos servidorUbuntu y descargaremos el repositorio de Blackbird utilizando el siguiente comando:<br>
-`git clone https://github.com/SPinzon12/bbs71_git`
-Luego navegamos a la carpeta `/bbs71_git/bbs71_docker` en donde encontraremos el docker-compose principal junto a las carpetas de cada servicio, cada una con su dockerfile correspondiente.<br>
-`cd /bbs71_git/bbs71_docker`
-5. Navega hasta el directorio '/bbs71_git/bbs71_docker' donde se encuentra el archivo docker-compose.yml, para ejecutar el compose usando swarm necesitaremos ejecutar el siguiente comando:<br>
-`docker stack -c docker-compose.yml bbs71`<br>
+4. Una vez hecho esto ya podemos salir del contenedor y verificaremos que en `/bbs71_docker/db` este creada la carpeta`mongo`, si es asi ya podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
+5. Ahora nos devolvemos a `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
+`docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.
-6. Y por ultimo escalamos los servicios que queramos:<br>
-`docker service scale bbs71_app-1=6`
 7. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
 
 
