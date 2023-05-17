@@ -74,15 +74,15 @@ EOF
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 ### Github y Git LFS:
 Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:<br>
-Primero instalamos git:<br> 
+1. Primero instalamos git:<br> 
 `apt install git`<br>
-Luego instalamos git lfs:<br>
+2. Luego instalamos git lfs:<br>
 `apt install git-lfs`<br>
 ### MQTT:
-Instalamos la libreria del Broker de mensajeria MQTT:<br>
+1. Instalamos la libreria del Broker de mensajeria MQTT:<br>
 `pip install paho-mqtt`
 ### Pip y libreria de pymongo:
-Instalamos PIP y PyMongo:<br>
+1. Instalamos PIP y PyMongo:<br>
 `apt-get install pip`
 `pip install pymongo`
 
