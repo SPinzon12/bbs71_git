@@ -147,13 +147,14 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
 `docker exec -it <id del contenedor> /bin/bash`<br>
 Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para subirlos al cluster:<br>
+Estos comandos suben los archivos .json especificando el nombre de la base de datos, el nombre de la colección, el archivo y el tipo de archivo.<br>
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
 4. Una vez hecho esto ya podemos salir del contenedor con `exit` para despues dirigirnos a la carpeta `/bbs71_docker/mqtt` he iniciamos tambien su docker compose:<br>
 `docker compose up -d`<br>
-6. y verificaremos que en `/bbs71_docker/db` este creada la carpeta`mongo`, si es asi ya podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
-7. Ahora nos devolvemos a `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
+6. Ya realizado los docker compose up, ahora podemos detener los contenedores de mongo y mqtt con `docker ps` para verlos y `docker stop <id del contenedor>` para detenerlos.<br>
+7. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
 7. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
