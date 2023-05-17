@@ -81,7 +81,7 @@ EOF
 `pip install pymongo`
 
 ## Configuración
-Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `db` correspondiende a la base de datos de mongodb, `app` donde se encuentra todos los archivos de nuestra aplicacion web, `haproxy` donde esta nuestro balanceador, `mqtt` el broker de mensajeria que usaremos, `a`, dentro de cada u se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
+Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
 
 ### bbs71_docker:<br>
 
@@ -141,8 +141,8 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
-`mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`
-Luego lo que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio y subir los json:<br>
+`mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
+4. Luego lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
 `docker compose up -d`<br>
 3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
 `docker exec -it <id del contenedor> /bin/bash`<br>
@@ -150,8 +150,10 @@ Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para su
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
-4. Una vez hecho esto ya podemos salir del contenedor y verificaremos que en `/bbs71_docker/db` este creada la carpeta`mongo`, si es asi ya podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
-5. Ahora nos devolvemos a `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
+4. Una vez hecho esto ya podemos salir del contenedor con `exit` para despues dirigirnos a la carpeta `/bbs71_docker/mqtt` he iniciamos tambien su docker compose:<br>
+`docker compose up -d`<br>
+6. y verificaremos que en `/bbs71_docker/db` este creada la carpeta`mongo`, si es asi ya podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
+7. Ahora nos devolvemos a `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
 7. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
