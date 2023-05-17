@@ -65,7 +65,7 @@ export PATH=\$PATH:\$JAVA_HOME/bin
 EOF
 ```
 Despues de este, hacemos:<br>
-`source /etc/profile.d/jdk18.sh`
+`source /etc/profile.d/jdk18.sh`<br>
  3. Crearemos el dictorio en donde guardaremos los archivos de Spark:
 `mkdir labSpark`<br>
 Descargamos el archivo comprimido de Spark:<br>
