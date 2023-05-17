@@ -72,13 +72,15 @@ EOF
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
 6. Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
-### MQTT:
-1. Instalamos la libreria del Broker de mensajeria MQTT:<br>
-`pip install paho-mqtt`
-### Pip y libreria de pymongo:
-1. Instalamos PIP y PyMongo:<br>
+### Librerias:
+### Pip y libreria de Python:
+1. Instalamos PIP y Python:<br>
+`apt-get install python3`
 `apt-get install pip`
+2. Instalamos la libreria Pymogno:<br>
 `pip install pymongo`
+3. Instalamos la libreria del Broker de mensajeria MQTT:<br>
+`pip install paho-mqtt`
 
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
