@@ -142,7 +142,9 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
-4. Luego lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
+4. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Puedo tardar un tiempo cuando se ejecute):
+`python3 bbs71_etl.py`
+6. Luego lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
 `docker compose up -d`<br>
 3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
 `docker exec -it <id del contenedor> /bin/bash`<br>
