@@ -33,7 +33,7 @@ Descargamos el archivo comprimido de Spark:<br>
 Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 ### Github y Git LFS
-Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:
+Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:<br>
 Primero instalamos git:<br> 
 `apt-get install git`<br>
 Luego instalamos git lfs:<br>
