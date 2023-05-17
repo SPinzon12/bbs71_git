@@ -77,7 +77,7 @@ EOF
 `apt-get install vim -y`<br>
 2. Zip y Unzip para descomprimir archivos:<br>
 `apt-get install zip unzip -y`<br>
-### Pip y libreria de Python:
+### Pip y librerias de Python:
 1. Instalamos PIP y Python:<br>
 `apt-get install python3`<br>
 `apt-get install pip`
