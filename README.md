@@ -142,8 +142,8 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
-2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, lo que haremos sera terminar de descargar el archivo flights.json que es demasiado pesado para git, con el siguiente comando:<br>
-`git lfs pull`<br>
+2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021 que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
+`wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 Luego lo que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio y subir los json:<br>
 `docker compose up -d`<br>
 3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
