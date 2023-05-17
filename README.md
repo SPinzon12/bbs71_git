@@ -5,8 +5,8 @@ Para el funcionamiento de este proyecto se utilizará Docker, que es una platafo
 Recuerda que como vamos a usar dos maquinas virtuales, ambas necesitaran tener instalados estos elementos.<br>
 Para instalarlos puedes usar los siguientes comandos:<br>
 ### Vagrantfile: 
-Para el despligue de este proyecto necesitaremos una maquina virtual Linux Ubuntu 22.04 con una IP en especifico, la `192.168.1002`, el motivo de esto es porque la configuración del proyecto esta mapeada sobre dicha IP, por lo que usar otra IP diferente podria generar conflictos y pasos innecesarios, y por ende hemos decidido especificarla:<br>
-``
+Para el despligue de este proyecto necesitaremos una maquina virtual Linux Ubuntu 22.04 con una IP en especifico, la `192.168.100.2`, el motivo de esto es porque la configuración del proyecto esta mapeada sobre dicha IP, por lo que usar otra IP diferente podria generar conflictos y pasos innecesarios, y por ende hemos decidido especificarla:<br>
+`
 Vagrant.configure("2") do |config|
 
   if Vagrant.has_plugin? "vagrant-vbguest"
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
     vb.gui = true
   end
 end
-``<br>
+`<br>
 
 ### Docker:
 #### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
