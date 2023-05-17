@@ -72,12 +72,6 @@ EOF
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
 6. Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
-### Github y Git LFS:
-Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:<br>
-1. Primero instalamos git:<br> 
-`apt install git`<br>
-2. Luego instalamos git lfs:<br>
-`apt install git-lfs`<br>
 ### MQTT:
 1. Instalamos la libreria del Broker de mensajeria MQTT:<br>
 `pip install paho-mqtt`
@@ -144,8 +138,10 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
-2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021 que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
+2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
+3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
+`mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`
 Luego lo que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio y subir los json:<br>
 `docker compose up -d`<br>
 3. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
