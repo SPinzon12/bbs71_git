@@ -87,7 +87,7 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 ## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
-`git clone https://github.com/SPinzon12/bbs71_gi`<br>
+`git clone https://github.com/SPinzon12/bbs71_git`<br>
 2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker/db`, lo que haremos sera terminar de descargar el archivo flights.json que es demasiado pesado para git, con el siguiente comando:<br>
 `git lfs pull`<br>
 Luego lo que haremos sera ejecutar unicamente el docker compose de la base de datos de con el fin de crear la carpeta 'mongo' dentro del directorio:<br>
@@ -101,7 +101,7 @@ Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para su
 4. Una vez hecho esto ya podemos salir del contenedor y verificaremos que en `/bbs71_docker/db` este creada la carpeta`mongo`, si es asi ya podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
 5. Ahora nos devolvemos a `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
-este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.
+este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
 7. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
 
 
