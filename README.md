@@ -64,13 +64,13 @@ export JAVA_HOME=/usr/lib/jvm/java-1.18.0-openjdk-amd64
 export PATH=\$PATH:\$JAVA_HOME/bin
 EOF
 ```
-Despues de este, hacemos:<br>
-`source /etc/profile.d/jdk18.sh`<br>
- 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:<br>
-`mkdir labSpark`<br>
-Descargamos el archivo comprimido de Spark:<br>
+3. Despues de este, hacemos:<br>
+`source /etc/profile.d/jdk18.sh`
+4. Crearemos el dictorio en donde guardaremos los archivos de Spark:<br>
+`mkdir labSpark`
+5. Descargamos el archivo comprimido de Spark:<br>
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
-Y lo descomprimimos:<br>
+6. Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 ### Github y Git LFS:
 Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:<br>
