@@ -4,7 +4,7 @@ Blackbird es una aplicación web que proporciona un dashboard de información de
 Para el funcionamiento de este proyecto se utilizará Docker, que es una plataforma de contenedores que permite empaquetar una aplicación junto con todas sus dependencias en un contenedor virtualizado que se puede ejecutar en cualquier sistema operativo, tambien usaremos Apache Spark para aprovechar su capacidad de procesamiento distribuido y su capacidad para manejar grandes conjuntos de datos.<br>
 Recuerda que como vamos a usar dos maquinas virtuales, ambas necesitaran tener instalados estos elementos.<br>
 Para instalarlos puedes usar los siguientes comandos:<br>
-### Docker
+### Docker:
 #### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
 `sudo apt-get install \
  apt-transport-https \
@@ -16,7 +16,7 @@ Para instalarlos puedes usar los siguientes comandos:<br>
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
 #### 3. Instala Docker Community Edition:<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
-### Apache Spark
+### Apache Spark:
 #### 1. Instala paquetes de Java:<br>
 `sudo apt install -y openjdk-18-jdk`<br>
 #### 2. Creamos el archivo jdk18.sh para la configuración:<br>
@@ -32,32 +32,35 @@ Descargamos el archivo comprimido de Spark:<br>
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
 Y lo descomprimimos:<br>
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
-### Github y Git LFS
+### Github y Git LFS:
 Ya que github no nos permite subir archivos csv que sobrepasen las 100Mb, hemos utilizado git lfs que es una herramienta de git para este tipo de archivos:<br>
 Primero instalamos git:<br> 
 `apt install git`<br>
 Luego instalamos git lfs:<br>
 `apt install git-lfs`<br>
-### MQTT
+### MQTT:
 Instalamos la libreria del Broker de mensajeria MQTT:<br>
 `pip install paho-mqtt`
-### Pip y libreria de pymongo
+### Pip y libreria de pymongo:
 Instalamos PIP y PyMongo:<br>
 `apt-get install pip`
 `pip install pymongo`
 
 ## Configuración
-Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. En este proyecto, se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles utilizados en el proyecto.
+Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las siguientes subcarpetas: `db` correspondiende a la base de datos de mongodb, `app` donde se encuentra todos los archivos de nuestra aplicacion web, `haproxy` donde esta nuestro balanceador, `mqtt` el broker de mensajeria que usaremos, `a`, dentro de cada u se han creado varios Dockerfiles que contienen las instrucciones para construir diferentes imágenes del contenedor Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presenta una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
+
+
 #### Docker-compose principal<br>
 Este es el docker-compose.yml principal, encargado de desplegar todos los servicios que necesitamos:<br>
 ![](https://i.imgur.com/ehSEfSF.png) ![](https://i.imgur.com/M0kbx30.png)<br>
 En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
 
+### Backend
+
 #### Mongodb:<br>
 Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
 ![](https://i.imgur.com/CACLSJV.png)<br>
 Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos volumenes con los archivos .json, los cuales deben de estar dentro del contenedor.<br>
-
 
 #### Apigateway:<br>
 Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
