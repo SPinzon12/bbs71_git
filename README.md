@@ -6,6 +6,7 @@ Recuerda que como vamos a usar dos maquinas virtuales, ambas necesitaran tener i
 Para instalarlos puedes usar los siguientes comandos:<br>
 ### Vagrantfile: 
 Para el despligue de este proyecto necesitaremos una maquina virtual Linux Ubuntu 22.04 con una IP en especifico, la `192.168.100.2`, el motivo de esto es porque la configuración del proyecto esta mapeada sobre dicha IP, por lo que usar otra IP diferente podria generar conflictos y pasos innecesarios, y por ende hemos decidido especificarla:<br>
+Si aun no tiene Vagrant, puede descargarlo de la pagina oficial: https://developer.hashicorp.com/vagrant/downloads?product_intent=vagrant <br>
 ```
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
