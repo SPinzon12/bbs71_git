@@ -135,7 +135,7 @@ MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra 
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
 ## Guia
-A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird:<br>
+A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otra ventana de cmd para realizar algunos pasos a la vez):<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
 2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
