@@ -17,14 +17,7 @@ Vagrant.configure("2") do |config|
     config.vbguest.auto_update = false
     config.vbguest.no_remote   = true
   end
-
-  config.vm.define :clienteUbuntu do |clienteUbuntu|
-    clienteUbuntu.vm.box = "bento/ubuntu-22.04"
-    clienteUbuntu.vm.network :private_network, ip: "192.168.100.3"
-    clienteUbuntu.vm.hostname = "clienteUbuntu"
-    clienteUbuntu.vm.box_download_insecure=true
-  end
-
+  
   config.vm.define :servidorUbuntu do |servidorUbuntu|
     servidorUbuntu.vm.box = "bento/ubuntu-22.04"
     servidorUbuntu.vm.network :private_network, ip: "192.168.100.2"
@@ -34,6 +27,13 @@ Vagrant.configure("2") do |config|
       v.cpus = 4
       v.memory = 6144      
     end
+  end
+
+  config.vm.define :clienteUbuntu do |clienteUbuntu|
+    clienteUbuntu.vm.box = "bento/ubuntu-22.04"
+    clienteUbuntu.vm.network :private_network, ip: "192.168.100.3"
+    clienteUbuntu.vm.hostname = "clienteUbuntu"
+    clienteUbuntu.vm.box_download_insecure=true
   end
   
   config.vm.provider :virtualbox do |vb|
