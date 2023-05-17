@@ -71,6 +71,18 @@ sudo add-apt-repository \
 6. Instale la ultima version de docker:<br>
 `sudo apt-get update`<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
+### DockerCompose:
+Instale DockerCompose:<br>
+`sudo apt-get install docker-compose-plugin`
+Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
+`vim ~/.vimrc`<br>
+Agregar la siguiente configuración para trabajar conlos archivos yaml.<br>
+
+```
+" Configuracion para trabajar con archivos yaml
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+```
 
 ### Apache Spark:
  1. Instala paquetes de Java:<br>
