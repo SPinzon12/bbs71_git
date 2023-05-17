@@ -43,16 +43,20 @@ end
 ```
 
 ### Docker:
- 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
-`sudo apt-get install \
+1. Quitar versiones de docker anteriores:
+`sudo apt-get remove docker docker-engine docker.io containerd runc`<br>
+y luego  `sudo apt-get update`<br>
+2. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
+```sudo apt-get install \
  apt-transport-https \
  ca-certificates \
  curl \
  gnupg-agent \
- software-properties-common`
- 2. Agrega la clave GPG oficial de Docker:<br>
+ software-properties-common
+ ```
+2. Agrega la clave GPG oficial de Docker:<br>
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
- 3. Instala Docker Community Edition:<br>
+3. Instala Docker Community Edition:<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### Apache Spark:
  1. Instala paquetes de Java:<br>
