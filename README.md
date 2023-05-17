@@ -43,21 +43,21 @@ end
 ```
 
 ### Docker:
-#### 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
+ 1. Instala paquetes para permitir que APT use un repositorio sobre HTTPS:<br>
 `sudo apt-get install \
  apt-transport-https \
  ca-certificates \
  curl \
  gnupg-agent \
  software-properties-common`
-#### 2. Agrega la clave GPG oficial de Docker:<br>
+ 2. Agrega la clave GPG oficial de Docker:<br>
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
-#### 3. Instala Docker Community Edition:<br>
+ 3. Instala Docker Community Edition:<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### Apache Spark:
-#### 1. Instala paquetes de Java:<br>
+ 1. Instala paquetes de Java:<br>
 `sudo apt install -y openjdk-18-jdk`<br>
-#### 2. Creamos el archivo jdk18.sh para la configuración:<br>
+ 2. Creamos el archivo jdk18.sh para la configuración:<br>
 ```
 cat <<EOF | sudo tee /etc/profile.d/jdk18.sh
 export JAVA_HOME=/usr/lib/jvm/java-1.18.0-openjdk-amd64
@@ -66,7 +66,7 @@ EOF
 ```
 Despues de este, hacemos:<br>
 `source /etc/profile.d/jdk18.sh`
-#### 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:
+ 3. Crearemos el dictorio en donde guardaremos los archivos de Spark:
 `mkdir labSpark`<br>
 Descargamos el archivo comprimido de Spark:<br>
 `wget https://dlcdn.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz`
