@@ -73,7 +73,7 @@ sudo add-apt-repository \
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### DockerCompose:
 Instale DockerCompose:<br>
-`sudo apt-get install docker-compose-plugin`
+`sudo apt-get install docker-compose-plugin`<br>
 Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
 `vim ~/.vimrc`<br>
 Agregar la siguiente configuración para trabajar conlos archivos yaml.<br>
