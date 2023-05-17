@@ -45,7 +45,7 @@ end
 ### Docker:
 1. Quitar versiones de docker anteriores:<br>
 `sudo apt-get remove docker docker-engine docker.io containerd runc`<br>
-y luego  `sudo apt-get update`<br>
+y luego  `sudo apt-get update`
 2. Instala paquetes para permitir que APT use un repositorio sobre HTTPS: <br>
 ```
  sudo apt-get install \
@@ -55,11 +55,11 @@ y luego  `sudo apt-get update`<br>
  gnupg-agent \
  software-properties-common
  ```
- <br>
+ 
 3. Agregue la clave GPG oficial de docker:<br>
-`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`<br>
+`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
 4. Agregue la clave:<br>
-`sudo apt-key fingerprint 0EBFCD88`<br>
+`sudo apt-key fingerprint 0EBFCD88`
 5. Agregue repositorio estable:<br>
 ```
 sudo add-apt-repository \
@@ -67,10 +67,10 @@ sudo add-apt-repository \
  $(lsb_release -cs) \
  stable"
  ```
- <br>
+ 
 6. Instale la ultima version de docker:<br>
 `sudo apt-get update`<br>
-`sudo apt-get install docker-ce docker-ce-cli containerd.io`<br>
+`sudo apt-get install docker-ce docker-ce-cli containerd.io`
 
 ### Apache Spark:
  1. Instala paquetes de Java:<br>
