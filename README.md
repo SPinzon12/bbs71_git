@@ -39,8 +39,10 @@ Primero instalamos git:<br>
 Luego instalamos git lfs:<br>
 `apt-get install git-lfs`<br>
 ### MQTT
+Instalamos la libreria del Broker de mensajeria MQTT:<br>
 `pip install paho-mqtt`
 ### Pip y libreria de pymongo
+Instalamos PIP y PyMongo:<br>
 `apt-get install pip`
 `pip install pymongo`
 
@@ -50,18 +52,24 @@ Para configurar el contenedor Docker del proyecto, es necesario conocer los arch
 Este es el docker-compose.yml principal, encargado de desplegar todos los servicios que necesitamos:<br>
 ![](https://i.imgur.com/ehSEfSF.png) ![](https://i.imgur.com/M0kbx30.png)<br>
 En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
+
 ##### Mongodb:<br>
 Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
+
 ##### Apigateway:<br>
 Es el servicio encargado de tomar los puertos de cada uno de los microservicios (microuser, microairlines y microairports) ya que los microservicios no se comunican entre ellos, y con el fin de no exponer multiples puertos y su vez simplificar la obtencion de los datos, constrimos este apigateway para concentrar las multiples salidas de los 3 puertos en uno solo, que en este caso es el puerto 3000.
+
 ##### Microuser:<br>
 Este es el microservicio encargado de controlar y autenticar a los usuarios que esten disponibles en la base de datos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
+
 ##### MicroAirlines:<br>
 MicroAirlines es el microservicio encargado de gestionar la información relacionada con las aerolíneas y sus tablas de informacion, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.
+
 ##### MicroAirports:<br>
 MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta dedicada unicamente a los aeropuertos, estara conectado a la base de datos y dependera del broker de mensajeria MQTT.<br>
 ![](https://i.imgur.com/tbCxBH1.png)<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
+
 ##### App:<br>
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.<br>
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
