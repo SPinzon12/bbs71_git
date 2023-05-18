@@ -348,7 +348,7 @@ Worker:<br>
 
 6. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py` (este proceso puede tardar un rato)<br>
-Cuando termine podemos salir con `Ctrl+D`, y nos debe generar una carpeta `flights` en el directorio `/bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
+Cuando termine nos debe generar una carpeta `flights` en el directorio `/bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
 ```
 part-00000-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00009-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
 part-00001-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00010-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
