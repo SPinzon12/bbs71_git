@@ -373,15 +373,15 @@ Estos comandos importan los archivos .json especificando el nombre de la base de
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
-
-9. Una vez hecho esto ya podemos salir del contenedor con `exit`.
+Una vez hecho esto ya podemos salir del contenedor con `exit`.
 
 10. Y volvemos a la terminal cmd nro1, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos los pasos 4 de verificación de rutas pero con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
 
 11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_stream.py`<br>
+La dejamos ahi corriendo mientras realizamos los siguientes pasos.
 
-12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
+12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo de la terminal nro2 con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
 
 13. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
