@@ -386,6 +386,12 @@ Una vez hecho esto ya podemos salir del contenedor con `exit`.
 
 11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_stream.py`<br>
+Nos debe de salir: <br>
+```
+Comenzando a leer los archivos CSV...
+Archivos CSV leídos correctamente.
+Conectado a la base de datos
+```
 La dejamos ahi corriendo mientras realizamos los siguientes pasos.
 
 12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo de la terminal nro2 con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
