@@ -125,20 +125,26 @@ Para configurar el contenedor Docker del proyecto, es necesario conocer los arch
 
 #### 1. Docker-compose principal<br>
 Este es el docker-compose.yml principal, encargado de desplegar todos los servicios que necesitamos:<br>
+<br>
 ![](https://i.imgur.com/ehSEfSF.png) ![](https://i.imgur.com/M0kbx30.png)<br>
+<br>
 En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
 
 #### 2. /Db:
 
 ##### Mongodb:<br>
 Es una imagen ya construida y disponible en Docker Hub de la base de datos mongodb, a la cual, se le aplico volumenes con el fin de copiar la data en archivos .json dentro de contenedor, ya que necesitaremos que la conexion de mongo con los demas servicios se expuso el puerto 27017, cabe recalcar que este servicio solo podra ser ejecuta dentro de la maquina de 'servidorUbuntu'.<br>
+<br>
 ![](https://i.imgur.com/CACLSJV.png)<br>
+<br>
 Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos volumenes con los archivos .json, los cuales deben de estar dentro del contenedor.<br>
 
-#### 3. /Backend:
+#### 3. /backend:
 Aqui se encuentran los 3 microservicios y el apigetway, para la creacion de la imagen de cada uno ellos se uso el mismo dockerfile, con una ligera diferencia como algunos parametros y lo mas importante el puerto por donde salen, pero en si tienen la misma estructura:<br>
 ##### Dockerfile de los microservicios y apigateway
+<br>
 ![](https://i.imgur.com/tbCxBH1.png)<br>
+<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Apigateway:<br>
@@ -156,20 +162,22 @@ MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta 
 #### 4. /App:
 ##### App:<br>
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.<br>
+<br>
 ![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
+<br>
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.<br>
 
 #### 5. /Haproxy:
-
-##### Haproxy:
 Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
+<br>
 ![](https://i.imgur.com/cqEJ45D.png)<br>
 ![](https://i.imgur.com/6OHeyR0.png)<br>
+<br>
 Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, para despues crear el directorio `/run/haproxy` dentro del contenedor. Por ultimo realizamos la copia de dos archivos, uno para la configuracion del haproxy y el otro para una pagina personalizada del error 503.<br>
 
 #### 6. /MQTT:
-##### MQTT:
 MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.<br>
+<br>
 ![](https://i.imgur.com/7MxsjlY.png)<br>
 
 ## Guia
@@ -211,7 +219,11 @@ Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark
 `docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
 12. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
-13. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`, con usuario y contraseña `admin`
+13. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`.<br>
+Usuario:<br>
+`admin`<br>
+Contraseña:<br>
+`admin`<br>
 14. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
 
 ##### Aeropuertos:
