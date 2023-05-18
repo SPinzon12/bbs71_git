@@ -156,7 +156,6 @@ Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos 
 #### 3. /backend:
 Aqui se encuentran los 3 microservicios y el apigetway, para la creacion de la imagen de cada uno ellos se uso el mismo dockerfile, con una ligera diferencia como algunos parametros y lo mas importante el puerto por donde salen, pero en si tienen la misma estructura:<br>
 ##### Dockerfile de los microservicios y apigateway
-<br>
 ```
 FROM node:16
 
