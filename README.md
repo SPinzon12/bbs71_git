@@ -174,6 +174,7 @@ EXPOSE 3000
 
 CMD ["node", "./src/index.js"]
 ```
+<br>
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Apigateway:<br>
