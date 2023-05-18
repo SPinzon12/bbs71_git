@@ -247,9 +247,8 @@ services:
       - 1884:1883
       - 9001:9001
 ```
-<br>
-En este docker-compose al igual que con el de mongodb, hacemos uso de los volumenes para copiar los archivos de configuración de mqtt.
-<br>
+En este docker-compose al igual que con el de mongodb, hacemos uso de los volumenes para copiar los archivos de configuración de mqtt.<br>
+
 ## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otra ventana de cmd en la misma maquina para realizar algunos pasos a la vez):<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
