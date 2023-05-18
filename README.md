@@ -205,10 +205,27 @@ En este punto se establecerán los parámetros necesarios para el funcionamiento
 
 #### 5. /haproxy:
 Haproxy sera el servicio encargado de balancear entre dos imagenes de nuestra app, permitiendonos tambien ver un informe detallado de el estado de cada una de ellas y el numero de peticiones ejecutadas.<br>
-<br>
-![](https://i.imgur.com/cqEJ45D.png)<br>
-![](https://i.imgur.com/6OHeyR0.png)<br>
-<br>
+##### Dockerfile de haproxy
+```
+FROM haproxy:2.3
+RUN mkdir -p /run/haproxy/
+COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY errors/503.http /usr/local/etc/haproxy/errors/503.http
+```
+```
+backend web-backend
+   balance roundrobin
+   stats enable
+   stats auth admin:admin
+   stats uri /haproxy?stats
+
+   server app-1 app-1:80 check
+   server app-2 app-2:80 check
+
+frontend http
+  bind *:80
+  default_backend web-backend
+```
 Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, para despues crear el directorio `/run/haproxy` dentro del contenedor. Por ultimo realizamos la copia de dos archivos, uno para la configuracion del haproxy y el otro para una pagina personalizada del error 503.<br>
 
 #### 6. /mqtt:
