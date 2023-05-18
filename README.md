@@ -212,6 +212,7 @@ RUN mkdir -p /run/haproxy/
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 COPY errors/503.http /usr/local/etc/haproxy/errors/503.http
 ```
+##### haproxy.cfg
 ```
 backend web-backend
    balance roundrobin
@@ -230,9 +231,24 @@ Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, p
 
 #### 6. /mqtt:
 MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.<br>
-<br>
-![](https://i.imgur.com/7MxsjlY.png)<br>
+##### docker-compose de mqtt
+```
+version: '3'
 
+services:
+  mqtt:
+    image: eclipse-mosquitto
+    restart: always
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 1884:1883
+      - 9001:9001
+```
+<br>
+En este docker-compose al igual que con el de mongodb, hacemos uso de los volumenes para copiar los archivos de configuración de mqtt.
 ## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otra ventana de cmd en la misma maquina para realizar algunos pasos a la vez):<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
