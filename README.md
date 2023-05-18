@@ -158,19 +158,14 @@ Aqui se encuentran los 3 microservicios y el apigetway, para la creacion de la i
 ##### Dockerfile de los microservicios y apigateway
 ```
 FROM node:16
-
 WORKDIR /home/node/app
-
 COPY package*.json ./
 RUN npm install
-
 COPY .env ./
 
 RUN mkdir -p ./src
 COPY ./src ./src
-
 EXPOSE 3000
-
 CMD ["node", "./src/index.js"]
 ```
 <br>
