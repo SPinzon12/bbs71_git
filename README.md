@@ -346,7 +346,7 @@ Master:<br>
 Worker:<br>
 `./start-worker.sh spark://192.168.100.2:7077`<br>
 
-6. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
+6. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py`<br>
 Cuando termine podemos salir con `Ctrl+D`, y nos debe generar una carpeta `flights` en el directorio `/bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
 ```
@@ -384,7 +384,7 @@ Una vez hecho esto ya podemos salir del contenedor con `exit`.
 
 10. Y volvemos a la terminal cmd nro1, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos los pasos 4 de verificación de rutas pero con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
 
-11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
+11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_stream.py`<br>
 La dejamos ahi corriendo mientras realizamos los siguientes pasos.
 
