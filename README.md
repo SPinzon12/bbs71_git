@@ -6,7 +6,8 @@ Recuerda que como vamos a usar dos maquinas virtuales, ambas necesitaran tener i
 Para instalarlos puedes usar los siguientes comandos:<br>
 ### Vagrantfile: 
 Para el despligue de este proyecto necesitaremos una maquina virtual Linux Ubuntu 22.04 con una IP en especifico, la `192.168.100.2`, el motivo de esto es porque la configuración del proyecto esta mapeada sobre dicha IP, por lo que usar otra IP diferente podria generar conflictos y pasos innecesarios, y por ende hemos decidido especificarla:<br>
-Si aun no tiene Vagrant, puede descargarlo de la pagina oficial: https://developer.hashicorp.com/vagrant/downloads?product_intent=vagrant <br>
+Si aun no tiene Vagrant, puede descargarlo de la pagina oficial:<br> 
+https://developer.hashicorp.com/vagrant/downloads?product_intent=vagrant <br>
 ```
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -72,7 +73,7 @@ sudo add-apt-repository \
 6. Instale la ultima version de docker:<br>
 `sudo apt-get update`<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
-### DockerCompose:
+### docker-compose:
 1. Instale DockerCompose:<br>
 `sudo apt-get install docker-compose-plugin`<br>
 2. Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
@@ -117,7 +118,8 @@ EOF
 `pip install pymongo`
 3. Instalamos la libreria del Broker de mensajeria MQTT:<br>
 `pip install paho-mqtt`
-
+4. Instalamos la libreria de PySpark:<br>
+`pip install pyspark`
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71-git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
 
@@ -326,15 +328,36 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
+
 4. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
 Usaremos vim para visualizarlo:<br>
 `vim bbs71_etl.py`<br>
 Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/home/vagrant/bbs71-git/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/home/vagrant/bbs71-git/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
-Si todo esta bien, podemos entonces ejecutar el archivo de python:<br>
-`python3 bbs71_etl.py`<br>
-6. Luego en la terminal cmd nro2 de la maquina lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
+5. Si todo esta bien, nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker (en la misma maquina):<br>
+Master:<br>
+`./start-master.sh`<br>
+Worker:<br>
+`./start-worker.sh spark://192.168.100.2:7077`<br>
+
+6. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
+`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_etl.py`<br>
+Cuando termine podemos salir con `Ctrl+D`, y nos debe generar una carpeta `flights` en el directorio `/bbs71-git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
+```
+part-00000-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00009-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00001-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00010-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00002-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00011-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00003-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00012-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00004-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00013-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00005-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00014-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00006-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00015-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00007-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00016-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
+part-00008-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  _SUCCESS
+```
+
+7. Luego en la terminal cmd nro2 de la maquina lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
 `docker compose up -d`<br>
-7. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos los comandos:<br> 
+
+8. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos los comandos:<br> 
 Para visualizar el ID del contenedor usamos:<br>
 `docker ps`<br>
 Deberia mostrarnos algo asi, y copiamos el `CONTAINER ID`:<br>
@@ -350,28 +373,28 @@ Estos comandos importan los archivos .json especificando el nombre de la base de
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
-8. Una vez hecho esto ya podemos salir del contenedor con `exit` para despues dirigirnos a la carpeta `/bbs71_docker/mqtt` con el fin de probar el broker de mensajeria, he iniciamos tambien su docker compose:<br>
-`docker compose up -d`<br>
-Una vez hecho este paso, volvemos a la terminal cmd nro1 que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos el paso 4 de verificación de rutas pero con el archivo `bbs71_stream.py`.
-9. Despues de esto nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker (en la misma maquina):<br>
-Master:<br>
-`./start-master.sh`<br>
-Worker:<br>
-`./start-worker.sh spark://192.168.100.2:7077`<br>
-Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
-`./spark-submit --master spark://192.168.100.3:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_stream.py`<br>
 
-10. Cuando el codigo este corriendo, ahora podemos detener los contenedores de mongo y mqtt con `docker ps` para verlos y `docker stop <id del contenedor>` para detenerlos.<br>
-11. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
+9. Una vez hecho esto ya podemos salir del contenedor con `exit`.
+
+10. Y volvemos a la terminal cmd nro1, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos los pasos 4 de verificación de rutas pero con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
+
+11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
+`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_stream.py`<br>
+
+12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
+
+13. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos:<br>
 `docker compose up -d`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml.<br>
-12. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
-13. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`.<br>
+
+14. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
+
+15. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`.<br>
 Usuario:<br>
 `admin`<br>
 Contraseña:<br>
 `admin`<br>
-14. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
+16. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
 
 ##### Aeropuertos:
 1. Usuario:<br>
