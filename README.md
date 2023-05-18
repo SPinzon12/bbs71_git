@@ -125,10 +125,79 @@ Para configurar el contenedor Docker del proyecto, es necesario conocer los arch
 
 #### 1. Docker-compose principal<br>
 Este es el docker-compose.yml principal, encargado de desplegar todos los servicios que necesitamos:<br>
-<br>
-![](https://i.imgur.com/ehSEfSF.png) ![](https://i.imgur.com/M0kbx30.png)<br>
-<br>
-En el docker compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
+```
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:4.0
+    restart: always
+    volumes:
+      - ./db/mongo/data:/data/db
+      - ./db/flights.json:/json/flights.json
+      - ./db/users.json:/json/users.json
+      - ./db/flight_stats.json:/json/flight_stats
+    ports:
+      - 27017:27017
+
+  api-gateway:
+    image: bbs71/api-gateway:0.0
+    ports:
+      - "3000:3000"
+    links:
+      - microuser
+      - microairlines
+      - microairports
+
+  microuser:
+    image: bbs71/micro-user:0.0
+    links:
+      - mongodb
+
+  microairlines:
+    image: bbs71/micro-airlines:0.0
+    links:
+      - mongodb
+    depends_on:
+      - mqtt
+
+  microairports:
+    image: bbs71/micro-airports:0.0
+    links:
+      - mongodb
+    depends_on:
+      - mqtt
+
+  app-1:
+    image: bbs71/app:0.0
+    depends_on:
+      - api-gateway
+      
+  app-2:
+    image: bbs71/app:0.0
+    depends_on:
+      - api-gateway
+
+  haproxy:
+    image: bbs71/haproxy:0.0
+    ports:
+      - "1080:80"
+    links:
+      - app-1
+      - app-2
+
+  mqtt:
+    image: eclipse-mosquitto
+    restart: always
+    volumes:
+      - ./mqtt/mosquitto/config:/mosquitto/config
+      - ./mqtt/mosquitto/data:/mosquitto/data
+      - ./mqtt/mosquitto/log:/mosquitto/log
+    ports:
+      - 1884:1883
+      - 9001:9001
+```
+En el docker-compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
 
 #### 2. /db:
 
