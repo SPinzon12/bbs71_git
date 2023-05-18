@@ -157,8 +157,23 @@ Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos 
 Aqui se encuentran los 3 microservicios y el apigetway, para la creacion de la imagen de cada uno ellos se uso el mismo dockerfile, con una ligera diferencia como algunos parametros y lo mas importante el puerto por donde salen, pero en si tienen la misma estructura:<br>
 ##### Dockerfile de los microservicios y apigateway
 <br>
-![](https://i.imgur.com/tbCxBH1.png)<br>
-<br>
+```
+FROM node:16
+
+WORKDIR /home/node/app
+
+COPY package*.json ./
+RUN npm install
+
+COPY .env ./
+
+RUN mkdir -p ./src
+COPY ./src ./src
+
+EXPOSE 3000
+
+CMD ["node", "./src/index.js"]
+```
 Para ejecutar los microservicios de Blackbird, es necesario contar con Nodejs y descargar la librería de NPM. En el WORKDIR se especificará el directorio de trabajo y se copiarán los archivos package.json, que contienen las dependencias que se utilizarán, como Axios, el cual se encargará de monitorear los puertos no expuestos de los otros microservicios.
 
 ##### Apigateway:<br>
