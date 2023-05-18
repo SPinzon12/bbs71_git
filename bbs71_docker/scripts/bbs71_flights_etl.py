@@ -1,4 +1,3 @@
-# Version 1
 import pandas as pd
 from datetime import datetime
 
@@ -16,7 +15,7 @@ def convert_to_hours(mins):
     return f"{hours:02d}:{minutes:02d}"
 
 # Ruta del archivo de datos
-ruta_archivo = r"C:\Users\sampi\Documents\UAO\semestre_4\Redes\BBS71\db\Combined_Flights_2021.csv"
+ruta_archivo = r"/home/vagrant/BBS71/spark_app/Combined_Flights_2021.csv"
 
 # Lista de columnas a utilizar
 cols = [

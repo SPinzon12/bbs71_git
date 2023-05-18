@@ -1,14 +1,7 @@
 import bcrypt
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
-import certifi
 
-try:
-    client = MongoClient(
-            "mongodb+srv://admin:admin@cluster0.qiha6t5.mongodb.net/?retryWrites=true&w=majority", tlsCAFile=certifi.where())
-    print("DB online")
-except ConnectionFailure:
-    print('Error de conexion')
+client = MongoClient("mongodb://localhost:27017/")
     
 db = client['bbs71_db']
 flights_col = db["flights"]

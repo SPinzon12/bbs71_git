@@ -1,3 +1,4 @@
+import sys
 from pyspark.sql.functions import col, when, from_unixtime, floor, concat_ws, format_number
 from pyspark.sql.types import IntegerType
 from pyspark.sql import SparkSession
@@ -19,7 +20,7 @@ def convert_to_hours(mins):
 spark = SparkSession.builder.appName("flights").getOrCreate()
 spark.sparkContext.setLogLevel("OFF")
 # Ruta del archivo de datos
-ruta_archivo = "/home/vagrant/BBS71/spark_app/Combined_Flights_2021.csv"
+ruta_archivo = sys.argv[1]
 
 # Lee el archivo CSV de datos
 df = spark.read.option("header", True).option("inferSchema", True).csv(ruta_archivo)
@@ -38,4 +39,4 @@ df = df.withColumn("AirTime", when((col("Diverted") == 0) & (col("Cancelled") ==
 df = df.withColumn("CRSElapsedTime", from_unixtime(col("CRSElapsedTime") * 60, 'HH:mm'))
 df = df.withColumn("ActualElapsedTime", when((col("Diverted") == 0) & (col("Cancelled") == 0), convert_to_hours(col("ActualElapsedTime").cast(IntegerType()))).otherwise(col("ActualElapsedTime")))
 
-df.write.format("csv").option("header", "true").mode("overwrite").save("/home/vagrant/BBS71/spark_app/flights")
+df.write.format("csv").option("header", "true").mode("overwrite").save(sys.argv[2])
