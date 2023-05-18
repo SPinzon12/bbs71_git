@@ -137,6 +137,22 @@ Es una imagen ya construida y disponible en Docker Hub de la base de datos mongo
 <br>
 ![](https://i.imgur.com/CACLSJV.png)<br>
 <br>
+```
+version: '3'
+
+services:
+    mongodb:
+        image: mongo:4.0
+        restart: always
+        container_name: mongodb
+        volumes:
+            - ./mongo/data:/data/db
+            - ./flights.json:/json/flights.json
+            - ./users.json:/json/users.json
+            - ./flight_stats.json:/json/flight_stats.json
+        ports:
+            - 27017:27017
+```
 Aqui creamos el contenedor de mongo sacado de dockerhub, al cual le aplicaremos volumenes con los archivos .json, los cuales deben de estar dentro del contenedor.<br>
 
 #### 3. /backend:
