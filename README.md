@@ -340,7 +340,7 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 Usaremos vim para visualizarlo:<br>
 `vim bbs71_etl.py`<br>
 Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/home/vagrant/bbs71_git/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
-5. Si todo esta bien, nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker (en la misma maquina):<br>
+5. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker (en la misma maquina):<br>
 Master:<br>
 `./start-master.sh`<br>
 Worker:<br>
