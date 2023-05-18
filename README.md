@@ -334,7 +334,7 @@ En este docker-compose al igual que con el de mongodb, hacemos uso de los volume
 
 ## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otras 2 ventana de cmd, una en la misma maquina de servidor y otra en cliente para realizar algunos pasos a la vez):<br>
-1. Primero realizares la conexion del Docker Swarm entre servidorUbuntu y clienteUbuntu, y lo haremos de la siguiente forma:
+1. Primero realizaremos la conexion del Docker Swarm entre servidorUbuntu y clienteUbuntu, y lo haremos de la siguiente forma:
 Abrimos la terminal nro 1 de servidorUbuntu y escribimos este comando `sudo docker swarm init --advertise-addr 192.168.100.2` para iniciarlo y nos dara el siguiente comando con el token para realizar el enlace (si se te olvide puedes usar este `sudo docker swarm join-token worker`) y en la terminal de clienteUbuntu lo escribimos `sudo docker swarm join --token SWMTKN-1-4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo 192.168.100.3:2377`
 2. Luego sera descargar el respositirio de bbs71 en la terminal nro1 de servidorUbuntu:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
