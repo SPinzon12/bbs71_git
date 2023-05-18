@@ -195,7 +195,16 @@ Si todo esta bien, podemos entonces ejecutar el archivo de python:<br>
 `python3 bbs71_etl.py`<br>
 6. Luego en la terminal cmd nro2 de la maquina lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
 `docker compose up -d`<br>
-7. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
+7. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos los comandos:<br> 
+Para visualizar el ID del contenedor usamos:<br>
+`docker ps`<br>
+Deberia mostrarnos algo asi, y copiamos el `CONTAINER ID`:<br>
+```
+root@vagrant:~/bbs71_git/bbs71_docker/db# docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                           NAMES
+8867c3571a3b   mongo:4.0   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp   mongodb
+```
+Ahora entramos en el contenedor:<br>
 `docker exec -it <id del contenedor> /bin/bash`<br>
 Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para subirlos al cluster:<br>
 Estos comandos importan los archivos .json especificando el nombre de la base de datos, el nombre de la colección, el archivo y el tipo de archivo.<br>
