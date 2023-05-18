@@ -199,7 +199,7 @@ Si todo esta bien, podemos entonces ejecutar el archivo de python:<br>
 7. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos el comando:<br> 
 `docker exec -it <id del contenedor> /bin/bash`<br>
 Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para subirlos al cluster:<br>
-Estos comandos suben los archivos .json especificando el nombre de la base de datos, el nombre de la colección, el archivo y el tipo de archivo.<br>
+Estos comandos importan los archivos .json especificando el nombre de la base de datos, el nombre de la colección, el archivo y el tipo de archivo.<br>
 `mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
