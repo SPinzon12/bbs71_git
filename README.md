@@ -185,9 +185,22 @@ MicroAirports cumple un papel similar a MicroAirlines, solo que su funcion esta 
 
 #### 4. /app:
 App-1 es el servicio encargado de cargar la aplicacion web construida en Vuejs en su version de producción, y con el fin de usar haproxy y realizar el balanceo de carga, hemos realizado una copia de este servicio llamado App-2.<br>
-<br>
-![AHHHH](https://i.imgur.com/1AxW2fc.png)<br>
-<br>
+##### Dockerfile de app
+```
+FROM ubuntu
+RUN apt update
+RUN apt install -y apache2
+RUN apt install -y apache2-utils
+RUN apt clean
+
+COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+
+RUN mkdir -p /var/www/html/blackbird/dist
+
+COPY ./dist /var/www/html/blackbird/dist/
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+```
 En este punto se establecerán los parámetros necesarios para el funcionamiento de nuestra aplicación web. Para ello, se instalará el servidor de Apache (Apache2) y se copiará la configuración de nuestro sitio web dentro del contenedor de la imagen. Finalmente, se creará una carpeta dentro del contenedor que contendrá todos los archivos de nuestro sitio web creado con Vuejs.<br>
 
 #### 5. /haproxy:
