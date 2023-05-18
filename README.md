@@ -331,7 +331,7 @@ En este docker-compose al igual que con el de mongodb, hacemos uso de los volume
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otra ventana de cmd en la misma maquina para realizar algunos pasos a la vez):<br>
 1. Primero sera descargar el respositirio de bbs71:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
-2. Despues de esto nos dirigimos al directorio `/bbs71-git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
+2. Despues de esto nos dirigimos al directorio `/bbs71_git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
@@ -339,7 +339,7 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 4. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
 Usaremos vim para visualizarlo:<br>
 `vim bbs71_etl.py`<br>
-Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/home/vagrant/bbs71-git/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/home/vagrant/bbs71-git/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
+Y verificamos que ruta_archivo contenga la ruta adecuada a su usuario, en nuestro caso es `ruta_archivo ="/home/vagrant/bbs71_git/bbs71_docker/spark_app/Combined_Flights_2021.csv"` y `...save("/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights")` para guardar el archivo.<br>
 5. Si todo esta bien, nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker (en la misma maquina):<br>
 Master:<br>
 `./start-master.sh`<br>
@@ -347,8 +347,8 @@ Worker:<br>
 `./start-worker.sh spark://192.168.100.2:7077`<br>
 
 6. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
-`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_etl.py`<br>
-Cuando termine podemos salir con `Ctrl+D`, y nos debe generar una carpeta `flights` en el directorio `/bbs71-git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
+`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py`<br>
+Cuando termine podemos salir con `Ctrl+D`, y nos debe generar una carpeta `flights` en el directorio `/bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
 ```
 part-00000-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00009-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
 part-00001-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00010-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
@@ -385,7 +385,7 @@ Una vez hecho esto ya podemos salir del contenedor con `exit`.
 10. Y volvemos a la terminal cmd nro1, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, y realizamos los pasos 4 de verificación de rutas pero con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
 
 11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` entramos a PySpark con `./pyspark` y una vez dentro ejecutamos el siguiente comando:<br>
-`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71-git/bbs71_docker/spark_app/bbs71_stream.py`<br>
+`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_stream.py`<br>
 La dejamos ahi corriendo mientras realizamos los siguientes pasos.
 
 12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo de la terminal nro2 con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
