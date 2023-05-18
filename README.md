@@ -129,7 +129,7 @@ SPARK_MASTER_HOST=192.168.100.2
 4. Instalamos la libreria de PySpark:<br>
 `pip install pyspark`
 ## Configuración
-Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Trabajaremos principalmente en el directorio `/bbs71_git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
+Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Cuando se descargue dentro de la carpeta `bbs71_git`, tendremos las siguientes subcarpetas `/bbs71_app` en donde se encuentran los archivos de toda la pagina como HTML, CSS y scripts, en `/bbs71_backend` tenemos todo lo relacionado con los microservicios y el apigateway y en `/bbs71_dockerfile` tenemos todos los archivos de la aplicacion incluido el docker-compose para hacer el despliegue, pero de aqui en adelante solo trabajaremos en el directorio de `/bbs71_git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
 
 ### bbs71_docker:<br>
 
@@ -310,9 +310,6 @@ Dentro de dockerfile de Haproxy le damos las intrucciones de usar haproxy:2.3, p
 
 #### 6. /mqtt:
 MQTT es el broker de mensajeria escogio para ser de intermediario entre nuestra app y el framework de computación distribuida y procesamiento de datos, Apache Spark, encargado de escuchar los topics por donde se transmitiran los datos que luego se convertiran el consultas de PySpark.<br>
-#### 7. /spark_app
-Aqui es donde se encuentran los scripts de pyspark para realizar el procesamiento distribuido, uno de ellos es `bbs71_etl.py` encargado de realizar la extración, limpieza y carga del dataset de kaggle y `bbs71_stream.py` encargado de hacer el procesamiento en streaming de Apache Spark, tambien esta sera la carpeta en donde se almacenara el dataset de kaggle `Combined_Flights_2021.csv` y en donde se guardaran posteriormente los .csv con los datos ya transformados.
-
 
 ##### docker-compose de mqtt
 ```
@@ -331,6 +328,8 @@ services:
       - 9001:9001
 ```
 En este docker-compose al igual que con el de mongodb, hacemos uso de los volumenes para copiar los archivos de configuración de mqtt.<br>
+#### 7. /spark_app
+Aqui es donde se encuentran los scripts de pyspark para realizar el procesamiento distribuido, uno de ellos es `bbs71_etl.py` encargado de realizar la extración, limpieza y carga del dataset de kaggle y `bbs71_stream.py` encargado de hacer el procesamiento en streaming de Apache Spark, tambien esta sera la carpeta en donde se almacenara el dataset de kaggle `Combined_Flights_2021.csv` y en donde se guardaran posteriormente los .csv con los datos ya transformados.
 
 ## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otras 2 ventana de cmd, una en la misma maquina de servidor y otra en cliente para realizar algunos pasos a la vez):<br>
