@@ -80,8 +80,7 @@ export default {
         },
         isLoading() {
             return this.$store.state.airline.airplanes.length === 0 ? true : false;
-        }
-        ,
+        },
     },
     methods: {
         paginate(airplanes) {
