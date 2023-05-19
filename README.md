@@ -353,7 +353,6 @@ Abrimos la terminal nro 1 de servidorUbuntu y escribimos este comando `sudo dock
 
 5. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
 6. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
-
 Master:<br>
 `./start-master.sh`<br>
 Worker:<br>
