@@ -121,19 +121,19 @@ SPARK_MASTER_HOST=192.168.100.2
 ```
 ### Librerias:
 1. Editor de texto Vim:<br>
-`apt-get install vim -y`<br>
+`sudo apt-get install vim -y`<br>
 2. Zip y Unzip para descomprimir archivos:<br>
-`apt-get install zip unzip -y`<br>
+`sudo apt-get install zip unzip -y`<br>
 ### Pip y librerias de Python:
 1. Instalamos PIP y Python:<br>
-`apt-get install python3`<br>
-`apt-get install pip`
+`sudo apt-get install python3`<br>
+`sudo apt-get install pip`
 2. Instalamos la libreria Pymogno:<br>
-`pip install pymongo`
+`sudo pip install pymongo`
 3. Instalamos la libreria del Broker de mensajeria MQTT:<br>
-`pip install paho-mqtt`
+`sudo pip install paho-mqtt`
 4. Instalamos la libreria de PySpark:<br>
-`pip install pyspark`
+`sudo pip install pyspark`
 ## Configuración
 Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Cuando se descargue dentro de la carpeta `bbs71_git`, tendremos las siguientes subcarpetas `/bbs71_app` en donde se encuentran los archivos de toda la pagina como HTML, CSS y scripts, en `/bbs71_backend` tenemos todo lo relacionado con los microservicios y el apigateway y en `/bbs71_dockerfile` tenemos todos los archivos de la aplicacion incluido el docker-compose para hacer el despliegue, pero de aqui en adelante solo trabajaremos en el directorio de `/bbs71_git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
 
