@@ -66,6 +66,6 @@ services:
       - ./mqtt/mosquitto/data:/mosquitto/data
       - ./mqtt/mosquitto/log:/mosquitto/log
     ports:
-      - 1884:1883
+      - 1883:1883
       - 9001:9001 
     
