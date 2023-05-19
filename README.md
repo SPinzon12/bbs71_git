@@ -75,6 +75,7 @@ sudo add-apt-repository \
 `sudo apt-get update`<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### docker-compose:
+Necesitaremos Docker-compose en las 2 maquinas de servidorUbuntu y clienteUbuntu.<br>
 1. Instale DockerCompose:<br>
 `sudo apt-get install docker-compose-plugin`<br>
 2. Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
