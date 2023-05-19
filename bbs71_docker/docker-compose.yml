@@ -8,55 +8,86 @@ services:
       - ./db/mongo/data:/data/db
       - ./db/flights.json:/json/flights.json
       - ./db/users.json:/json/users.json
-      - ./db/flight_stats.json:/json/flight_stats
     ports:
       - 27017:27017
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2
 
   api-gateway:
-    image: bbs71/api-gateway:0.0
+    image: bbs71/api-gateway
     ports:
-      - "3000:3000"
+      - 3000:3000
     links:
       - microuser
       - microairlines
       - microairports
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2
 
   microuser:
-    image: bbs71/micro-user:0.0
+    image: bbs71/micro-user
     links:
       - mongodb
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2
 
   microairlines:
-    image: bbs71/micro-airlines:0.0
+    image: bbs71/micro-airlines
     links:
       - mongodb
     depends_on:
       - mqtt
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2
 
   microairports:
-    image: bbs71/micro-airports:0.0
+    image: bbs71/micro-airports
     links:
       - mongodb
     depends_on:
       - mqtt
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2
 
   app-1:
-    image: bbs71/app:0.0
+    image: bbs71/app
     depends_on:
       - api-gateway
-    
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == clienteUbuntu
+
   app-2:
-    image: bbs71/app:0.0
+    image: bbs71/app
     depends_on:
       - api-gateway
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == clienteUbuntu
 
   haproxy:
-    image: bbs71/haproxy:0.0
+    image: bbs71/haproxy
     ports:
-      - "1080:80"
+      - 1080:80
     links:
       - app-1
       - app-2
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2
 
   mqtt:
     image: eclipse-mosquitto
@@ -67,5 +98,8 @@ services:
       - ./mqtt/mosquitto/log:/mosquitto/log
     ports:
       - 1883:1883
-      - 9001:9001 
-    
+      - 9001:9001  
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu2

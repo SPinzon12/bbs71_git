@@ -486,7 +486,11 @@
       ]
     }
   ],
-  "stats": {}
+  "stats": {
+    "total_flights": 109360,
+    "flights_cancelled": 2096,
+    "tail_numbers": 62
+  }
 },{
   "_id": {
     "$oid": "6456f68e44d2e891f2a19617"
@@ -10563,7 +10567,11 @@
       ]
     }
   ],
-  "stats": {}
+  "stats": {
+    "total_arrivals": 5451,
+    "total_departures": 5434,
+    "flights_cancelled": 160
+  }
 },{
   "_id": {
     "$oid": "6456fb0944d2e891f2a1962c"

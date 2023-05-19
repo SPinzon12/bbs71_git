@@ -27,7 +27,7 @@ stats_col.update_many({}, {"$set": {"stats": {}}})
 
 # Configuración del cliente MQTT
 mqtt_broker_host = "192.168.100.2"  # dirección del broker Mosquitto
-mqtt_broker_port = 1884  # puerto del broker Mosquitto
+mqtt_broker_port = 1883  # puerto del broker Mosquitto
 
 
 # Callback que se ejecuta cuando se conecta al broker MQTT
@@ -67,7 +67,7 @@ def on_message(client, userdata, msg):
     	    "tail_numbers": len(num_airplanes),
     	    "flights_delay": num_flights_delay,
     	    "flights_holidaySeason": num_total_flights_hs,
-            "flights_max_month": {"month": month_name_max_flights, "num_flights": num_result}
+            "flight_month": {"month": month_name_max_flights, "num_flights": num_result}
         }
         print(stats)
         stats_col.update_one({'user_id': airline_id}, {'$set': {'stats': stats}})
@@ -93,12 +93,12 @@ def on_message(client, userdata, msg):
         
         # estadísticas finales
         stats ={
-            "total_arrivals": total_arrivals,
-            "total_departures": total_departures,
+            "flights_arrivals": total_arrivals,
+            "flights_departures": total_departures,
             "flights_cancelled": total_cancelled_flights,
-            "total_flights_delay": total_delay,
-            "total_flights_hs": total_flights_holiSeason,
-            "flight_max_month": {"month": month_name_max_flights, "num_flights": num_result}
+            "flights_delay": total_delay,
+            "flights_holidaySeason": total_flights_holiSeason,
+            "flight_month": {"month": month_name_max_flights, "num_flights": num_result}
         }
         stats_col.update_one({'user_id': airport_id}, {'$set': {'stats': stats}})
         print(stats)
