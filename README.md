@@ -204,7 +204,7 @@ services:
       - ./mqtt/mosquitto/data:/mosquitto/data
       - ./mqtt/mosquitto/log:/mosquitto/log
     ports:
-      - 1884:1883
+      - 1883:1883
       - 9001:9001
 ```
 En el docker-compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
