@@ -108,9 +108,15 @@ EOF
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 7. Luego entramos a `/labSpark/spark-3.3.1-bin-hadoop3/conf` y hacemos una copia del archivo de configuración:<br>
 `cp spark-env.sh.template spark-env.sh`<br>
-Y introducimos estas instrucciones:
+Y introducimos estas instrucciones:<br>
+En servidorUbuntu:<br>
 ```
 SPARK_LOCAL_IP=192.168.100.2
+SPARK_MASTER_HOST=192.168.100.2
+```
+En clienteUbuntu:<br>
+```
+SPARK_LOCAL_IP=192.168.100.3
 SPARK_MASTER_HOST=192.168.100.2
 ```
 ### Librerias:
