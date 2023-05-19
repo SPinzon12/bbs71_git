@@ -352,11 +352,11 @@ Abrimos la terminal nro 1 de servidorUbuntu y escribimos este comando `sudo dock
 
 
 5. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
-6. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en las 2 maquinas:<br>
+6. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
 
-Master en servidorUbuntu:<br>
+Master:<br>
 `./start-master.sh`<br>
-Worker en clienteUbuntu:<br>
+Worker:<br>
 `./start-worker.sh spark://192.168.100.2:7077`<br>
 
 7. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
@@ -394,10 +394,11 @@ Estos comandos importan los archivos .json especificando el nombre de la base de
 `mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
 `mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
 Una vez hecho esto ya podemos salir del contenedor con `exit`.
+10. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo de la terminal nro2 con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
 
-10. Y volvemos a la terminal cmd nro1 de servidorUbuntu, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, tenga en cuenta el paso 4 con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
+11. Y volvemos a la terminal cmd nro1 de servidorUbuntu, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, tenga en cuenta el paso 4 con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
 
-11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
+12. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_stream.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights/*csv"`<br>
 Nos debe de salir: <br>
 ```
@@ -406,8 +407,6 @@ Archivos CSV leídos correctamente.
 Conectado a la base de datos
 ```
 La dejamos ahi corriendo mientras realizamos los siguientes pasos.
-
-12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo de la terminal nro2 con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
 
 13. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera usando Docker Swarm, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos usando Swarm:<br>
 `sudo docker stack deploy -c docker-compose.yml bbs71`<br>
