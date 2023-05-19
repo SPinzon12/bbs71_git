@@ -415,7 +415,6 @@ Worker:<br>
 8. Y luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/Combined_Flights_2021.csv" "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights"`<br>
 (este proceso puede tardar un rato)<br>
-
 Cuando termine nos debe generar una carpeta `flights` en el directorio `/bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
 ```
 part-00000-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00009-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
@@ -449,7 +448,7 @@ sudo docker pull eclipse-mosquitto
 `sudo docker stack deploy -c docker-compose.yml bbs71`<br>
 este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml y usara los recursos de ambas maquinas.<br>
 
-11. Por ultimo en la terminal #2 de servidorUbuntu nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
+12. Por ultimo en la terminal #2 de servidorUbuntu nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_stream.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights/*csv"`<br>
 Nos debe de salir: <br>
 ```
