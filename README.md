@@ -379,14 +379,14 @@ A continuacion daremos el paso a seguir para desplegar de forma exitosa la app d
 1. Lo primero sera descargar el respositirio de bbs71 en la terminal #1 servidorUbuntu:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
 
-2. Despues de esto nos dirigimos al directorio `/bbs71_git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
+2. Despues de esto nos dirigimos al directorio `bbs71_git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 
 3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
 
-4. Luego en `/bbs71_docker/db` iniciamos el docker-compose de la base de datos de con el fin de subir los json:<br>
-`docker compose up -d`<br>
+4. Luego en `bbs71_docker/db` iniciamos el docker-compose de la base de datos de con el fin de subir los json:<br>
+`sudo docker compose up -d`<br>
 
 5. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos los comandos:<br> 
 Para visualizar el ID del contenedor usamos:<br>
@@ -407,7 +407,7 @@ Estos comandos importan los archivos .json especificando el nombre de la base de
 
 6. Una vez hecho esto ya podemos salir del contenedor con `exit` y ahora podemos detener el contenedor de mongo  con `sudo docker ps` para verlo y `sudo docker stop <id del contenedor>` para detenerlo.<br>
 
-7. Una vez cerremos el contenedor de mongo, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
+7. Una vez cerremos el contenedor de mongo, nos dirigimos a `cd ../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
 Master:<br>
 `./start-master.sh`<br>
 Worker:<br>
@@ -443,6 +443,7 @@ sudo docker pull bbs71/micro-airports
 sudo docker pull bbs71/app
 sudo docker pull bbs71/haproxy
 sudo docker pull eclipse-mosquitto
+sudo docker pull mongo:4.0
 ```
 
 11. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera usando Docker Swarm, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos usando Swarm:<br>
