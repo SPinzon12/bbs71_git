@@ -13,7 +13,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
 
   api-gateway:
     image: bbs71/api-gateway
@@ -26,7 +26,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
 
   microuser:
     image: bbs71/micro-user
@@ -35,7 +35,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
 
   microairlines:
     image: bbs71/micro-airlines
@@ -46,7 +46,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
 
   microairports:
     image: bbs71/micro-airports
@@ -57,7 +57,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
 
   app-1:
     image: bbs71/app
@@ -87,7 +87,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
 
   mqtt:
     image: eclipse-mosquitto
@@ -102,4 +102,4 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == servidorUbuntu2
+          - node.hostname == servidorUbuntu
