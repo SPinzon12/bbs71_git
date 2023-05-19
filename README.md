@@ -341,22 +341,13 @@ Aqui es donde se encuentran los scripts de pyspark para realizar el procesamient
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otras 2 ventana de cmd, una en la misma maquina de servidor y otra en cliente para realizar algunos pasos a la vez):<br>
 1. Primero realizaremos la conexion del Docker Swarm entre servidorUbuntu y clienteUbuntu, y lo haremos de la siguiente forma:
 Abrimos la terminal nro 1 de servidorUbuntu y escribimos este comando `sudo docker swarm init --advertise-addr 192.168.100.2` para iniciarlo y nos dara el siguiente comando con el token para realizar el enlace (si se te olvide puedes usar este `sudo docker swarm join-token worker`) y en la terminal de clienteUbuntu lo escribimos:<br> `sudo docker swarm join --token SWMTKN-1-4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo 192.168.100.2:2377`
-2. Luego sera descargar el respositirio de bbs71 en ambas maquinas:<br>
+2. Luego sera descargar el respositirio de bbs71 en servidorUbuntu:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
 3. Despues de esto nos dirigimos al directorio `/bbs71_git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
 4. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
 (Recuerda hacer los pasos 2,3 y 4 en ambas maquinas)<br>
-
-
-
-5. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
-6. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
-Master:<br>
-`./start-master.sh`<br>
-Worker:<br>
-`./start-worker.sh spark://192.168.100.2:7077`<br>
 
 7. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/Combined_Flights_2021.csv" "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights"` (este proceso puede tardar un rato)<br>
@@ -372,6 +363,22 @@ part-00006-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00015-4a73310c-a9
 part-00007-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00016-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
 part-00008-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  _SUCCESS
 ```
+
+
+
+
+
+5. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
+6. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
+Master:<br>
+`./start-master.sh`<br>
+Worker:<br>
+`./start-worker.sh spark://192.168.100.2:7077`<br>
+
+
+
+
+
 
 8. Luego en la terminal nro2 de servidorUbuntu lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
 `docker compose up -d`<br>
