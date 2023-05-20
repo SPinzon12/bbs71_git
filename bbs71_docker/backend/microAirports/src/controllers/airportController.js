@@ -4,7 +4,7 @@ const mqtt = require("mqtt");
 
 const options = {
   host: "192.168.100.2",
-  port: 1884,
+  port: 1883,
 };
 const client = mqtt.connect(options);
 
@@ -71,8 +71,8 @@ const airportStats = async (req, res) => {
         error: "No se encontró ningún aeropuerto con ese código",
       });
     }
-    let statistics = airport[0].stats;
-    if (Object.keys(statistics).length === 0) {
+    let dataAnalysis = airport[0].stats;
+    if (Object.keys(dataAnalysis).length === 0) {
       client.publish(
         "airport_airline_stats",
         JSON.stringify({
@@ -82,31 +82,45 @@ const airportStats = async (req, res) => {
       );
 
       // Esperar hasta que las estadísticas estén actualizadas
-      while (Object.keys(statistics).length === 0) {
+      while (Object.keys(dataAnalysis).length === 0) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         const updatedAirline = await Stats.find({ user_id: airportID });
-        statistics = updatedAirline[0].stats;
+        dataAnalysis = updatedAirline[0].stats;
       }
     }
 
     const stats = [
       {
-        number: statistics.total_arrivals,
+        value: dataAnalysis.flights_arrivals,
         name: "Arrivals",
         icon: "fa-solid fa-plane-arrival",
       },
       {
-        number: statistics.total_departures,
+        value: dataAnalysis.flights_departures,
         name: "Departures",
         icon: "fa-solid fa-plane-departure",
       },
       {
-        number: statistics.flights_cancelled,
+        value: dataAnalysis.flights_cancelled,
         name: "Cancelled Flights",
         icon: "fa-solid fa-plane-circle-xmark",
       },
+      {
+        value: dataAnalysis.flights_delay,
+        name: "Delayed Flight",
+        icon: "fa-solid fa-plane-circle-exclamation",
+      },
+      {
+        value: `${dataAnalysis.flight_month.month} ${dataAnalysis.flight_month.num_flights}`,
+        name: "Most Flights in a Month",
+        icon: "fa-solid fa-calendar",
+      },
+      {
+        value: dataAnalysis.flights_holidaySeason,
+        name: "Holiday Season Flights",
+        icon: "fa-solid fa-umbrella-beach",
+      },
     ];
-
     res.status(200).json({
       ok: true,
       stats,

@@ -75,6 +75,7 @@ sudo add-apt-repository \
 `sudo apt-get update`<br>
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 ### docker-compose:
+Necesitaremos Docker-compose en las 2 maquinas de servidorUbuntu y clienteUbuntu.<br>
 1. Instale DockerCompose:<br>
 `sudo apt-get install docker-compose-plugin`<br>
 2. Cree el archivo ~/.vimrc para trabajar con Yaml:<br>
@@ -108,28 +109,34 @@ EOF
 `tar -xvzf spark-3.4.0-bin-hadoop3.tgz`
 7. Luego entramos a `/labSpark/spark-3.3.1-bin-hadoop3/conf` y hacemos una copia del archivo de configuración:<br>
 `cp spark-env.sh.template spark-env.sh`<br>
-Y introducimos estas instrucciones:
+Y introducimos estas instrucciones:<br>
+En servidorUbuntu:<br>
 ```
 SPARK_LOCAL_IP=192.168.100.2
 SPARK_MASTER_HOST=192.168.100.2
 ```
+En clienteUbuntu:<br>
+```
+SPARK_LOCAL_IP=192.168.100.3
+SPARK_MASTER_HOST=192.168.100.2
+```
 ### Librerias:
 1. Editor de texto Vim:<br>
-`apt-get install vim -y`<br>
+`sudo apt-get install vim -y`<br>
 2. Zip y Unzip para descomprimir archivos:<br>
-`apt-get install zip unzip -y`<br>
+`sudo apt-get install zip unzip -y`<br>
 ### Pip y librerias de Python:
 1. Instalamos PIP y Python:<br>
-`apt-get install python3`<br>
-`apt-get install pip`
+`sudo apt-get install python3`<br>
+`sudo apt-get install pip`
 2. Instalamos la libreria Pymogno:<br>
-`pip install pymongo`
+`sudo pip install pymongo`
 3. Instalamos la libreria del Broker de mensajeria MQTT:<br>
-`pip install paho-mqtt`
+`sudo pip install paho-mqtt`
 4. Instalamos la libreria de PySpark:<br>
-`pip install pyspark`
+`sudo pip install pyspark`
 ## Configuración
-Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Cuando se descargue dentro de la carpeta `bbs71_git`, tendremos las siguientes subcarpetas `/bbs71_app` en donde se encuentran los archivos de toda la pagina como HTML, CSS y scripts, en `/bbs71_backend` tenemos todo lo relacionado con los microservicios y el apigateway y en `/bbs71_dockerfile` tenemos todos los archivos de la aplicacion incluido el docker-compose para hacer el despliegue, pero de aqui en adelante solo trabajaremos en el directorio de `/bbs71_git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
+Para configurar el contenedor Docker del proyecto, es necesario conocer los archivos Dockerfile que se han utilizado para crear las imágenes del contenedor. Cuando se descargue dentro de la carpeta `bbs71_git`, tendremos las siguientes subcarpetas `/bbs71_app` en donde se encuentran los archivos de toda la pagina como HTML, CSS y scripts, en `/bbs71_backend` tenemos todo lo relacionado con los microservicios y el apigateway y en `/bbs71_dockerfile` tenemos todos los archivos de la aplicacion incluido el docker-compose para hacer el despliegue, pero de aqui en adelante solo trabajaremos en el directorio de `bbs71_git/bbs71_docker` el cual contiene las subcarpetas donde estan los archivos necesario para la creacion de cada una de las imagenes del proyecto, las carpetas en cuestion son: `/db` correspondiende a la base de datos de mongodb, `/app` donde se encuentra todos los archivos de nuestra aplicacion web,`/backend` donde estan los microservicios, `/haproxy` donde esta nuestro balanceador, `/mqtt` el broker de mensajeria que usaremos, `/spark_app` donde estan los archivos que usaremos para el procesamiento de spark, dentro de cada carpeta se ha creado el Dockerfile que contienen las instrucciones para construir diferentes imágenes de Docker, cada una con su propia configuración y dependencias específicas. A continuación, se presentara una breve descripción y captura de cada uno de los Dockerfiles en sus repectivas carpetas utilizados en el proyecto.
 
 ### bbs71_docker:<br>
 
@@ -146,55 +153,86 @@ services:
       - ./db/mongo/data:/data/db
       - ./db/flights.json:/json/flights.json
       - ./db/users.json:/json/users.json
-      - ./db/flight_stats.json:/json/flight_stats
     ports:
       - 27017:27017
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 
   api-gateway:
-    image: bbs71/api-gateway:0.0
+    image: bbs71/api-gateway
     ports:
-      - "3000:3000"
+      - 3000:3000
     links:
       - microuser
       - microairlines
       - microairports
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 
   microuser:
-    image: bbs71/micro-user:0.0
+    image: bbs71/micro-user
     links:
       - mongodb
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 
   microairlines:
-    image: bbs71/micro-airlines:0.0
+    image: bbs71/micro-airlines
     links:
       - mongodb
     depends_on:
       - mqtt
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 
   microairports:
-    image: bbs71/micro-airports:0.0
+    image: bbs71/micro-airports
     links:
       - mongodb
     depends_on:
       - mqtt
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 
   app-1:
-    image: bbs71/app:0.0
+    image: bbs71/app
     depends_on:
       - api-gateway
-      
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == clienteUbuntu
+
   app-2:
-    image: bbs71/app:0.0
+    image: bbs71/app
     depends_on:
       - api-gateway
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == clienteUbuntu
 
   haproxy:
-    image: bbs71/haproxy:0.0
+    image: bbs71/haproxy
     ports:
-      - "1080:80"
+      - 1080:80
     links:
       - app-1
       - app-2
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 
   mqtt:
     image: eclipse-mosquitto
@@ -205,7 +243,11 @@ services:
       - ./mqtt/mosquitto/log:/mosquitto/log
     ports:
       - 1883:1883
-      - 9001:9001
+      - 9001:9001  
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == servidorUbuntu
 ```
 En el docker-compose se definen las imagenes de cada uno de los servicios y los parametros que se van a usar, para este proyecto utilizamos los siguientes servicios:
 
@@ -324,7 +366,7 @@ services:
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
     ports:
-      - 1884:1883
+      - 1883:1883
       - 9001:9001
 ```
 En este docker-compose al igual que con el de mongodb, hacemos uso de los volumenes para copiar los archivos de configuración de mqtt.<br>
@@ -333,26 +375,48 @@ Aqui es donde se encuentran los scripts de pyspark para realizar el procesamient
 
 ## Guia
 A continuacion daremos el paso a seguir para desplegar de forma exitosa la app de Blackbird (Es recomendable ir preparando otras 2 ventana de cmd, una en la misma maquina de servidor y otra en cliente para realizar algunos pasos a la vez):<br>
-1. Primero realizaremos la conexion del Docker Swarm entre servidorUbuntu y clienteUbuntu, y lo haremos de la siguiente forma:
-Abrimos la terminal nro 1 de servidorUbuntu y escribimos este comando `sudo docker swarm init --advertise-addr 192.168.100.2` para iniciarlo y nos dara el siguiente comando con el token para realizar el enlace (si se te olvide puedes usar este `sudo docker swarm join-token worker`) y en la terminal de clienteUbuntu lo escribimos:<br> `sudo docker swarm join --token SWMTKN-1-4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo 192.168.100.2:2377`
-2. Luego sera descargar el respositirio de bbs71 en la terminal nro1 de servidorUbuntu:<br>
+
+1. Lo primero sera descargar el respositirio de bbs71 en la terminal #1 servidorUbuntu:<br>
 `git clone https://github.com/SPinzon12/bbs71_git`<br>
-3. Despues de esto nos dirigimos al directorio `/bbs71_git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
+
+2. Despues de esto nos dirigimos al directorio `bbs71_git/bbs71_docker`, y lo que haremos sera descargar el archivo flights.json y el dataset combined_flights_2021.csv que son demasiado pesados para git, lo haremos con el siguiente comando:<br>
 `wget https://www.dropbox.com/s/npd87j2k5yxul2r/bbs71_data.zip`
-4. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
+
+3. Lo siguiente sera descomprimir el archivo .zip con `unzip bbs71_data.zip`, al hacerlo nos dara 2 archivos `Combined_Flights_2021.csv` y `flights.json` los cuales tendremos que mover a directorios diferentes de la siguiente forma:<br>
 `mv Combined_Flights_2021.csv ./spark_app/` y `mv flights.json ./db/`<br>
 
-5. Necesitamos ir a la carpeta `/bbs71_docker/spark_app` para ejecutar el archivo `bbs71_etl.py` encargado de tomar, transformar y limpiar el dataset (Este proceso puede tardar un tiempo) pero antes vamos a revisar las rutas del archivo y que sean las indicadas (si esta usando el usuario vagrant o root recuerde que las rutas son diferentes)<br>
-6. Si todo esta bien, nos dirigimos a `../../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en las 2 maquinas:<br>
+4. Luego en `bbs71_docker/db` iniciamos el docker-compose de la base de datos de con el fin de subir los json:<br>
+`sudo docker compose up -d`<br>
 
-Master en servidorUbuntu:<br>
+5. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos los comandos:<br> 
+Para visualizar el ID del contenedor usamos:<br>
+`sudo docker ps`<br>
+Deberia mostrarnos algo asi, y copiamos el `CONTAINER ID`:<br>
+```
+root@vagrant:~/bbs71_git/bbs71_docker/db# docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                           NAMES
+8867c3571a3b   mongo:4.0   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp   mongodb
+```
+Ahora entramos en el contenedor:<br>
+`sudo docker exec -it <id del contenedor> /bin/bash`<br>
+Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para subirlos al cluster:<br>
+Estos comandos importan los archivos .json especificando el nombre de la base de datos, el nombre de la colección, el archivo y el tipo de archivo.<br>
+`mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
+`mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
+`mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
+
+6. Una vez hecho esto ya podemos salir del contenedor con `exit` y ahora podemos detener el contenedor de mongo  con `sudo docker ps` para verlo y `sudo docker stop <id del contenedor>` para detenerlo.<br>
+
+7. Una vez cerremos el contenedor de mongo, nos dirigimos a `cd ../../labSpark/spark-3.4.0-bin-hadoop3/sbin` y iniciamos el master y el worker en la maquina de servidorUbuntu:<br>
+Master:<br>
 `./start-master.sh`<br>
-Worker en clienteUbuntu:<br>
+Worker:<br>
 `./start-worker.sh spark://192.168.100.2:7077`<br>
 
-7. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
-`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/Combined_Flights_2021.csv" "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights"` (este proceso puede tardar un rato)<br>
-Cuando termine nos debe generar una carpeta `flights` en el directorio `/bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
+8. Y luego nos dirigimos a `labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
+`./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_etl.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/Combined_Flights_2021.csv" "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights"`<br>
+(este proceso puede tardar un rato)<br>
+Cuando termine nos debe generar una carpeta `flights` en el directorio `bbs71_git/bbs71_docker/spark_app/` con todos los csv resultado `bbs71_etl.py`, como por ejemplo:<br>
 ```
 part-00000-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00009-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
 part-00001-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00010-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv
@@ -365,30 +429,28 @@ part-00007-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  part-00016-4a73310c-a9
 part-00008-4a73310c-a9aa-4590-9e8f-c260dbf2a0ee-c000.csv  _SUCCESS
 ```
 
-8. Luego en la terminal nro2 de servidorUbuntu lo que haremos es ir a `/bbs71_docker/db` he iniciamos el docker compose de la base de datos de con el fin de subir los json:<br>
-`docker compose up -d`<br>
+9. Ahora para correr la app realizaremos la conexion del Docker Swarm entre servidorUbuntu y clienteUbuntu, y lo haremos de la siguiente forma:
+Escribimos este comando `sudo docker swarm init --advertise-addr 192.168.100.2` para iniciarlo y nos dara el siguiente comando con el token para realizar el enlace (si se te olvide puedes usar este `sudo docker swarm join-token worker`) y en la terminal de clienteUbuntu lo escribimos:<br> 
+En nuestro caso fue: <br>
+`sudo docker swarm join --token SWMTKN-1-4qt4bp8o1jeakj6xtgfsa62esrgb8mq6fyip25444653jv1c2b-cqdk5hl7yf17xi1a943ntw3zo 192.168.100.2:2377`
 
-9. Una vez hecho esto, entraremos al contenedor de mongo con el fin de subir los archivos .json al cluster de mongo y para ello usaremos los comandos:<br> 
-Para visualizar el ID del contenedor usamos:<br>
-`docker ps`<br>
-Deberia mostrarnos algo asi, y copiamos el `CONTAINER ID`:<br>
+10. Para agilizar la descarga de las imagenes, realizaremos un pull para asi descargarlas de dockerhub.
 ```
-root@vagrant:~/bbs71_git/bbs71_docker/db# docker ps
-CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                           NAMES
-8867c3571a3b   mongo:4.0   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp   mongodb
+sudo docker pull bbs71/api-gateway
+sudo docker pull bbs71/micro-user
+sudo docker pull bbs71/micro-airlines
+sudo docker pull bbs71/micro-airports
+sudo docker pull bbs71/app
+sudo docker pull bbs71/haproxy
+sudo docker pull eclipse-mosquitto
+sudo docker pull mongo:4.0
 ```
-Ahora entramos en el contenedor:<br>
-`docker exec -it <id del contenedor> /bin/bash`<br>
-Y navegamos al directorio `/json` y ejecutaremos los siguientes comandos para subirlos al cluster:<br>
-Estos comandos importan los archivos .json especificando el nombre de la base de datos, el nombre de la colección, el archivo y el tipo de archivo.<br>
-`mongoimport --db bbs71_db --collection flights --type json --file /json/flights.json --jsonArray`<br>
-`mongoimport --db bbs71_db --collection users --type json --file /json/users.json --jsonArray`<br>
-`mongoimport --db bbs71_db --collection flight_stats --type json --file /json/flight_stats.json --jsonArray`<br>
-Una vez hecho esto ya podemos salir del contenedor con `exit`.
 
-10. Y volvemos a la terminal cmd nro1 de servidorUbuntu, que recordemos debe de estar en la ruta `/bbs71_docker/spark_app`, tenga en cuenta el paso 4 con el archivo `bbs71_stream.py` y hacemos exactamente lo mismo del paso 6 pero con .py de stream:<br>
+11. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera usando Docker Swarm, para ello nos devolvemos a  `bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos usando Swarm:<br>
+`sudo docker stack deploy -c docker-compose.yml bbs71`<br>
+este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml y usara los recursos de ambas maquinas.<br>
 
-11. Luego nos dirigimos a `/labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
+12. Por ultimo en la terminal #2 de servidorUbuntu nos dirigimos a `labSpark/spark-3.4.0-bin-hadoop3/bin` y una vez dentro ejecutamos el siguiente comando:<br>
 `./spark-submit --master spark://192.168.100.2:7077 /home/vagrant/bbs71_git/bbs71_docker/spark_app/bbs71_stream.py "/home/vagrant/bbs71_git/bbs71_docker/spark_app/flights/*csv"`<br>
 Nos debe de salir: <br>
 ```
@@ -396,22 +458,15 @@ Comenzando a leer los archivos CSV...
 Archivos CSV leídos correctamente.
 Conectado a la base de datos
 ```
-La dejamos ahi corriendo mientras realizamos los siguientes pasos.
 
-12. Cuando el codigo este corriendo, ahora podemos detener el contenedor de mongo de la terminal nro2 con `docker ps` para verlo y `docker stop <id del contenedor>` para detenerlo.<br>
+13. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
 
-13. Ya casi para finalizar una vez hecho los pasos anteriores ahora si ya podemos desplegar la aplicación entera usando Docker Swarm, para ello nos devolvemos a  `/bbs71_git/bbs71_docker` donde se encuentra el archivo docker-compose.yml y lo ejecutamos usando Swarm:<br>
-`sudo docker stack deploy -c docker-compose.yml bbs71`<br>
-este comando creará y ejecutará los contenedores de Docker necesarios para cada servicio especificado en el archivo docker-compose.yml y usara los recursos de ambas maquinas.<br>
-
-14. Ya con todo corriendo nos dirigimos a nuestro navegador de preferencia y colocamos en la barra de busqueda la ip `192.168.100.2` con el puerto `1080` de Haproxy.
-
-15. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`.<br>
+14. Tambien podemos ver las estadisticas de haproxy accediendo por `192.168.100.2:1080/haproxy?stats`.<br>
 Usuario:<br>
 `admin`<br>
 Contraseña:<br>
 `admin`<br>
-16. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
+15. Para loguearse en nuestra app hemos colocado 4 ejemplos de usuarios, 2 de aeropuerto y otros 2 de aerolinea:
 
 ##### Aeropuertos:
 1. Usuario:<br>

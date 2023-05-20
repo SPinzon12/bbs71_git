@@ -1,4 +1,5 @@
 <template>
+    <loading v-model:active="isLoading" :can-cancel="true" />
     <div class="container">
         <div class="form-group">
             <label class="table-name">
@@ -46,12 +47,17 @@
 </template>
   
 <script>
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
 export default {
     props: {
         airlines: {
             type: Array,
             required: true,
         }
+    },
+    components: {
+        Loading,
     },
     data() {
         return {
@@ -71,7 +77,10 @@ export default {
                 this.pages.push(i);
             }
             return this.pages;
-        }
+        },
+        isLoading() {
+            return this.$store.state.airport.airlines.length === 0 ? true : false;
+        },
     },
     methods: {
         paginate(airlines) {

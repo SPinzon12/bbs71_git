@@ -39,4 +39,44 @@ df = df.withColumn("AirTime", when((col("Diverted") == 0) & (col("Cancelled") ==
 df = df.withColumn("CRSElapsedTime", from_unixtime(col("CRSElapsedTime") * 60, 'HH:mm'))
 df = df.withColumn("ActualElapsedTime", when((col("Diverted") == 0) & (col("Cancelled") == 0), convert_to_hours(col("ActualElapsedTime").cast(IntegerType()))).otherwise(col("ActualElapsedTime")))
 
-df.write.format("csv").option("header", "true").mode("overwrite").save(sys.argv[2])
+# Columnas que se guardarán en el archivo CSV
+cols = [
+    'Origin',
+    'OriginAirportID',
+    'OriginCityName',
+    'Dest',
+    'DestAirportID',
+    'DestCityName',
+    'Tail_Number',
+    'Airline',
+    'IATA_Code_Operating_Airline',
+    'Distance',
+    'CRSElapsedTime',
+    'ActualElapsedTime',
+    'FlightDate',
+    'Cancelled',
+    'Diverted',
+    'AirTime',
+    'CRSDepTime',
+    'DepTime',
+    'DepDelay',
+    'DepDel15',
+    'WheelsOff',
+    'TaxiOut',
+    'CRSArrTime',
+    'ArrTime',
+    'ArrDelay',
+    'ArrDel15',
+    'WheelsOn',
+    'TaxiIn',
+    'Flight_Number_Marketing_Airline',
+    'Month',
+    'DayofMonth'
+]
+
+# Seleccionar las columnas especificadas y guardar en un nuevo DataFrame
+selected_df = df.select(*[col(c) for c in cols])
+
+# Guardar el nuevo DataFrame en formato CSV
+selected_df.write.format("csv").option("header", "true").mode("overwrite").save(sys.argv[2])
+

@@ -4,7 +4,7 @@
     <div v-for="card in cards" class="card col-4 my-3">
       <div class="cardContent d-flex justify-content-between align-items-center">
         <div class="cardInfo d-flex flex-column">
-          <div class="numbers">{{ card.number }}</div>
+          <div class="numbers">{{ card.value }}</div>
           <div class="cardName">
             <b>{{ card.name }}</b>
           </div>
